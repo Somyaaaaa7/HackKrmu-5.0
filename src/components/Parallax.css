@@ -1,0 +1,106 @@
+/* ================================================= */
+/* PARALLAX BACKGROUND CONTAINER */
+/* ================================================= */
+
+.parallax {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+/* ================================================= */
+/* SHARED LAYER STYLES */
+/* ================================================= */
+/*
+  Each layer is oversized so movement never reveals edges.
+  Opacity is kept low so content remains the focus.
+*/
+
+.layer {
+    position: absolute;
+    inset: -20%;
+    opacity: 0.25;
+}
+
+/* ================================================= */
+/* BACK LAYER (DEEPEST) */
+/* ================================================= */
+/* - Largest spacing
+   - Very faint
+   - Slowest movement */
+
+.layer-back {
+    background-image: radial-gradient(circle,
+            rgba(0, 255, 247, 0.18) 2px,
+            transparent 2px);
+    background-size: 180px 180px;
+    animation: driftBack 120s linear infinite;
+}
+
+/* ================================================= */
+/* MIDDLE LAYER */
+/* ================================================= */
+/* - Medium spacing
+   - Slightly brighter
+   - Moderate speed */
+
+.layer-mid {
+    background-image: radial-gradient(circle,
+            rgba(0, 255, 247, 0.28) 2px,
+            transparent 2px);
+    background-size: 130px 130px;
+    animation: driftMid 80s linear infinite;
+}
+
+/* ================================================= */
+/* FRONT LAYER (SUBTLE HIGHLIGHTS) */
+/* ================================================= */
+/* - Smallest spacing
+   - Most visible dots
+   - Still intentionally restrained */
+
+.layer-front {
+    background-image: radial-gradient(circle,
+            rgba(0, 255, 247, 0.4) 2px,
+            transparent 2px);
+    background-size: 90px 90px;
+    animation: driftFront 60s linear infinite;
+}
+
+/* ================================================= */
+/* ORGANIC DRIFT ANIMATIONS */
+/* ================================================= */
+/* Movement is diagonal and slow
+   to avoid "wallpaper" feeling */
+
+@keyframes driftBack {
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(-120px, -220px);
+    }
+}
+
+@keyframes driftMid {
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(100px, -300px);
+    }
+}
+
+@keyframes driftFront {
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(-80px, -420px);
+    }
+}

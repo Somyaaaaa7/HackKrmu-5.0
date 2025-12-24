@@ -1,38 +1,167 @@
-.App {
-  text-align: center;
+/* ================================================= */
+/* GLOBAL HTML SETTINGS */
+/* ================================================= */
+
+/* Enables smooth scrolling for navbar navigation */
+html {
+  scroll-behavior: smooth;
 }
 
-.App-logo {
-  height: 40vmin;
+/* ================================================= */
+/* GLOBAL COLOR VARIABLES (NEON CYBER THEME) */
+/* ================================================= */
+
+:root {
+  --neon-cyan: #00fff7;
+  --neon-purple: #b400ff;
+
+  --neon-soft: rgba(0, 255, 247, 0.35);
+  --neon-glow: rgba(0, 255, 247, 0.6);
+
+  --purple-soft: rgba(180, 0, 255, 0.25);
+  --purple-glow: rgba(180, 0, 255, 0.55);
+
+  --bg-dark: #05010a;
+  --bg-deep: #020014;
+
+  --navbar-height: 70px;
+}
+
+/* ================================================= */
+/* GLOBAL BODY STYLING */
+/* ================================================= */
+
+body {
+  margin: 0;
+  padding-top: var(--navbar-height);
+  color: white;
+  font-family: monospace;
+  overflow-x: hidden;
+
+  /* CYBER + PURPLE AMBIENT BACKGROUND */
+  background:
+    radial-gradient(circle at top center,
+      rgba(180, 0, 255, 0.18),
+      transparent 60%),
+    radial-gradient(circle at bottom center,
+      rgba(0, 255, 247, 0.12),
+      transparent 65%),
+    linear-gradient(180deg,
+      var(--bg-dark),
+      var(--bg-deep));
+
+  background-attachment: fixed;
+
+  /* Subtle cinematic screen flicker */
+  animation: flicker 0.5s infinite;
+}
+
+/* ================================================= */
+/* DOT GRID (MATCHES PURPLE TEAM CARDS) */
+/* ================================================= */
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+
+  background-image:
+    radial-gradient(rgba(180, 0, 255, 0.35) 1px,
+      transparent 1px);
+
+  background-size: 28px 28px;
+  opacity: 0.15;
+
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ================================================= */
+/* CRT SCANLINE OVERLAY (VERY SUBTLE) */
+/* ================================================= */
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+
+  background: repeating-linear-gradient(to bottom,
+      rgba(255, 255, 255, 0.015),
+      rgba(255, 255, 255, 0.015) 1px,
+      transparent 1px,
+      transparent 3px);
+
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* ================================================= */
+/* SCREEN FLICKER ANIMATION */
+/* ================================================= */
+
+@keyframes flicker {
+  0% {
+    opacity: 0.94;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.97;
+  }
+}
+
+/* ================================================= */
+/* BACKGROUND LAYERING SYSTEM */
+/* ================================================= */
+
+/* Parallax animated dots background (deepest layer) */
+.parallax {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Main content & navbar always above background */
+.page-section,
+.navbar {
+  position: relative;
+  z-index: 3;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* ================================================= */
+/* INTENTIONAL NEON GLOW (TEXT ONLY) */
+/* ================================================= */
+
+/* Cyan glow for headings & CTAs */
+h1,
+h2,
+h3,
+.logo,
+.cta {
+  text-shadow: 0 0 6px var(--neon-soft);
 }
 
-.App-link {
-  color: #61dafb;
+/* Purple glow for section titles (optional class) */
+.section-title {
+  text-shadow: 0 0 10px var(--purple-soft);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* ================================================= */
+/* OPTIONAL APP WRAPPER */
+/* ================================================= */
+
+.app {
+  overflow-x: hidden;
+}
+
+/* Navbar MUST stay above everything */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9998;
 }

@@ -1,0 +1,134 @@
+/* ============================= */
+/* TEAM SECTION */
+/* ============================= */
+
+.team-section {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.team-subtitle {
+    margin: 60px 0 30px;
+    font-size: 1.6rem;
+    color: #00fff7;
+    letter-spacing: 1px;
+}
+
+/* ============================= */
+/* GRID */
+/* ============================= */
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 40px;
+    justify-items: center;
+}
+
+.team-grid2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 40px;
+    justify-items: center;
+    margin-top: 70px;
+}
+
+/* ============================= */
+/* CARD */
+/* ============================= */
+
+.team-card {
+    width: 260px;
+    padding: 26px 20px;
+    background: radial-gradient(circle at top,
+            rgba(170, 0, 255, 0.15),
+            rgba(0, 0, 0, 0.85));
+
+    border-radius: 18px;
+    text-align: center;
+    position: relative;
+    transition: all 0.4s ease;
+
+    box-shadow:
+        0 0 20px rgba(180, 0, 255, 0.25),
+        inset 0 0 20px rgba(180, 0, 255, 0.15);
+}
+
+.team-card:hover {
+    transform: translateY(-14px) scale(1.04);
+    box-shadow:
+        0 0 45px rgba(200, 0, 255, 0.7),
+        inset 0 0 25px rgba(89, 0, 255, 0.35);
+}
+
+/* ============================= */
+/* IMAGE */
+/* ============================= */
+
+.team-card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 14px;
+    margin-bottom: 18px;
+}
+
+/* ============================= */
+/* TEXT */
+/* ============================= */
+
+.team-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 6px;
+    color: #fff;
+}
+
+.team-card p {
+    font-size: 0.95rem;
+    color: #ccc;
+    margin-bottom: 14px;
+}
+
+/* ============================= */
+/* LINKEDIN ICON */
+/* ============================= */
+
+.team-card a {
+    font-size: 1.6rem;
+    color: #0b010f;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.team-card a:hover {
+    color: #4ecaff;
+    transform: scale(1.15);
+}
+
+/* ============================= */
+/* LINKEDIN BADGE */
+/* ============================= */
+
+.linkedin {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 34px;
+    height: 34px;
+
+    border-radius: 6px;
+    background: #c100ff;
+    color: black;
+
+    font-weight: bold;
+    font-size: 1rem;
+    text-decoration: none;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.linkedin:hover {
+    transform: scale(1.15);
+    box-shadow: 0 0 18px rgba(193, 0, 255, 0.9);
+}

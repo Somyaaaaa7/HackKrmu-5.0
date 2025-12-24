@@ -1,0 +1,64 @@
+/* ================================================= */
+/* SECTION DIVIDER */
+/* ================================================= */
+/*
+
+Purpose:
+- Visually separates full-page sections
+- Subtle neon glow + pulse
+- Does NOT interfere with scroll-snap
+*/
+
+.divider {
+    width: 80%;
+    height: 2px;
+
+    /* Controlled spacing between sections */
+    margin: 12px auto;
+
+    /* Neon gradient line */
+    background: linear-gradient(90deg,
+            transparent,
+            var(--neon),
+            transparent);
+
+    /* Glow + visibility */
+    box-shadow: 0 0 14px rgba(0, 255, 247, 0.8);
+    opacity: 0.85;
+
+    /* Subtle pulse animation */
+    animation: pulse 3s ease-in-out infinite;
+
+    /* Prevent divider from being a snap point */
+    scroll-snap-align: none;
+
+    /* Smooth hover feedback */
+    transition: box-shadow 0.4s ease, opacity 0.4s ease;
+}
+
+/* Hover glow (desktop only, subtle) */
+.divider:hover {
+    box-shadow: 0 0 22px var(--neon-glow);
+}
+
+/* ================================================= */
+/* PULSE ANIMATION */
+/* ================================================= */
+/* Gentle brightness breathing — not distracting */
+
+@keyframes pulse {
+    0% {
+        opacity: 0.55;
+        box-shadow: 0 0 8px rgba(0, 255, 247, 0.5);
+    }
+
+    50% {
+        opacity: 1;
+        box-shadow: 0 0 18px rgba(0, 255, 247, 0.9);
+    }
+
+    100% {
+        opacity: 0.55;
+        box-shadow: 0 0 8px rgba(0, 255, 247, 0.5);
+    }
+}

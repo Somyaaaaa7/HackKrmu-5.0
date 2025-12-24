@@ -1,0 +1,70 @@
+// =============================
+// FIXED NAVBAR (CLICK-BASED ACTIVE)
+// =============================
+
+import { useState } from "react";
+import "./Navbar.css";
+import logo from "../assets/logo.png";
+
+/*
+IDs of sections on the page
+Must match section IDs in Home.js
+*/
+const sections = [
+    { id: "home", label: "Home" },
+    { id: "past", label: "Past Editions" },
+    { id: "themes", label: "Themes" },
+    { id: "sponsors", label: "Sponsors" },
+    { id: "contact", label: "Our Team" },
+];
+
+export default function Navbar() {
+    // Mobile menu open/close
+    const [open, setOpen] = useState(false);
+
+    // Active link (NULL initially → no underline on load)
+    const [active, setActive] = useState(null);
+
+    /* ================================================= */
+    /* SCROLL TO SECTION (ON CLICK ONLY) */
+    /* ================================================= */
+    const scrollTo = (id) => {
+        const section = document.getElementById(id);
+        if (!section) return;
+
+        setActive(id); // ✅ underline ONLY after click
+        section.scrollIntoView({ behavior: "smooth" });
+        setOpen(false);
+    };
+
+    return (
+        <nav className="navbar">
+            {/* BRAND */}
+            <div className="brand" onClick={() => scrollTo("home")}>
+                <img src={logo} alt="HackKRMU Logo" className="brand-logo" />
+                <span className="logo-text">HACK KRMU 5.0</span>
+            </div>
+
+            {/* HAMBURGER */}
+            <div
+                className="hamburger"
+                onClick={() => setOpen((prev) => !prev)}
+            >
+                ☰
+            </div>
+
+            {/* NAV LINKS */}
+            <div className={`links ${open ? "show" : ""}`}>
+                {sections.map(({ id, label }) => (
+                    <span
+                        key={id}
+                        className={`nav-link ${active === id ? "active" : ""}`}
+                        onClick={() => scrollTo(id)}
+                    >
+                        {label}
+                    </span>
+                ))}
+            </div>
+        </nav>
+    );
+}
