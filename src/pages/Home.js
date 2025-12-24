@@ -10,6 +10,7 @@ import PastEditions from "./PastEditions";
 import Sponsors from "./Sponsors";
 import Contact from "./Contact";
 import krmuBanner from "../assets/krmu-banner.png";
+import About from "./About";
 
 
 // UI Components
@@ -65,7 +66,7 @@ export default function Home() {
                 {/* Spacer between hero and prizes */}
                 <div style={{ height: "80px" }} />
 
-                {/* ================= PRIZE POOL ================= */}
+                {/* ================= PRIZE POOL =================
                 <h2 className="section-title">Prize Pool Worth</h2>
 
                 <div className="prize-total">₹5,00,000</div>
@@ -89,8 +90,17 @@ export default function Home() {
 
                 <p className="prize-note">
                     Track prizes & exclusive goodies for winners 🚀
-                </p>
+                </p> */}
 
+            </section>
+
+            <Divider />
+
+            {/* ================================================= */}
+            {/* ABOUT */}
+            {/* ================================================= */}
+            <section id="about" className="page-section">
+                <About />
             </section>
 
             <Divider />

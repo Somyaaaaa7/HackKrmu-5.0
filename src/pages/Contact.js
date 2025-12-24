@@ -50,7 +50,7 @@ export default function Contact() {
                 <div className="team-grid">
                 <Card
                     image={vishwanil}
-                    name="Mr. Vishwanil Suma"
+                    name="Mr. Vishwanil Suman"
                     role="Co-Convenor"
                     linkedin="https://www.linkedin.com/in/vishwanil-suman-b95b23145/"
                 />

@@ -1,55 +1,27 @@
-// =============================
-// Root Application Component
-// =============================
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-// Fixed navigation bar (always visible)
 import Navbar from "./components/Navbar";
-
-// All page sections (Home, Past, Themes, etc.)
-import Home from "./pages/Home";
-
-// Scroll progress indicator (top bar)
 import ScrollIndicator from "./components/ScrollIndicator";
-
-// Animated background (subtle cyber dots)
 import Parallax from "./components/Parallax";
+import About from "./pages/About";
+import Home from "./pages/Home";
+import Register from "./pages/Register";
 
-// Global styles
 import "./App.css";
 
 function App() {
   return (
-    <>
-      {/* 
-        BACKGROUND LAYER 
-        - Fixed
-        - Lowest z-index
-        - Provides subtle motion & depth
-      */}
+    <Router>
       <Parallax />
-
-      {/* 
-        UI OVERLAY
-        - Shows scroll progress
-        - Always visible at top
-      */}
       <ScrollIndicator />
-
-      {/* 
-        FIXED NAVBAR
-        - Used for section navigation
-        - Highlights active section
-      */}
       <Navbar />
 
-      {/* 
-        MAIN CONTENT
-        - Single-page scroll layout
-        - Contains all sections:
-          Home → Past → Themes → Sponsors → Contact
-      */}
-      <Home />
-    </>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </Router>
   );
 }
 

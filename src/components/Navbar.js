@@ -6,33 +6,26 @@ import { useState } from "react";
 import "./Navbar.css";
 import logo from "../assets/logo.png";
 
-/*
-IDs of sections on the page
-Must match section IDs in Home.js
-*/
 const sections = [
     { id: "home", label: "Home" },
+    { id: "about", label: "About" },
     { id: "past", label: "Past Editions" },
     { id: "themes", label: "Themes" },
-    { id: "sponsors", label: "Sponsors" },
+    { id: "sponsors", label: "Prizes" },
     { id: "contact", label: "Our Team" },
 ];
 
 export default function Navbar() {
-    // Mobile menu open/close
     const [open, setOpen] = useState(false);
 
-    // Active link (NULL initially → no underline on load)
+    // 🔥 null initially → NO underline on load
     const [active, setActive] = useState(null);
 
-    /* ================================================= */
-    /* SCROLL TO SECTION (ON CLICK ONLY) */
-    /* ================================================= */
     const scrollTo = (id) => {
         const section = document.getElementById(id);
         if (!section) return;
 
-        setActive(id); // ✅ underline ONLY after click
+        setActive(id); // underline appears ONLY after click
         section.scrollIntoView({ behavior: "smooth" });
         setOpen(false);
     };
@@ -48,17 +41,17 @@ export default function Navbar() {
             {/* HAMBURGER */}
             <div
                 className="hamburger"
-                onClick={() => setOpen((prev) => !prev)}
+                onClick={() => setOpen(prev => !prev)}
             >
                 ☰
             </div>
 
-            {/* NAV LINKS */}
+            {/* LINKS */}
             <div className={`links ${open ? "show" : ""}`}>
                 {sections.map(({ id, label }) => (
                     <span
                         key={id}
-                        className={`nav-link ${active === id ? "active" : ""}`}
+                        className={active === id ? "clicked" : ""}
                         onClick={() => scrollTo(id)}
                     >
                         {label}
