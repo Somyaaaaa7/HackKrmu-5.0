@@ -16,33 +16,39 @@ export default function About() {
             {/* ================= TOP SECTION ================= */}
             <div className="about-top">
                 <div className="about-left">
-                    <h2>What is Hack KRMU?</h2>
 
-                    <p>
-                        Hack KRMU is an annual hackathon hosted by K.R. Mangalam
-                        University, designed to challenge and inspire tech
-                        enthusiasts and innovators. Participants from all
-                        backgrounds come together to solve real-world problems
-                        through cutting-edge technology.
+                    <h2 style={{ marginTop: "-100px", marginLeft: "-160px", fontSize:"50px" }}>What is Hack KRMU?</h2>
+
+                    <p style={{ marginTop: "60px", marginLeft: "-150px" }}>
+                        Hack KRMU is an annual hackathon hosted by K.R. Mangalam University that brings
+                        together passionate innovators, developers, and creators to collaborate and
+                        build impactful solutions using cutting-edge technology.
                     </p>
 
-                    <p>
-                        With exciting tracks in fields like Blockchain, IoT,
-                        AR/VR, FinTech, and more, Hack KRMU provides a platform
-                        for creativity, collaboration, and growth. Compete for
-                        amazing prizes, network with mentors and industry
-                        leaders, and push the boundaries of innovation in this
-                        high-energy event.
+                    <p style={{ marginLeft: "-155px" }}>
+                        Over 24+ hours of intense innovation, participants work on futuristic themes
+                        such as Artificial Intelligence, Cybersecurity, Blockchain, IoT, AR/VR, and
+                        FinTech—guided by industry mentors and driven by creativity, teamwork, and
+                        real-world problem solving.
                     </p>
+
+                    <p style={{ marginLeft: "-175px" }}>
+                        More than just a competition, Hack KRMU is a platform to learn, network, and
+                        transform bold ideas into scalable solutions while competing for exciting
+                        prizes and recognition.
+                    </p>
+
+
+
                 </div>
 
-                <div className="about-right">
+                <div className="about-right" style={{ marginTop: "-120px", marginLeft: "-25px", }}>
                     <img src={aboutMain} alt="Hack KRMU Winners" />
                 </div>
             </div>
 
             {/* ================= PARTNERS ================= */}
-            <h3 className="partners-title">Our Trusted Partners</h3>
+            <h3 className="partners-title" style={{fontSize:"50px", marginBottom:"70px", marginTop:"100px"}}>Our Trusted Partners</h3>
 
             <div className="partners-grid">
                 <div className="partner-card">

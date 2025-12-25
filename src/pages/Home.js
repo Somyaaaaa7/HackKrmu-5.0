@@ -50,18 +50,18 @@ export default function Home() {
             <section id="home" className="page-section home">
 
                 {/* KRMU UNIVERSITY BANNER */}
-                <img
+                <img style={{ marginTop: "-200px", marginBottom: "5px" }}
                     src={krmuBanner}
                     alt="K R Mangalam University"
                     className="krmu-banner"
                 />
 
                 {/* HERO */}
-                <h1 className="glitch" data-text="HACK KRMU 5.0">
+                <h1 className="glitch" data-text="HACK KRMU 5.0" style={{ marginTop: "37px",}}>
                     HACK KRMU 5.0
                 </h1>
 
-                <p className="tagline">Innovate • Build • Disrupt</p>
+                {/* <p className="tagline">Innovate • Build • Disrupt</p> */}
 
                 {/* Spacer between hero and prizes */}
                 <div style={{ height: "80px" }} />
