@@ -7,7 +7,7 @@ import { useEffect } from "react";
 // Page sections
 import Themes from "./Themes";
 import PastEditions from "./PastEditions";
-import Sponsors from "./Sponsors";
+import Sponsors from "./Prizes";
 import Contact from "./Team";
 import krmuBanner from "../assets/krmu-banner.png";
 import About from "./About";
