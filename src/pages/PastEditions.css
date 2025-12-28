@@ -23,11 +23,11 @@
 .track {
     display: flex;
     width: max-content;
-    animation: scrollLeft 35s linear infinite;
+    animation: scrollLeft 40s linear infinite;
 }
 
 .marquee.reverse .track {
-    animation: scrollRight 40s linear infinite;
+    animation: scrollRight 50s linear infinite;
 }
 
 /* ============================= */
@@ -40,11 +40,11 @@
     margin-right: 24px;
 
     border-radius: 14px;
-    border: 2px solid rgba(193, 0, 255, 0.6);
+    border: 2px solid rgba(255, 225, 0, 0.35);
 
     box-shadow:
-        0 0 15px rgba(193, 0, 255, 0.35),
-        inset 0 0 10px rgba(0, 0, 0, 0.6);
+        0 0 15px rgba(255, 225, 0, 0.35),
+        inset 0 0 10px rgba(255, 225, 0, 0.35);
 
     transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
@@ -52,8 +52,8 @@
 .track img:hover {
     transform: scale(1.05);
     box-shadow:
-        0 0 30px rgba(193, 0, 255, 0.9),
-        0 0 60px rgba(0, 255, 247, 0.4);
+        0 0 30px rgba(255, 225, 0, 0.35),
+        0 0 60px rgba(255, 225, 0, 0.35);
 }
 
 /* ============================= */

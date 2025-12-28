@@ -2,7 +2,7 @@
 // OUR TEAM SECTION
 // =============================
 
-import "./Contact.css";
+import "./Team.css";
 
 // Images
 import shweta from "../assets/team/shweta.jpg";
@@ -12,82 +12,102 @@ import anuj from "../assets/team/anuj.jpg";
 import krish from "../assets/team/krish.jpg";
 import somya from "../assets/team/somya.jpg";
 
-const Card = ({ image, name, role, linkedin }) => (
-    <div className="team-card">
+/* ============================= */
+/* CARD COMPONENT */
+/* ============================= */
+
+const Card = ({ image, name, role, linkedin, instagram, variant }) => (
+    <div className={`team-card ${variant === "gold" ? "gold" : ""}`}>
         <img src={image} alt={name} />
         <h3>{name}</h3>
         <p>{role}</p>
 
-        {linkedin && (
-            <a href={linkedin} target="_blank" rel="noreferrer" className="linkedin">
-                in
-            </a>
-        )}
+        <div className="socials">
+            {linkedin && (
+                <a
+                    href={linkedin}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="linkedin"
+                >
+                    in
+                </a>
+            )}
+
+            {instagram && (
+                <a
+                    href={instagram}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="instagram"
+                >
+                    ig
+                </a>
+            )}
+        </div>
     </div>
 );
+
+/* ============================= */
+/* TEAM SECTION */
+/* ============================= */
 
 export default function Contact() {
     return (
         <div className="team-section">
             <h2 className="section-title">Our Team</h2>
 
-            {/* CONVENORS */}
-            {/* <h3 className="team-subtitle">Convenors</h3> */}
+            {/* ================= CONVENORS ================= */}
             <div className="team-grid">
                 <Card
+                    variant="gold"
                     image={shweta}
                     name="Prof.(Dr.) Shweta Bansal"
                     role="Convenor"
                     linkedin="https://www.linkedin.com/in/prof-dr-shweta-a-bansal-a0495b17/"
                 />
+
                 <Card
+                    variant="gold"
                     image={amar}
                     name="Dr. Amar Saraswat"
                     role="Convenor"
                     linkedin="https://www.linkedin.com/in/dr-amar-saraswat-b67453188/"
                 />
 
-                <div className="team-grid">
                 <Card
+                    variant="gold"
                     image={vishwanil}
                     name="Mr. Vishwanil Suman"
                     role="Co-Convenor"
                     linkedin="https://www.linkedin.com/in/vishwanil-suman-b95b23145/"
                 />
             </div>
-            </div>
 
-            {/* CO-CONVENOR */}
-            {/* <h3 className="team-subtitle">Co-Convenor</h3> */}
-            {/* <div className="team-grid">
-                <Card
-                    image={vishwanil}
-                    name="Mr. Vishwanil Suma"
-                    role="Co-Convenor"
-                    linkedin="https://www.linkedin.com/in/vishwanil-suman-b95b23145/"
-                />
-            </div> */}
-
-            {/* STUDENT COORDINATORS */}
-            {/* <h3 className="team-subtitle">Student Coordinators</h3> */}
+            {/* ================= STUDENT COORDINATORS ================= */}
             <div className="team-grid2">
                 <Card
                     image={krish}
                     name="Krish Agarwal"
                     role="Student Coordinator"
                     linkedin="https://www.linkedin.com/in/krish-agarwal-140920301/"
+                    instagram="#"
                 />
+
                 <Card
                     image={anuj}
                     name="Anuj Narain"
                     role="Student Coordinator"
                     linkedin="https://www.linkedin.com/in/narainanuj/"
+                    instagram="#"
                 />
+
                 <Card
                     image={somya}
                     name="Somya Sharma"
                     role="Student Coordinator"
-                    linkedin="#"
+                    linkedin="https://www.linkedin.com/in/somya-sharma-486a22305/"
+                    instagram="#"
                 />
             </div>
         </div>

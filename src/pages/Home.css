@@ -42,58 +42,29 @@
 }
 
 /* ================================================= */
+/* HERO TITLE WRAPPER */
+/* ================================================= */
+
+.hero-title {
+    font-size: 4rem;
+    font-family: 'Orbitron', monospace;
+    letter-spacing: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.hero-normal {
+    color: white;
+}
+
+
+/* ================================================= */
 /* GLITCH TITLE */
 /* ================================================= */
 
-.glitch {
-    font-size: 4rem;
-    color: white;
-    position: relative;
-    font-family: monospace;
-    letter-spacing: 4px;
 
-    text-shadow:
-        0 0 12px rgba(0, 255, 247, 0.6),
-        0 0 30px rgba(255, 0, 255, 0.4);
-}
-
-.glitch::before,
-.glitch::after {
-    content: attr(data-text);
-    position: absolute;
-    left: 0;
-    top: 0;
-}
-
-.glitch::before {
-    color: #ff00ff;
-    animation: glitchTop 1s infinite linear alternate-reverse;
-}
-
-.glitch::after {
-    color: #00fff7;
-    animation: glitchBottom 1.2s infinite linear alternate-reverse;
-}
-
-@keyframes glitchTop {
-    0% {
-        clip-path: inset(0 0 80% 0);
-    }
-
-    100% {
-        clip-path: inset(0 0 20% 0);
-    }
-}
-
-@keyframes glitchBottom {
-    0% {
-        clip-path: inset(80% 0 0 0);
-    }
-
-    100% {
-        clip-path: inset(20% 0 0 0);
-    }
-}
 
 /* ================================================= */
 /* HERO TAGLINE */
@@ -261,4 +232,3 @@ p {
         max-width: 100%;
     }
 }
-

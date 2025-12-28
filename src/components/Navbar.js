@@ -9,7 +9,7 @@ import logo from "../assets/logo.png";
 const sections = [
     { id: "home", label: "Home" },
     { id: "about", label: "About" },
-    { id: "past", label: "Past Editions" },
+    { id: "past", label: "Glimpses" },
     { id: "themes", label: "Themes" },
     { id: "sponsors", label: "Prizes" },
     { id: "contact", label: "Our Team" },

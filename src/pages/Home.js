@@ -8,10 +8,10 @@ import { useEffect } from "react";
 import Themes from "./Themes";
 import PastEditions from "./PastEditions";
 import Sponsors from "./Sponsors";
-import Contact from "./Contact";
+import Contact from "./Team";
 import krmuBanner from "../assets/krmu-banner.png";
 import About from "./About";
-
+import GlitchText from "../components/GlitchText";
 
 // UI Components
 import Divider from "../components/Divider";
@@ -57,8 +57,9 @@ export default function Home() {
                 />
 
                 {/* HERO */}
-                <h1 className="glitch" data-text="HACK KRMU 5.0" style={{ marginTop: "37px",}}>
-                    HACK KRMU 5.0
+                <h1 className="hero-title" style={{ marginTop: "37px" }}>
+                    <span className="hero-normal" style={{marginRight:"30px"}} >HACK KRMU </span>
+                    <GlitchText text="5.0" />
                 </h1>
 
                 {/* <p className="tagline">Innovate • Build • Disrupt</p> */}

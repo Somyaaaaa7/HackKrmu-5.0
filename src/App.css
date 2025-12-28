@@ -2,7 +2,6 @@
 /* GLOBAL HTML SETTINGS */
 /* ================================================= */
 
-/* Enables smooth scrolling for navbar navigation */
 html {
   scroll-behavior: smooth;
 }
@@ -15,117 +14,56 @@ html {
   --neon-cyan: #00fff7;
   --neon-purple: #b400ff;
 
-  --neon-soft: rgba(0, 255, 247, 0.35);
-  --neon-glow: rgba(0, 255, 247, 0.6);
+  --neon-soft: rgba(0, 255, 247, 0.4);
+  --neon-glow: rgba(0, 255, 247, 0.8);
 
-  --purple-soft: rgba(180, 0, 255, 0.25);
-  --purple-glow: rgba(180, 0, 255, 0.55);
+  --purple-soft: rgba(180, 0, 255, 0.4);
+  --purple-glow: rgba(180, 0, 255, 0.8);
 
-  --bg-dark: #05010a;
-  --bg-deep: #020014;
-
+  --bg-black: #000000;
   --navbar-height: 70px;
 }
 
 /* ================================================= */
-/* GLOBAL BODY STYLING */
+/* GLOBAL BODY STYLING (PURE BLACK – STABLE) */
 /* ================================================= */
 
 body {
   margin: 0;
   padding-top: var(--navbar-height);
   color: white;
-  font-family: monospace;
+
+  /* IMPORTANT: Hack KRMU font */
+  font-family: 'Orbitron', monospace;
+
   overflow-x: hidden;
 
-  /* CYBER + PURPLE AMBIENT BACKGROUND */
-  background:
-    radial-gradient(circle at top center,
-      rgba(180, 0, 255, 0.18),
-      transparent 60%),
-    radial-gradient(circle at bottom center,
-      rgba(0, 255, 247, 0.12),
-      transparent 65%),
-    linear-gradient(180deg,
-      var(--bg-dark),
-      var(--bg-deep));
+  /* PURE BLACK BACKGROUND */
+  background: var(--bg-black);
 
-  background-attachment: fixed;
-
-  /* Subtle cinematic screen flicker */
-  animation: flicker 0.5s infinite;
+  /* No animations, no flicker */
+  animation: none;
 }
 
 /* ================================================= */
-/* DOT GRID (MATCHES PURPLE TEAM CARDS) */
+/* REMOVE ALL OVERLAY / NOISE EFFECTS */
 /* ================================================= */
 
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-
-  background-image:
-    radial-gradient(rgba(180, 0, 255, 0.35) 1px,
-      transparent 1px);
-
-  background-size: 28px 28px;
-  opacity: 0.15;
-
-  pointer-events: none;
-  z-index: 1;
-}
-
-/* ================================================= */
-/* CRT SCANLINE OVERLAY (VERY SUBTLE) */
-/* ================================================= */
-
+body::before,
 body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-
-  background: repeating-linear-gradient(to bottom,
-      rgba(255, 255, 255, 0.015),
-      rgba(255, 255, 255, 0.015) 1px,
-      transparent 1px,
-      transparent 3px);
-
-  pointer-events: none;
-  z-index: 2;
-}
-
-/* ================================================= */
-/* SCREEN FLICKER ANIMATION */
-/* ================================================= */
-
-@keyframes flicker {
-  0% {
-    opacity: 0.94;
-  }
-
-  50% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0.97;
-  }
+  display: none;
 }
 
 /* ================================================= */
 /* BACKGROUND LAYERING SYSTEM */
 /* ================================================= */
 
-/* Parallax animated dots background (deepest layer) */
+/* Disable parallax / ambient layers */
 .parallax {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
+  display: none;
 }
 
-/* Main content & navbar always above background */
+/* Main content always above background */
 .page-section,
 .navbar {
   position: relative;
@@ -133,35 +71,113 @@ body::after {
 }
 
 /* ================================================= */
-/* INTENTIONAL NEON GLOW (TEXT ONLY) */
+/* APP CONTAINER (FROM App.js) */
 /* ================================================= */
 
-/* Cyan glow for headings & CTAs */
+.app-container {
+  position: relative;
+  z-index: 3;
+  overflow-x: hidden;
+}
+
+/* ================================================= */
+/* NAVBAR (FIXED, CLEAN, SAFE Z-INDEX) */
+/* ================================================= */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: var(--navbar-height);
+  width: 100%;
+
+  background: #000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+  z-index: 100;
+}
+
+/* ================================================= */
+/* NEON TEXT GLOW (TEXT ONLY) */
+/* ================================================= */
+
 h1,
 h2,
 h3,
 .logo,
 .cta {
-  text-shadow: 0 0 6px var(--neon-soft);
+  color: white;
+  text-shadow:
+    0 0 6px var(--neon-soft),
+    0 0 12px var(--neon-glow);
 }
 
-/* Purple glow for section titles (optional class) */
+/* Purple glow for section titles */
 .section-title {
-  text-shadow: 0 0 10px var(--purple-soft);
+  text-shadow:
+    0 0 8px var(--purple-soft),
+    0 0 16px var(--purple-glow);
 }
 
 /* ================================================= */
-/* OPTIONAL APP WRAPPER */
+/* PAGE SECTIONS BASE */
 /* ================================================= */
 
-.app {
-  overflow-x: hidden;
+.page-section {
+  min-height: calc(100vh - var(--navbar-height));
+  width: 100%;
+  padding: 60px 10% 80px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  box-sizing: border-box;
+  text-align: center;
 }
 
-/* Navbar MUST stay above everything */
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 9998;
+/* ================================================= */
+/* BUTTONS (NEON CTA STYLE) */
+/* ================================================= */
+
+button,
+.cta {
+  background: transparent;
+  color: var(--neon-cyan);
+  border: 1px solid var(--neon-cyan);
+  padding: 12px 22px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover,
+.cta:hover {
+  background: var(--neon-cyan);
+  color: black;
+  box-shadow:
+    0 0 12px var(--neon-glow),
+    0 0 24px var(--neon-glow);
+}
+
+/* ================================================= */
+/* LINKS */
+/* ================================================= */
+
+a {
+  color: var(--neon-cyan);
+  text-decoration: none;
+}
+
+a:hover {
+  text-shadow: 0 0 10px var(--neon-glow);
+}
+
+/* ================================================= */
+/* TEXT SELECTION */
+/* ================================================= */
+
+::selection {
+  background: var(--neon-purple);
+  color: white;
 }
