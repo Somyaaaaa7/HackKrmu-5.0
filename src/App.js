@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Prizes from "./pages/Prizes";
 
+
 import "./App.css";
 
 function App() {

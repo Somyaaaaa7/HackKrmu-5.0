@@ -12,6 +12,8 @@ import Contact from "./Team";
 import krmuBanner from "../assets/krmu-banner.png";
 import About from "./About";
 import GlitchText from "../components/GlitchText";
+import Countdown from "../components/Countdown"
+
 
 // UI Components
 import Divider from "../components/Divider";
@@ -50,7 +52,7 @@ export default function Home() {
             <section id="home" className="page-section home">
 
                 {/* KRMU UNIVERSITY BANNER */}
-                <img style={{ marginTop: "-200px", marginBottom: "5px" }}
+                <img
                     src={krmuBanner}
                     alt="K R Mangalam University"
                     className="krmu-banner"
@@ -58,9 +60,27 @@ export default function Home() {
 
                 {/* HERO */}
                 <h1 className="hero-title" style={{ marginTop: "37px" }}>
-                    <span className="hero-normal" style={{marginRight:"30px"}} >HACK KRMU </span>
+                    <span className="hero-normal" style={{ marginRight: "30px" }} >HACK KRMU </span>
                     <GlitchText text="5.0" />
                 </h1>
+
+                <Countdown />
+
+                {/* 🔥 REGISTER NOW BUTTON */}
+                <div style={{ marginTop: "50px" }}>
+                    <a
+                        href="https://docs.google.com/forms/d/e/YOUR_GOOGLE_FORM_ID/viewform"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="register-btn"
+                    >
+                        REGISTER NOW
+                    </a>
+                </div>
+
+
+
+
 
                 {/* <p className="tagline">Innovate • Build • Disrupt</p> */}
 
@@ -70,7 +90,7 @@ export default function Home() {
                 {/* ================= PRIZE POOL =================
                 <h2 className="section-title">Prize Pool Worth</h2>
 
-                <div className="prize-total">₹5,00,000</div>
+                <div className="prize-total">₹5,00,000</div>npm
 
                 <div className="prize-grid">
                     <div className="prize-card gold">
