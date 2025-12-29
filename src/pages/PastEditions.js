@@ -1,46 +1,57 @@
 // =============================
-// PAST EDITIONS – MOVING GLIMPSES
+// PAST EDITIONS – PERFECT HONEYCOMB (5-4-5-4)
 // =============================
 
 import "./PastEditions.css";
 
-// Row 1 images
+// Replace with ANY images — layout will NOT change
 import img1 from "../assets/past/2.jpg";
 import img2 from "../assets/past/2.jpg";
-import img3 from "../assets/past/2.jpg";
-import img4 from "../assets/past/2.jpg";
 
-// Row 2 images (DIFFERENT)
-import img5 from "../assets/past/2.jpg";
-import img6 from "../assets/past/2.jpg";
-import img7 from "../assets/past/2.jpg";
-import img8 from "../assets/past/2.jpg";
+const H = (a, b) => ({ front: a, back: b });
 
-const rowOneImages = [img1, img2, img3, img4,img5, img6, img7, img8];
-const rowTwoImages = [img5, img6, img7, img8];
+const rows = [
+    // Row 1 (5)
+    [H(img1, img2), H(img2, img1), H(img1, img2), H(img2, img1), H(img1, img2)],
+
+    // Row 2 (4)
+    [H(img2, img1), H(img1, img2), H(img2, img1), H(img1, img2)],
+
+    // Row 3 (5)
+    [H(img1, img2), H(img2, img1), H(img1, img2), H(img2, img1), H(img1, img2)],
+
+    // Row 4 (4)
+    [H(img2, img1), H(img1, img2), H(img2, img1), H(img1, img2)],
+];
 
 export default function PastEditions() {
     return (
-        <div className="past-gallery">
-            <h2 className="section-title">Glimpses</h2>
+        <section className="past-gallery">
+            <h2 className="section-title" style={{marginTop:"-100px"}}>GLIMPSES</h2>
 
-            {/* ROW 1 */}
-            <div className="marquee">
-                <div className="track">
-                    {rowOneImages.concat(rowOneImages).map((img, i) => (
-                        <img key={i} src={img} alt="Hackathon glimpse" />
-                    ))}
-                </div>
+            <div className="honeycomb">
+                {rows.map((row, r) => (
+                    <div
+                        key={r}
+                        className={`hex-row ${row.length === 4 ? "offset" : ""}`}
+                    >
+                        {row.map((item, i) => (
+                            <div className="hex-wrap" key={i}>
+                                <div className="hex">
+                                    <div
+                                        className="hex-face front"
+                                        style={{ backgroundImage: `url(${item.front})` }}
+                                    />
+                                    <div
+                                        className="hex-face back"
+                                        style={{ backgroundImage: `url(${item.back})` }}
+                                    />
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                ))}
             </div>
-
-            {/* ROW 2 (reverse direction) */}
-            <div className="marquee reverse">
-                <div className="track">
-                    {rowTwoImages.concat(rowTwoImages).map((img, i) => (
-                        <img key={i} src={img} alt="Hackathon glimpse" />
-                    ))}
-                </div>
-            </div>
-        </div>
+        </section>
     );
 }

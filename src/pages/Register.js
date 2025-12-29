@@ -14,5 +14,6 @@ export default function Register() {
                 Loading…
             </iframe>
         </div>
+        
     );
 }

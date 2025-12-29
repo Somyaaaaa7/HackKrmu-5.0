@@ -33,34 +33,34 @@ function Prize({ amount, title, variant }) {
 export default function Prizes() {
     return (
         <section className="prizes-page">
-            <h1 className="prizes-heading">PRIZES</h1>
+            <h1 className="prizes-heading" style={{marginTop:"-125px"}}>PRIZES</h1>
 
             <div className="podium-wrapper">
                 {/* SECOND */}
                 <div className="podium-column second">
-                    <Prize amount={75000} title="Runner Up" variant="second" />
+                    <Prize amount={30000} title="Runner Up" variant="second" />
                     <div className="podium-base blue" />
                 </div>
 
                 {/* FIRST */}
                 <div className="podium-column first">
-                    <Prize amount={100000} title="Champion" variant="first" />
+                    <Prize amount={50000} title="Champion" variant="first" />
                     <div className="podium-base gold" />
                 </div>
 
                 {/* THIRD */}
                 <div className="podium-column third">
-                    <Prize amount={50000} title="2nd Runner Up" variant="third" />
+                    <Prize amount={20000} title="2nd Runner Up" variant="third" />
                     <div className="podium-base red" />
                 </div>
             </div>
 
-            {/* TRACK PRIZES */}
+            {/* TRACK PRIZES
             <div className="track-prizes">
                 <div className="gift">🎁</div>
                 <div className="track-amount">₹10,000</div>
                 <div className="track-label">4 Track Prizes</div>
-            </div>
+            </div> */}
         </section>
     );
 }

@@ -76,10 +76,13 @@ export default function Home() {
                     >
                         REGISTER NOW
                     </a>
+
+                    {/* 👇 NEW TEXT */}
+                    <p className="tagline-below">
+                        54 Hours • 2 Days • 1 Amazing Experience
+                    </p>
+
                 </div>
-
-
-
 
 
                 {/* <p className="tagline">Innovate • Build • Disrupt</p> */}

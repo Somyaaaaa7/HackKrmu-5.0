@@ -9,6 +9,12 @@ Purpose:
 - Does NOT interfere with scroll-snap
 */
 
+:root {
+    --neon: #00fff7;          /* CYAN / BLUE */
+    --neon-glow: rgba(0, 255, 247, 0.9);
+}
+
+
 .divider {
     width: 80%;
     height: 2px;

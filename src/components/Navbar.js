@@ -35,7 +35,7 @@ export default function Navbar() {
             {/* BRAND */}
             <div className="brand" onClick={() => scrollTo("home")}>
                 <img src={logo} alt="HackKRMU Logo" className="brand-logo" />
-                <span className="logo-text">HACK KRMU 5.0</span>
+                <span className="logo-text" style={{marginLeft:"10px", color: "#cfd8dc", textShadow:"0 0 18px rgba(0, 255, 247, 0.8)",}}>HACK KRMU 5.0</span>
             </div>
 
             {/* HAMBURGER */}

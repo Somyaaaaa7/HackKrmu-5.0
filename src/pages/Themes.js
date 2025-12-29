@@ -22,7 +22,7 @@ export default function Themes() {
     return (
         <div className="themes-page">
             {/* Section heading */}
-            <h2 className="section-title">Themes</h2>
+            <h2 className="section-title" style={{marginTop:"10px"}}>THEMES</h2>
 
             {/* Grid of theme cards */}
             <div className="theme-grid">

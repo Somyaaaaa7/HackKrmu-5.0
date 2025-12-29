@@ -8,7 +8,8 @@ import "./Countdown.css";
    10 FEB 2026 — 10:00 AM IST
    Timezone: +05:30 (India Standard Time)
 ================================================= */
-const TARGET_DATE = new Date("2026-02-10T10:00:00+05:30");
+// Hackathon starts on: 18 FEB 2026 — 9:00 AM IST
+const TARGET_DATE = new Date("2026-02-18T09:00:00+05:30");
 /* ================================================= */
 
 export default function Countdown() {

@@ -55,7 +55,7 @@ const Card = ({ image, name, role, linkedin, instagram, variant }) => (
 export default function Contact() {
     return (
         <div className="team-section">
-            <h2 className="section-title">Our Team</h2>
+            <h2 className="section-title" style={{marginTop:"-5"}}>OUR TEAM</h2>
 
             {/* ================= CONVENORS ================= */}
             <div className="team-grid">

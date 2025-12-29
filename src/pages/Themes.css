@@ -11,9 +11,11 @@
 
 /* Section heading */
 .section-title {
-    color: #00fff7;
-    text-align: center;
-    margin-bottom: 40px;
+    font-size: 3.4rem;
+    margin-bottom: 120px;
+    color: #ffffff;
+    letter-spacing: 4px;
+    text-shadow: 0 0 18px rgba(0, 255, 247, 0.8);
 }
 
 /* ================================================= */

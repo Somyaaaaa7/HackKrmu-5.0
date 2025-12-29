@@ -1,91 +1,151 @@
 /* ============================= */
-/* PAST EDITIONS – GALLERY */
+/* SECTION */
 /* ============================= */
 
 .past-gallery {
     width: 100%;
+    padding: 120px 0 160px;
     display: flex;
     flex-direction: column;
-    gap: 40px;
     align-items: center;
 }
 
 /* ============================= */
-/* MARQUEE */
+/* TITLE */
 /* ============================= */
 
-.marquee {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
+.section-title {
+    font-family: "Orbitron", monospace;
+    font-size: 3.2rem;
+    letter-spacing: 6px;
+    margin-bottom: 90px;
+    color: #ffffff;
+
+    text-shadow:
+        0 0 12px rgba(0, 255, 247, 0.9),
+        0 0 24px rgba(0, 255, 247, 0.6);
 }
 
-.track {
+/* ============================= */
+/* HONEYCOMB STACK */
+/* ============================= */
+
+.honeycomb {
     display: flex;
-    width: max-content;
-    animation: scrollLeft 40s linear infinite;
-}
-
-.marquee.reverse .track {
-    animation: scrollRight 50s linear infinite;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* ============================= */
-/* IMAGE STYLE */
+/* ROWS */
 /* ============================= */
 
-.track img {
-    height: 220px;
-    width: auto;
-    margin-right: 24px;
+.hex-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    border-radius: 14px;
-    border: 2px solid rgba(255, 225, 0, 0.35);
+    /* 🔒 Exact vertical interlock */
+    margin-bottom: -10px;
+}
+
+/* 🔒 Exact horizontal offset for 4-hex rows */
+.hex-row.offset {
+    margin-left: 4px;
+}
+
+/* ============================= */
+/* HEX WRAPPER (SIZE LOCKED) */
+/* ============================= */
+
+.hex-wrap {
+    width: 220px;
+    /* 🔒 SAME FOR ALL */
+    height: 190px;
+    /* 🔒 SAME FOR ALL */
+    margin: 0 12px;
+    perspective: 1400px;
+    flex-shrink: 0;
+}
+
+/* ============================= */
+/* HEX BODY */
+/* ============================= */
+
+.hex {
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    clip-path: polygon(50% 0%,
+            93% 25%,
+            93% 75%,
+            50% 100%,
+            7% 75%,
+            7% 25%);
+
+    transform-style: preserve-3d;
+    transition: transform 0.7s ease;
+
+    border: 2px solid rgba(0, 255, 247, 0.45);
 
     box-shadow:
-        0 0 15px rgba(255, 225, 0, 0.35),
-        inset 0 0 10px rgba(255, 225, 0, 0.35);
-
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+        0 0 18px rgba(0, 255, 247, 0.28),
+        inset 0 0 14px rgba(0, 255, 247, 0.22);
 }
 
-.track img:hover {
-    transform: scale(1.05);
+/* ============================= */
+/* FLIP */
+/* ============================= */
+
+.hex-wrap:hover .hex {
+    transform: rotateY(180deg);
     box-shadow:
-        0 0 30px rgba(255, 225, 0, 0.35),
-        0 0 60px rgba(255, 225, 0, 0.35);
+        0 0 32px rgba(0, 255, 247, 0.7),
+        0 0 60px rgba(0, 255, 247, 0.4);
 }
 
 /* ============================= */
-/* ANIMATIONS */
+/* FACES */
 /* ============================= */
 
-@keyframes scrollLeft {
-    from {
-        transform: translateX(0);
-    }
-
-    to {
-        transform: translateX(-50%);
-    }
+.hex-face {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    backface-visibility: hidden;
 }
 
-@keyframes scrollRight {
-    from {
-        transform: translateX(-50%);
-    }
-
-    to {
-        transform: translateX(0);
-    }
+.hex-face.back {
+    transform: rotateY(180deg);
 }
 
 /* ============================= */
-/* RESPONSIVE */
+/* RESPONSIVE (KEEPS SHAPE) */
 /* ============================= */
 
-@media (max-width: 768px) {
-    .track img {
-        height: 160px;
+@media (max-width: 1200px) {
+    .hex-wrap {
+        width: 200px;
+        height: 175px;
+    }
+
+    .hex-row.offset {
+        margin-left: 104px;
+    }
+}
+
+@media (max-width: 900px) {
+    .hex-wrap {
+        width: 160px;
+        height: 140px;
+    }
+
+    .hex-row,
+    .hex-row.offset {
+        margin-left: 0;
+        margin-bottom: 0;
+        flex-wrap: wrap;
     }
 }
