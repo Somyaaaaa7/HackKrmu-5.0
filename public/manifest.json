@@ -1,19 +1,19 @@
 {
-  "short_name": "React App",
+  "short_name": "Hack KRMU 5.0",
   "name": "Create React App Sample",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "hack-krmu-5/public/favicon.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      "src": "hack-krmu-5/public/favicon.ico",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logo512.png",
+      "src": "hack-krmu-5/public/favicon.ico",
       "type": "image/png",
       "sizes": "512x512"
     }
