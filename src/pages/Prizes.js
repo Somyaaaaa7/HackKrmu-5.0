@@ -39,7 +39,7 @@ export default function Prizes() {
 <div className="prize-pool">
     <div className="prize-pool-line" style={{marginTop:"-120px",}}/>
     <div className="prize-pool-text">
-        PRIZES WORTH <span>₹5,00,000+</span>
+        PRIZES POOL - <span>₹5,00,000+</span>
     </div>
     <div className="prize-pool-sub" style={{marginTop:"20px",}}>
         Track Prizes & Goodies

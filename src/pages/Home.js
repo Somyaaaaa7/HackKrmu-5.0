@@ -52,7 +52,7 @@ export default function Home() {
             <section id="home" className="page-section home">
 
                 {/* KRMU UNIVERSITY BANNER */}
-                <img
+                <img style={{ marginBottom: "-20px" }}
                     src={krmuBanner}
                     alt="K R Mangalam University"
                     className="krmu-banner"

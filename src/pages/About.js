@@ -17,7 +17,7 @@ export default function About() {
             <div className="about-top">
                 <div className="about-left">
 
-                    <h2 style={{ marginTop: "-100px", marginLeft: "-160px", fontSize:"50px" }}>What is Hack KRMU?</h2>
+                    <h2 style={{ marginTop: "-100px", marginLeft: "-140px", fontSize:"50px" }}>What is Hack KRMU?</h2>
 
                     <p style={{ marginTop: "60px", marginLeft: "-150px" }}>
                         Hack KRMU is an annual hackathon hosted by K.R. Mangalam University that brings
@@ -38,11 +38,9 @@ export default function About() {
                         prizes and recognition.
                     </p>
 
-
-
                 </div>
 
-                <div className="about-right" style={{ marginTop: "-120px", marginLeft: "-25px", }}>
+                <div className="about-right">
                     <img src={aboutMain} alt="Hack KRMU Winners" />
                 </div>
             </div>

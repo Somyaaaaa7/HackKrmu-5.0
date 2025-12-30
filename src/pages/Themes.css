@@ -1,77 +1,112 @@
-/* ================================================= */
-/* THEMES SECTION WRAPPER */
-/* ================================================= */
+/* ============================= */
+/* THEMES PAGE */
+/* ============================= */
 
 .themes-page {
     width: 100%;
+    padding: 120px 0 160px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-/* Section heading */
-.section-title {
-    font-size: 3.4rem;
-    margin-bottom: 120px;
-    color: #ffffff;
-    letter-spacing: 4px;
-    text-shadow: 0 0 18px rgba(0, 255, 247, 0.8);
-}
-
-/* ================================================= */
-/* THEMES GRID LAYOUT */
-/* ================================================= */
-/* Desktop: 3 cards per row
-Tablet: 2 cards per row
-Mobile: 1 card per row */
+/* ============================= */
+/* GRID */
+/* ============================= */
 
 .theme-grid {
-    width: 100%;
-    max-width: 900px;
+    margin-top: 80px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    margin-top: 40px;
+    gap: 40px;
 }
 
-/* ================================================= */
-/* THEME CARD */
-/* ================================================= */
+/* ============================= */
+/* CARD */
+/* ============================= */
 
 .theme-card {
-    background: rgba(10, 10, 10, 0.9);
-    border: 1px solid rgba(0, 255, 247, 0.7);
-    padding: 32px 24px;
-    text-align: center;
+    width: 320px;
+    height: 180px;
+    position: relative;
+    border: 1.5px solid rgba(0, 255, 247, 0.45);
+    background: rgba(0, 0, 0, 0.7);
+    overflow: hidden;
     cursor: pointer;
 
-    /* Smooth hover motion */
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease,
-        border-color 0.3s ease;
-}
-
-/* Hover effect (subtle, premium) */
-.theme-card:hover {
-    transform: translateY(-8px);
-    border-color: #00fff7;
     box-shadow:
-        0 0 12px rgba(0, 255, 247, 0.4),
-        0 0 24px rgba(0, 255, 247, 0.2);
+        0 0 18px rgba(0, 255, 247, 0.25),
+        inset 0 0 14px rgba(0, 255, 247, 0.18);
+
+    transition:
+        transform 0.5s ease,
+        box-shadow 0.5s ease;
 }
 
-/* Theme icon */
-.icon {
-    font-size: 2.4rem;
-    margin-bottom: 12px;
+/* ============================= */
+/* FACES */
+/* ============================= */
+
+.theme-face {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    transition:
+        opacity 0.45s ease,
+        transform 0.45s ease;
 }
 
-/* ================================================= */
-/* RESPONSIVE FALLBACKS */
-/* ================================================= */
+/* FRONT */
+.theme-face.front {
+    gap: 12px;
+    color: #00fff7;
+    opacity: 1;
+    transform: scale(1);
+}
 
-@media (max-width: 900px) {
+.theme-face.front h3 {
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+}
+
+/* BACK (IMAGE) */
+.theme-face.back {
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transform: scale(1.08);
+}
+
+/* ============================= */
+/* HOVER EFFECT (SAFE FLIP) */
+/* ============================= */
+
+.theme-card:hover {
+    transform: rotateX(8deg) rotateZ(-1deg);
+    box-shadow:
+        0 0 35px rgba(0, 255, 247, 0.6),
+        0 0 80px rgba(0, 255, 247, 0.35);
+}
+
+.theme-card:hover .theme-face.front {
+    opacity: 0;
+    transform: scale(0.9);
+}
+
+.theme-card:hover .theme-face.back {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* ============================= */
+/* RESPONSIVE */
+/* ============================= */
+
+@media (max-width: 1024px) {
     .theme-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -80,5 +115,9 @@ Mobile: 1 card per row */
 @media (max-width: 600px) {
     .theme-grid {
         grid-template-columns: 1fr;
+    }
+
+    .theme-card {
+        width: 90vw;
     }
 }

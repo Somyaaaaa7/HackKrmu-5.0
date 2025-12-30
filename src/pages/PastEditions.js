@@ -52,7 +52,7 @@ const rows = [
     // Row 1 (5)
     [
         H(f1, b1),
-        H(f2, b2),
+        H(f2, b13),
         H(f3, b3),
         H(f4, b4),
         H(f5, b5),
@@ -60,8 +60,8 @@ const rows = [
 
     // Row 2 (4)
     [
-        H(f6, b6),
-        H(f7, b7),
+        H(b6, f17),
+        H(b7, f7),
         H(f8, b8),
         H(f9, b9),
     ],
@@ -71,7 +71,7 @@ const rows = [
         H(f10, b10),
         H(f11, b11),
         H(f12, b12),
-        H(f13, b13),
+        H(f13, b2),
         H(f14, b14),
     ],
 
@@ -79,7 +79,7 @@ const rows = [
     [
         H(f15, b15),
         H(f16, b16),
-        H(f17, b17),
+        H(b17, f6),
         H(f18, b18),
     ],
 ];
