@@ -1,6 +1,10 @@
 /* ================================================= */
-/* NAVBAR BASE (FIXED, ALWAYS VISIBLE) */
+/* NAVBAR BASE */
 /* ================================================= */
+
+:root {
+--navbar-height: 72px;
+}
 
 .navbar {
     position: fixed;
@@ -21,7 +25,6 @@
     box-sizing: border-box;
 
     z-index: 9999;
-    isolation: isolate;
 }
 
 /* ================================================= */
@@ -41,66 +44,74 @@
 }
 
 .logo-text {
-    color: #00fff7;
+    color: #cfd8dc;
     font-family: monospace;
     letter-spacing: 2px;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
 }
 
 /* ================================================= */
-/* NAV LINKS */
+/* LINKS */
 /* ================================================= */
 
 .links {
+    position: relative; /* 🔥 REQUIRED for indicator positioning */
     display: flex;
     align-items: center;
+    gap: 26px;
 }
 
+/* Individual link */
 .links span {
-    position: relative;
     cursor: pointer;
-    margin-left: 22px;
-    color: white;
-    padding-bottom: 6px;
-    transition: color 0.3s ease;
+    color: #ffffff;
+    font-size: 0.9rem;
+    letter-spacing: 1.2px;
+    padding: 6px 2px;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
-/* Hover effect */
+/* Hover */
 .links span:hover {
-    color: #00fff7;
+    color: #ffffff;
 }
 
-/* ================================================= */
-/* SCROLL ACTIVE (TEXT ONLY – NO UNDERLINE) */
-/* ================================================= */
-
+/* Active (scroll-based) */
 .links span.active {
-    color: #00fff7;
-    text-shadow: 0 0 8px #00fff7;
+    color: #01fff7;
+    text-shadow: 0 0 8px rgba(0, 105, 102, 0.9);
 }
 
 /* ================================================= */
-/* CLICKED UNDERLINE (SLIDE ANIMATION) */
+/* 🔥 SINGLE SLIDING INDICATOR */
 /* ================================================= */
 
-.links span::after {
-    content: "";
+.nav-indicator {
     position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 2px;
-    width: 100%;
+    bottom: -6px;
+
+    height: 2px;              /* 👈 small thin line */
+    border-radius: 1px;
+    width: 0;
+
     background: #00fff7;
 
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.35s ease;
+    box-shadow:
+        0 0 6px rgba(0, 255, 247, 0.9);
+
+    transition:
+        left 0.35s ease,
+        width 0.35s ease,
+        opacity 0.25s ease;
+
+    opacity: 0;
 }
 
-/* Underline ONLY after click */
-.links span.clicked::after {
-    transform: scaleX(1);
+/* visible only when a section is active */
+.nav-indicator.active {
+    opacity: 1;
 }
+
 
 /* ================================================= */
 /* HAMBURGER */
@@ -130,16 +141,18 @@
         width: 100%;
         background: rgba(0, 0, 0, 0.95);
         flex-direction: column;
+        align-items: center;
         padding: 20px 0;
+        gap: 16px;
     }
 
     .links.show {
         display: flex;
     }
 
-    .links span {
-        margin: 14px 0;
-        text-align: center;
+    /* Hide indicator on mobile menu */
+    .nav-indicator {
+        display: none;
     }
 }
 

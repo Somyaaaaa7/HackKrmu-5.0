@@ -51,7 +51,7 @@ const H = (front, back) => ({ front, back });
 const rows = [
     // Row 1 (5)
     [
-        H(f1, b1),
+        H(f1, b8),
         H(f2, b13),
         H(f3, b3),
         H(f4, b4),
@@ -62,7 +62,7 @@ const rows = [
     [
         H(b6, f17),
         H(b7, f7),
-        H(f8, b8),
+        H(f8, b1),
         H(f9, b9),
     ],
 

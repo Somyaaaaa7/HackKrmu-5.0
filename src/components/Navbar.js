@@ -1,8 +1,8 @@
 // =============================
-// FIXED NAVBAR (CLICK-BASED ACTIVE)
+// FIXED NAVBAR (SCROLL-SPY + SLIDING INDICATOR)
 // =============================
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./Navbar.css";
 import logo from "../assets/logo.png";
 
@@ -18,15 +18,63 @@ const sections = [
 
 export default function Navbar() {
     const [open, setOpen] = useState(false);
-
-    // 🔥 null initially → NO underline on load
     const [active, setActive] = useState(null);
 
+    const linksRef = useRef(null);
+    const indicatorRef = useRef(null);
+
+    /* ================================================= */
+    /* SCROLL SPY — detect active section while scrolling */
+    /* ================================================= */
+    useEffect(() => {
+        const sectionEls = sections.map(s =>
+            document.getElementById(s.id)
+        );
+
+        const onScroll = () => {
+            const scrollPos = window.scrollY + window.innerHeight / 3;
+
+            sectionEls.forEach(section => {
+                if (!section) return;
+
+                const top = section.offsetTop;
+                const height = section.offsetHeight;
+
+                if (scrollPos >= top && scrollPos < top + height) {
+                    setActive(section.id);
+                }
+            });
+        };
+
+        window.addEventListener("scroll", onScroll);
+        return () => window.removeEventListener("scroll", onScroll);
+    }, []);
+
+    /* ================================================= */
+    /* MOVE SLIDING INDICATOR */
+    /* ================================================= */
+    useEffect(() => {
+        if (!active || !linksRef.current || !indicatorRef.current) return;
+
+        const activeLink = linksRef.current.querySelector(
+            `span[data-id="${active}"]`
+        );
+
+        if (activeLink) {
+            indicatorRef.current.style.width =
+                `${activeLink.offsetWidth}px`;
+            indicatorRef.current.style.left =
+                `${activeLink.offsetLeft}px`;
+        }
+    }, [active]);
+
+    /* ================================================= */
+    /* CLICK SCROLL */
+    /* ================================================= */
     const scrollTo = (id) => {
         const section = document.getElementById(id);
         if (!section) return;
 
-        setActive(id); // underline appears ONLY after click
         section.scrollIntoView({ behavior: "smooth" });
         setOpen(false);
     };
@@ -36,7 +84,17 @@ export default function Navbar() {
             {/* BRAND */}
             <div className="brand" onClick={() => scrollTo("home")}>
                 <img src={logo} alt="HackKRMU Logo" className="brand-logo" />
-                <span className="logo-text" style={{marginLeft:"10px", color: "#cfd8dc", textShadow:"0 0 18px rgba(0, 255, 247, 0.8)",}}>HACK KRMU 5.0</span>
+                <span
+                    className="logo-text"
+                    style={{
+                        marginLeft: "10px",
+                        color: "#cfd8dc",
+                        textShadow: "0 0 18px rgba(0, 255, 247, 0.8)",
+                        fontWeight: "bold",
+                    }}
+                >
+                    HACK KRMU 5.0
+                </span>
             </div>
 
             {/* HAMBURGER */}
@@ -48,16 +106,23 @@ export default function Navbar() {
             </div>
 
             {/* LINKS */}
-            <div className={`links ${open ? "show" : ""}`}>
+            <div
+                ref={linksRef}
+                className={`links ${open ? "show" : ""}`}
+            >
                 {sections.map(({ id, label }) => (
                     <span
                         key={id}
-                        className={active === id ? "clicked" : ""}
+                        data-id={id}
+                        className={active === id ? "active" : ""}
                         onClick={() => scrollTo(id)}
                     >
                         {label}
                     </span>
                 ))}
+
+                {/* 🔥 SINGLE SLIDING INDICATOR */}
+                <span ref={indicatorRef} className="nav-indicator" />
             </div>
         </nav>
     );

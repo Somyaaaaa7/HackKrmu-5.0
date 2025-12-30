@@ -146,7 +146,7 @@ export default function Home() {
             <Divider />
 
             {/* TIMELINE (NEW) */}
-            <section id="timeline">
+            <section id="timeline" className="page-section">
                 <Timeline />
             </section>
 

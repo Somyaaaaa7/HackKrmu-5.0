@@ -1,7 +1,7 @@
 import "./About.css";
 
 // Main image
-import aboutMain from "../assets/about/1.jpg";
+import aboutMain from "../assets/about/about.jpg";
 
 // Partner logos
 import iskcon from "../assets/about/iskcon.png";
