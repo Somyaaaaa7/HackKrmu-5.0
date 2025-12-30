@@ -6,6 +6,7 @@ import { useEffect } from "react";
 
 // Page sections
 import Themes from "./Themes";
+import Timeline from "../components/Timeline";
 import PastEditions from "./PastEditions";
 import Sponsors from "./Prizes";
 import Contact from "./Team";
@@ -63,6 +64,12 @@ export default function Home() {
                     <span className="hero-normal" style={{ marginRight: "30px" }} >HACK KRMU </span>
                     <GlitchText text="5.0" />
                 </h1>
+
+                {/* EVENT DATE */}
+                <div className="event-dates" style={{ fontSize: "30px", marginBottom: "30px", marginTop: "-10px" }}>
+                    18<span>th</span> Feb – 20<span>th</span> Feb 2026
+                </div>
+
 
                 <Countdown />
 
@@ -130,19 +137,26 @@ export default function Home() {
             <Divider />
 
             {/* ================================================= */}
-            {/* PAST EDITIONS */}
+            {/* THEMES */}
             {/* ================================================= */}
-            <section id="past" className="page-section">
-                <PastEditions />
+            <section id="themes" className="page-section">
+                <Themes />
+            </section>
+
+            <Divider />
+
+            {/* TIMELINE (NEW) */}
+            <section id="timeline">
+                <Timeline />
             </section>
 
             <Divider />
 
             {/* ================================================= */}
-            {/* THEMES */}
+            {/* GALLERY */}
             {/* ================================================= */}
-            <section id="themes" className="page-section">
-                <Themes />
+            <section id="past" className="page-section">
+                <PastEditions />
             </section>
 
             <Divider />

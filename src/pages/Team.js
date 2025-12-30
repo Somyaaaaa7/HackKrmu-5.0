@@ -16,11 +16,26 @@ import somya from "../assets/team/somya.jpg";
 /* CARD COMPONENT */
 /* ============================= */
 
-const Card = ({ image, name, role, linkedin, instagram, variant }) => (
+const Card = ({
+    image,
+    name,
+    role,
+    phone,
+    linkedin,
+    instagram,
+    variant,
+}) => (
     <div className={`team-card ${variant === "gold" ? "gold" : ""}`}>
         <img src={image} alt={name} />
         <h3>{name}</h3>
         <p>{role}</p>
+
+        {/* 📞 Contact number (ONLY if provided) */}
+        {phone && (
+            <div className="phone" style={{marginLeft:"-10px"}}>
+                📞 <a href={`tel:${phone}`}>{phone}</a>
+            </div>
+        )}
 
         <div className="socials">
             {linkedin && (
@@ -52,10 +67,12 @@ const Card = ({ image, name, role, linkedin, instagram, variant }) => (
 /* TEAM SECTION */
 /* ============================= */
 
-export default function Contact() {
+export default function Team() {
     return (
         <div className="team-section">
-            <h2 className="section-title" style={{marginTop:"-80px"}}>OUR TEAM</h2>
+            <h2 className="section-title" style={{ marginTop: "-80px" }}>
+                OUR TEAM
+            </h2>
 
             {/* ================= CONVENORS ================= */}
             <div className="team-grid">
@@ -84,31 +101,36 @@ export default function Contact() {
                 />
             </div>
 
-            {/* ================= STUDENT COORDINATORS ================= */}
+            {/* ================= STUDENT ORGANIZERS ================= */}
             <div className="team-grid2">
+                
                 <Card
                     image={krish}
                     name="Krish Agarwal"
-                    role="Student Coordinator"
+                    role="Student Organizer"
+                    phone="+91 9310189324"
                     linkedin="https://www.linkedin.com/in/krish-agarwal-140920301/"
-                    instagram="#"
-                />
-
-                <Card
-                    image={anuj}
-                    name="Anuj Narain"
-                    role="Student Coordinator"
-                    linkedin="https://www.linkedin.com/in/narainanuj/"
                     instagram="#"
                 />
 
                 <Card
                     image={somya}
                     name="Somya Sharma"
-                    role="Student Coordinator"
+                    role="Student Organizer"
+                    phone="+91 9205038742"
                     linkedin="https://www.linkedin.com/in/somya-sharma-486a22305/"
                     instagram="#"
                 />
+
+                <Card
+                    image={anuj}
+                    name="Anuj Narain"
+                    role="Student Organizer"
+                    phone="+91 9811625462"
+                    linkedin="https://www.linkedin.com/in/narainanuj/"
+                    instagram="#"
+                />
+
             </div>
         </div>
     );

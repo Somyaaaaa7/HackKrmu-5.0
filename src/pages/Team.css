@@ -187,6 +187,8 @@
         0 0 18px rgba(255, 215, 0, 0.45);
 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    margin-top: 10px;
 }
 
 .linkedin:hover,
@@ -195,6 +197,28 @@
     box-shadow:
         0 0 30px rgb(219, 16, 16);
 }
+
+/* ============================= */
+/* PHONE NUMBER STYLE */
+/* ============================= */
+
+.phone {
+    margin-top: 6px;
+    font-size: 0.9rem;
+    color: #ffd966;
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px rgba(255, 217, 102, 0.45);
+}
+
+.phone a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.phone a:hover {
+    text-shadow: 0 0 16px rgba(255, 217, 102, 0.9);
+}
+
 
 /* ============================= */
 /* RESPONSIVE */

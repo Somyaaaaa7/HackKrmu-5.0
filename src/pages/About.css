@@ -70,6 +70,46 @@
     transform: translateY(-6px);
 }
 
+/* ================= SPONSOR CTA ================= */
+
+.sponsor-cta {
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+}
+
+.sponsor-btn {
+    padding: 16px 44px;
+    font-family: "Orbitron", monospace;
+    font-size: 2rem;
+    letter-spacing: 2px;
+    text-decoration: none;
+
+    color: #00fff7;
+    border: 2px solid #00fff7;
+    border-radius: 40px;
+
+    background: transparent;
+
+    box-shadow:
+        0 0 14px rgba(0, 255, 247, 0.5),
+        inset 0 0 10px rgba(0, 255, 247, 0.2);
+
+    transition: all 0.35s ease;
+}
+
+.sponsor-btn:hover {
+    color: #000;
+    background: #00fff7;
+
+    box-shadow:
+        0 0 30px rgba(0, 255, 247, 0.9),
+        0 0 80px rgba(0, 255, 247, 0.5);
+
+    transform: translateY(-2px);
+}
+
+
 /* ================= RESPONSIVE ================= */
 
 @media (max-width: 1024px) {

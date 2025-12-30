@@ -51,19 +51,19 @@ export default function Prizes() {
                 {/* SECOND */}
                 <div className="podium-column second">
                     <Prize amount={30000} title="Runner Up" variant="second" />
-                    <div className="podium-base blue"style={{marginBottom:"-120px",}} />
+                    <div className="podium-base blue"style={{marginBottom:"-150px",}} />
                 </div>
 
                 {/* FIRST */}
                 <div className="podium-column first">
                     <Prize amount={50000} title="Champion" variant="first" />
-                    <div className="podium-base gold" style={{marginBottom:"-120px",}}/>
+                    <div className="podium-base gold" style={{marginBottom:"-150px",}}/>
                 </div>
 
                 {/* THIRD */}
                 <div className="podium-column third">
                     <Prize amount={20000} title="2nd Runner Up" variant="third" />
-                    <div className="podium-base red" style={{marginBottom:"-120px",}}/>
+                    <div className="podium-base red" style={{marginBottom:"-150px",}}/>
                 </div >
             </div>
 

@@ -9,8 +9,9 @@ import logo from "../assets/logo.png";
 const sections = [
     { id: "home", label: "Home" },
     { id: "about", label: "About" },
-    { id: "past", label: "Glimpses" },
     { id: "themes", label: "Themes" },
+    { id: "timeline", label: "Timeline" },
+    { id: "past", label: "Gallery" },
     { id: "sponsors", label: "Prizes" },
     { id: "contact", label: "Our Team" },
 ];

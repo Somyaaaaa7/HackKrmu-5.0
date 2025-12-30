@@ -9,12 +9,12 @@ import open from "../assets/themes/open.jpg";
 import fintech from "../assets/themes/fintech.jpg";
 
 const themes = [
-    { title: "AI & ML", icon: "🤖", image: ai },
-    { title: "Web3 & Blockchain", icon: "⛓️", image: web3 },
-    { title: "Cybersecurity", icon: "🛡️", image: cyber },
-    { title: "IoT & Hardware", icon: "🔌", image: iot },
-    { title: "Open Innovation", icon: "🚀", image: open },
-    { title: "FinTech / HealthTech", icon: "💡", image: fintech },
+    { title: "AI & ML", image: ai },
+    { title: "Web3 & Blockchain", image: web3 },
+    { title: "Cybersecurity", image: cyber },
+    { title: "IoT & Hardware", image: iot },
+    { title: "Open Innovation", image: open },
+    { title: "FinTech / HealthTech", image: fintech },
 ];
 
 export default function Themes() {

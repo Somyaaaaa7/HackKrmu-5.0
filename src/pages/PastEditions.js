@@ -88,7 +88,7 @@ export default function PastEditions() {
     return (
         <section className="past-gallery">
             <h2 className="section-title" style={{ marginTop: "-100px", marginBottom: "90px", fontFamily: "Orbitron, monospace"}}>
-                GLIMPSES
+                GALLERY
             </h2>
 
             <div className="honeycomb">

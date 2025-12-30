@@ -120,7 +120,6 @@ export default function About() {
                 <div className="partner-card">
                     <img src={ccg} alt="CCG" />
                 </div>
-
                 <div className="partner-card">
                     <img src={hackcbs} alt="HackCBS" />
                 </div>
@@ -133,7 +132,6 @@ export default function About() {
                 <div className="partner-card">
                     <img src={devsdungeon} alt="DevDungeon" />
                 </div>
-
                 <div className="partner-card">
                     <img src={tversiton} alt="Tversiton" />
                 </div>
@@ -146,6 +144,13 @@ export default function About() {
                 <div className="partner-card">
                     <img src={devlovers} alt="DevLovers" />
                 </div>
+            </div>
+
+            {/* ================= SPONSORSHIP CTA ================= */}
+            <div className="sponsor-cta">
+                <a href="/sponsorship" className="sponsor-btn" style={{marginBottom:"-60px"}}>
+                    BECOME OUR SPONSOR
+                </a>
             </div>
         </section>
     );
