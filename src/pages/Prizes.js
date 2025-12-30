@@ -33,26 +33,38 @@ function Prize({ amount, title, variant }) {
 export default function Prizes() {
     return (
         <section className="prizes-page">
-            <h1 className="prizes-heading" style={{marginTop:"-125px"}}>PRIZES</h1>
+            <h1 className="prizes-heading" style={{marginTop:"-130px"}}>PRIZES</h1>
+
+            {/* TOTAL PRIZE POOL */}
+<div className="prize-pool">
+    <div className="prize-pool-line" style={{marginTop:"-120px",}}/>
+    <div className="prize-pool-text">
+        PRIZES WORTH <span>₹5,00,000+</span>
+    </div>
+    <div className="prize-pool-sub" style={{marginTop:"20px",}}>
+        Track Prizes & Goodies
+    </div>
+    <div className="prize-pool-line" style={{marginBottom:"100px"}}/>
+</div>
 
             <div className="podium-wrapper">
                 {/* SECOND */}
                 <div className="podium-column second">
                     <Prize amount={30000} title="Runner Up" variant="second" />
-                    <div className="podium-base blue" />
+                    <div className="podium-base blue"style={{marginBottom:"-120px",}} />
                 </div>
 
                 {/* FIRST */}
                 <div className="podium-column first">
                     <Prize amount={50000} title="Champion" variant="first" />
-                    <div className="podium-base gold" />
+                    <div className="podium-base gold" style={{marginBottom:"-120px",}}/>
                 </div>
 
                 {/* THIRD */}
                 <div className="podium-column third">
                     <Prize amount={20000} title="2nd Runner Up" variant="third" />
-                    <div className="podium-base red" />
-                </div>
+                    <div className="podium-base red" style={{marginBottom:"-120px",}}/>
+                </div >
             </div>
 
             {/* TRACK PRIZES
