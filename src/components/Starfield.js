@@ -80,7 +80,7 @@ export default function Starfield() {
         window.addEventListener("resize", resize);
 
         const STAR_COUNT = 260;
-        const SPEED = 4;
+        const SPEED = 2;
 
         const stars = Array.from({ length: STAR_COUNT }, () => ({
             x: Math.random() * canvas.width - canvas.width / 2,
