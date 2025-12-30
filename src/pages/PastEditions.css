@@ -46,12 +46,12 @@
     align-items: center;
 
     /* 🔒 Exact vertical interlock */
-    margin-bottom: -10px;
+    margin-bottom: -30px;
 }
 
 /* 🔒 Exact horizontal offset for 4-hex rows */
 .hex-row.offset {
-    margin-left: 4px;
+    margin-left: 1px;
 }
 
 /* ============================= */
@@ -60,13 +60,11 @@
 
 .hex-wrap {
     width: 220px;
-    /* 🔒 SAME FOR ALL */
     height: 190px;
-    /* 🔒 SAME FOR ALL */
     margin: 0 12px;
-    perspective: 1400px;
     flex-shrink: 0;
 }
+
 
 /* ============================= */
 /* HEX BODY */
@@ -115,10 +113,24 @@
     background-size: cover;
     background-position: center;
     backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
 .hex-face.back {
-    transform: rotateY(180deg);
+    transform: rotateY(180deg) translateZ(1px);
+    opacity: 0;
+    transform: scale(0.92);
+}
+
+.hex-wrap:hover .hex-face.front {
+    opacity: 0;
+    transform: scale(1.05);
+}
+
+.hex-wrap:hover .hex-face.back {
+    opacity: 1;
+    transform: scale(1);
 }
 
 /* ============================= */
