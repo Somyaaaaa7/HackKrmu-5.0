@@ -110,7 +110,7 @@ export default function Team() {
                     role="Student Organizer"
                     phone="+91 9310189324"
                     linkedin="https://www.linkedin.com/in/krish-agarwal-140920301/"
-                    instagram="#"
+                    instagram="https://www.instagram.com/_aggarwal_krish_?igsh=MXJ4djRoNmdqcHgxbA=="
                 />
 
                 <Card
@@ -119,7 +119,7 @@ export default function Team() {
                     role="Student Organizer"
                     phone="+91 9205038742"
                     linkedin="https://www.linkedin.com/in/somya-sharma-486a22305/"
-                    instagram="#"
+                    instagram="https://www.instagram.com/somyaaaaa.7?igsh=ZXAzbGU0N3I5emt2&utm_source=qr"
                 />
 
                 <Card
@@ -128,7 +128,7 @@ export default function Team() {
                     role="Student Organizer"
                     phone="+91 9811625462"
                     linkedin="https://www.linkedin.com/in/narainanuj/"
-                    instagram="#"
+                    instagram="https://www.instagram.com/anuj_narain?igsh=MXJ6dWs2ZTRxdnBhag=="
                 />
 
             </div>
