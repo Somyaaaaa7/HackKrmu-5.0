@@ -244,20 +244,6 @@ p {
 }
 
 
-/* ================================================= */
-/* RESPONSIVE */
-/* ================================================= */
-
-@media (max-width: 900px) {
-    .prize-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .glitch {
-        font-size: 3rem;
-    }
-}
-
 /* ============================= */
 /* KRMU BANNER – STABLE & DECENT */
 /* ============================= */
@@ -277,6 +263,30 @@ p {
     width: 100%;
 }
 
+/* =============================== */
+/* TIMELINE SECTION OVERRIDE */
+/* =============================== */
+
+.timeline-section {
+    align-items: stretch !important;
+    padding-left: 4%;
+    padding-right: 4%;
+}
+
+
+/* ================================================= */
+/* RESPONSIVE */
+/* ================================================= */
+
+@media (max-width: 900px) {
+    .prize-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .glitch {
+        font-size: 3rem;
+    }
+}
 
 /* Responsive */
 @media (max-width: 768px) {

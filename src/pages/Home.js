@@ -14,6 +14,7 @@ import krmuBanner from "../assets/krmu-banner.png";
 import About from "./About";
 import GlitchText from "../components/GlitchText";
 import Countdown from "../components/Countdown"
+import FAQ from "../components/FAQ";
 
 
 // UI Components
@@ -146,7 +147,7 @@ export default function Home() {
             <Divider />
 
             {/* TIMELINE (NEW) */}
-            <section id="timeline" className="page-section">
+            <section id="timeline" className="page-section timeline-section">
                 <Timeline />
             </section>
 
@@ -176,6 +177,18 @@ export default function Home() {
             <section id="contact" className="page-section">
                 <Contact />
             </section>
+
+            <Divider />
+
+            {/* ================================================= */}
+            {/* FAQ */}
+            {/* ================================================= */}
+            <section id="faq" className="page-section">
+                <FAQ />
+            </section>
+
+            <Divider />
+
         </>
     );
 }

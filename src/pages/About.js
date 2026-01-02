@@ -37,36 +37,34 @@ export default function About() {
             <div className="about-top">
                 <div className="about-left">
 
-                    <h2 style={{ marginTop: "-100px", marginLeft: "-140px", fontSize:"50px" }}>What is Hack KRMU?</h2>
+                    <h2 style={{ marginTop: "-125px", marginLeft: "-140px", fontSize: "50px" }}>What is Hack KRMU?</h2>
 
                     <p style={{ marginTop: "60px", marginLeft: "-150px" }}>
-                        Hack KRMU is an annual hackathon hosted by K.R. Mangalam University that brings
-                        together passionate innovators, developers, and creators to collaborate and
-                        build impactful solutions using cutting-edge technology.
+                        HackKRMU is the flagship annual hackathon hosted by KR Mangalam University, bringing together innovators, developers, designers, and problem-solvers from across the country under one roof.
                     </p>
 
                     <p style={{ marginLeft: "-155px" }}>
-                        Over 24+ hours of intense innovation, participants work on futuristic themes
-                        such as Artificial Intelligence, Cybersecurity, Blockchain, IoT, AR/VR, and
-                        FinTech—guided by industry mentors and driven by creativity, teamwork, and
-                        real-world problem solving.
+                        With the 5th iteration, HackKRMU is set to mark its biggest and most ambitious edition ever. What started as a campus initiative has now grown into a large-scale innovation festival, witnessing 1200+ participants, 200+ teams, and an ever-growing community of tech enthusiasts in previous editions.
                     </p>
 
                     <p style={{ marginLeft: "-175px" }}>
-                        More than just a competition, Hack KRMU is a platform to learn, network, and
-                        transform bold ideas into scalable solutions while competing for exciting
-                        prizes and recognition.
+                        HackKRMU 5.0 is more than just a hackathon ,it’s a 54-hour journey of creativity, collaboration, and cutting-edge innovation. Participants will work on real-world problem statements, explore emerging technologies, attend expert-led sessions, and compete for exciting prizes, recognition, and opportunities.
+                        This milestone edition aims to push boundaries, encourage bold ideas, and create solutions that matter making HackKRMU 5.0 a platform where ideas turn into impact.
                     </p>
 
                 </div>
 
                 <div className="about-right">
                     <img src={aboutMain} alt="Hack KRMU Winners" />
+
+                    <p style={{ marginLeft: "50px", marginTop:"50px", color: "#000000ff", }}>
+                        .
+                    </p>
                 </div>
             </div>
 
             {/* ================= PARTNERS ================= */}
-            <h3 className="partners-title" style={{fontSize:"50px", marginBottom:"70px", marginTop:"100px"}}>Our Trusted Partners</h3>
+            <h3 className="partners-title" style={{ fontSize: "50px", marginBottom: "70px", marginTop: "100px" }}>Our Trusted Partners</h3>
 
             <div className="partners-grid">
                 <div className="partner-card">
@@ -148,7 +146,7 @@ export default function About() {
 
             {/* ================= SPONSORSHIP CTA ================= */}
             <div className="sponsor-cta">
-                <a href="/sponsorship" className="sponsor-btn" style={{marginBottom:"-60px"}}>
+                <a href="/sponsorship" className="sponsor-btn" style={{ marginBottom: "-60px" }}>
                     BECOME OUR SPONSOR
                 </a>
             </div>

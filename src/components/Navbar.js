@@ -14,6 +14,7 @@ const sections = [
     { id: "past", label: "Gallery" },
     { id: "sponsors", label: "Prizes" },
     { id: "contact", label: "Our Team" },
+    { id: "faq", label: "FAQ" },
 ];
 
 export default function Navbar() {
@@ -119,6 +120,7 @@ export default function Navbar() {
                     >
                         {label}
                     </span>
+                    
                 ))}
 
                 {/* 🔥 SINGLE SLIDING INDICATOR */}

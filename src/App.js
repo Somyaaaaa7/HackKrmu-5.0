@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Prizes from "./pages/Prizes";
 import Sponsorship from "./pages/Sponsorship";
+import FAQ from "./components/FAQ";
 
 
 import "./App.css";
@@ -29,7 +30,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/prizes" element={<Prizes />} />
           <Route path="/sponsorship" element={<Sponsorship />} />
-
+          <Route path="/faq" element={<FAQ />} />
         </Routes>
       </main>
     </Router>
