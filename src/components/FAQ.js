@@ -37,7 +37,7 @@ export default function FAQ() {
 
   return (
     <section className="faq-page">
-      <h1 className="section-title" style={{marginTop:"-110px"}}>Frequently Asked Questions</h1>
+      <h1 className="section-title" style={{marginTop:"-110px", marginBottom: "70px"}}>Frequently Asked Questions</h1>
 
       <div className="faq-container">
         {faqs.map((item, index) => (
