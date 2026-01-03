@@ -1,16 +1,56 @@
 .faq-page {
   min-height: 100vh;
-  padding: 140px 12% 120px;
+  padding: 110px 12% 120px;
   text-align: center;
   color: white;
 }
 
-.faq-title {
-  font-size: 3.2rem;
-  margin-bottom: 60px;
-  color: #00fff7;
-  text-shadow: 0 0 25px rgba(0,255,247,0.9);
+/* ================= FAQ HEADING ================= */
+
+.faq-heading-wrapper {
+  position: relative;
+  text-align: center;
+  margin-top: -110px;
+  margin-bottom: 90px;
 }
+
+/* Ghost text */
+.faq-ghost {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  font-size: 8.5rem;
+  font-weight: 800;
+  letter-spacing: 20px;
+
+  font-family: "TransformersMovie", sans-serif;
+  color: rgba(255, 255, 255, 0.1);
+
+  filter: blur(1.2px);
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+
+  animation: ghostFloat 20s ease-in-out infinite;
+}
+
+/* Foreground title */
+.faq-main-title {
+  position: relative;
+  z-index: 2;
+  line-height: 1.1;
+  
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .faq-ghost {
+    font-size: 4.2rem;
+  }
+}
+
 
 /* CONTAINER */
 .faq-container {
@@ -23,17 +63,20 @@
 
 /* ITEM */
 .faq-item {
-  background: radial-gradient(circle at top, #071928, #020812);
-  border-radius: 18px;
-  border: 1px solid rgba(0,255,247,0.45);
-  box-shadow: 0 0 35px rgba(0,255,247,0.25);
-  overflow: hidden;
-  transition: box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05),
+    0 8px 30px rgba(0, 0, 0, 0.6) !important;
 }
 
+
 .faq-item.active {
-  box-shadow: 0 0 55px rgba(0,255,247,0.55);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.15),
+    0 12px 40px rgba(0, 0, 0, 0.75);
 }
+
 
 /* QUESTION */
 .faq-question {
@@ -41,7 +84,7 @@
   background: transparent;
   border: none;
   outline: none;
-  color: #00fff7;
+  color: #ffffff;
   font-family: "Orbitron", monospace;
   font-size: 1.15rem;
   padding: 22px 26px;
@@ -53,18 +96,20 @@
 }
 
 .faq-question:hover {
-  background: rgba(#00fff7, 0.05);
+  background: rgba(255, 255, 255, 0.04) !important;
+  color: white;
 }
 
 /* ICON */
 .faq-icon {
   font-size: 1.8rem;
-  color: #ff5cff;
-  text-shadow: 0 0 15px #ff5cff;
+  color: #ecb102;
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
 }
 
 /* ANSWER */
 .faq-answer {
+  color: #d0d0d0;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.4s ease, padding 0.4s ease;
@@ -80,6 +125,8 @@
   font-size: 1.05rem;
   line-height: 1.6;
 }
+
+
 
 /* MOBILE */
 @media (max-width: 768px) {

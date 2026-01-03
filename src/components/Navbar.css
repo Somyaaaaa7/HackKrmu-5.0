@@ -1,171 +1,215 @@
-/* ================================================= */
-/* NAVBAR BASE */
-/* ================================================= */
-
 :root {
---navbar-height: 72px;
+  --neon: #00fff7;
+  --bg-dark: #05010a;
 }
+
+/* ================= NAVBAR ================= */
 
 .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: var(--navbar-height);
-
-    background: rgba(10, 10, 10, 0.85);
-    backdrop-filter: blur(8px);
-
-    padding: 12px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    border-bottom: 1px solid #00fff7;
-    box-sizing: border-box;
-
-    z-index: 9999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 72px;
+  width: 100%;
+  backdrop-filter: blur(10px);
+  backdrop-filter: none;
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
+  z-index: 1000;
+  overflow: visible;
 }
 
-/* ================================================= */
-/* BRAND */
-/* ================================================= */
+/* ================= BRAND ================= */
 
 .brand {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
 }
 
 .brand-logo {
-    height: 45px;
-    width: 45px;
-    border-radius: 50%;
-    object-fit: cover;
-
-    border: 2px solid rgba(0, 255, 247, 0.8);
-    box-shadow:
-        0 0 12px rgba(0, 255, 247, 0.6),
-        inset 0 0 6px rgba(0, 255, 247, 0.4);
+  height: 44px;
 }
-
 
 .logo-text {
-    color: #cfd8dc;
-    font-family: monospace;
-    letter-spacing: 2px;
-    font-size: 1.4rem;
+  color: #cfd8dc;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-shadow: 0 0 18px rgba(0, 255, 247, 0.8);
 }
 
-/* ================================================= */
-/* LINKS */
-/* ================================================= */
+/* ================= CENTER LINKS ================= */
 
-.links {
-    position: relative; /* 🔥 REQUIRED for indicator positioning */
-    display: flex;
-    align-items: center;
-    gap: 26px;
+.links.center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 25px;
+  align-items: center;
 }
 
-/* Individual link */
 .links span {
-    cursor: pointer;
-    color: #ffffff;
-    font-size: 0.9rem;
-    letter-spacing: 1.2px;
-    padding: 6px 2px;
-    transition: color 0.3s ease, text-shadow 0.3s ease;
+  color: #cfd8dc;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: 0.3s;
 }
 
-/* Hover */
-.links span:hover {
-    color: #ffffff;
-}
-
-/* Active (scroll-based) */
+.links span:hover,
 .links span.active {
-    color: #01fff7;
-    text-shadow: 0 0 8px rgba(0, 105, 102, 0.9);
+  color: var(--neon);
 }
 
-/* ================================================= */
-/* 🔥 SINGLE SLIDING INDICATOR */
-/* ================================================= */
+/* ================= SLIDING INDICATOR ================= */
 
 .nav-indicator {
-    position: absolute;
-    bottom: -6px;
+  position: absolute;
+  bottom: -10px;
+  height: 3px;
+  background: var(--neon);
+  box-shadow: 0 0 14px var(--neon);
+  transition: 0.3s ease;
+}
 
-    height: 2px;              /* 👈 small thin line */
-    border-radius: 1px;
-    width: 0;
+/* ================= 🔥 REGISTER RIBBON ================= */
 
-    background: #00fff7;
+.register-ribbon {
+  position: absolute;
+  right: 32px;
+  top: 0;
 
+  height: 250px;
+  min-width: 80px;
+  padding: 0 6px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: 'transformers', sans-serif;
+  font-weight: 300;
+  font-size: 1px;
+
+  background: linear-gradient(
+    to bottom,
+    #df3d3d 0%,
+    #df3d3d 50%,
+    #df3d3d 100%
+  );
+
+  color: #000;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  clip-path: polygon(
+  0% 0%,     /* top-left */
+  100% 0%,   /* top-right */
+
+  100% 68%,  /* right side */
+  75% 82%,   /* inward slope right */
+
+  50% 100%,  /* sharp bottom point */
+
+  25% 82%,   /* inward slope left */
+  0% 68%     /* left side */
+);
+
+
+  box-shadow:
+    inset 0 -6px 8px rgba(0,0,0,0.18),
+    inset 0 4px 6px rgba(0,0,0,0.15),
+    0 10px 26px rgba(0,0,0,0.45);
+
+  z-index: 2000;
+
+  /* 🎯 ANIMATION SETUP */
+  transform-origin: top center;
+  animation:
+    ribbon-sway 7s ease-in-out infinite,
+    ribbon-breathe 6s ease-in-out infinite;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+/* ================= STITCH ================= */
+
+.register-ribbon::before {
+  content: "";
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  top: 18px;
+  bottom: 18px;
+
+  border-top: 2px dashed rgba(0,0,0,0.35);
+  border-bottom: 2px dashed rgba(0,0,0,0.35);
+  pointer-events: none;
+}
+
+/* ================= FOLD SHADOW ================= */
+
+.register-ribbon::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.12),
+    transparent 40%,
+    rgba(0,0,0,0.25)
+  );
+  pointer-events: none;
+}
+
+/* ================= HOVER ================= */
+
+.register-ribbon:hover {
+  animation-play-state: paused;
+  transform: translateY(3px) scale(1.02);
+  box-shadow:
+    inset 0 -8px 10px rgba(0,0,0,0.3),
+    0 14px 36px rgba(0,0,0,0.6);
+}
+
+/* ================= 🎞️ KEYFRAMES ================= */
+
+/* Gentle left-right fabric sway */
+@keyframes ribbon-sway {
+  0%   { transform: translateX(0) rotate(0deg); }
+  25%  { transform: translateX(-1.5px) rotate(-0.35deg); }
+  50%  { transform: translateX(0) rotate(0deg); }
+  75%  { transform: translateX(1.5px) rotate(0.35deg); }
+  100% { transform: translateX(0) rotate(0deg); }
+}
+
+/* Soft breathing depth */
+@keyframes ribbon-breathe {
+  0%, 100% {
     box-shadow:
-        0 0 6px rgba(0, 255, 247, 0.9);
-
-    transition:
-        left 0.35s ease,
-        width 0.35s ease,
-        opacity 0.25s ease;
-
-    opacity: 0;
+      inset 0 -6px 8px rgba(0,0,0,0.18),
+      inset 0 4px 6px rgba(0,0,0,0.15),
+      0 10px 26px rgba(0,0,0,0.45);
+  }
+  50% {
+    box-shadow:
+      inset 0 -8px 10px rgba(0,0,0,0.24),
+      inset 0 6px 8px rgba(0,0,0,0.2),
+      0 14px 34px rgba(0,0,0,0.55);
+  }
 }
 
-/* visible only when a section is active */
-.nav-indicator.active {
-    opacity: 1;
-}
+/* ================= REDUCED MOTION SAFETY ================= */
 
-
-/* ================================================= */
-/* HAMBURGER */
-/* ================================================= */
-
-.hamburger {
-    display: none;
-    font-size: 1.8rem;
-    color: #00fff7;
-    cursor: pointer;
-}
-
-/* ================================================= */
-/* MOBILE */
-/* ================================================= */
-
-@media (max-width: 768px) {
-    .hamburger {
-        display: block;
-    }
-
-    .links {
-        display: none;
-        position: absolute;
-        top: var(--navbar-height);
-        right: 0;
-        width: 100%;
-        background: rgba(0, 0, 0, 0.95);
-        flex-direction: column;
-        align-items: center;
-        padding: 20px 0;
-        gap: 16px;
-    }
-
-    .links.show {
-        display: flex;
-    }
-
-    /* Hide indicator on mobile menu */
-    .nav-indicator {
-        display: none;
-    }
-}
-
-@media (max-width: 480px) {
-    .logo-text {
-        display: none;
-    }
+@media (prefers-reduced-motion: reduce) {
+  .register-ribbon {
+    animation: none;
+  }
 }

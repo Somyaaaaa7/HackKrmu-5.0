@@ -9,6 +9,7 @@ import About from "./pages/About";
 import Prizes from "./pages/Prizes";
 import Sponsorship from "./pages/Sponsorship";
 import FAQ from "./components/FAQ";
+import Footer from "./components/Footer";
 
 
 import "./App.css";
@@ -33,6 +34,10 @@ function App() {
           <Route path="/faq" element={<FAQ />} />
         </Routes>
       </main>
+
+{/* 👣 FOOTER (ALWAYS LAST) */}
+      <Footer />
+
     </Router>
   );
 }

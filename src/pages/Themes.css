@@ -1,10 +1,75 @@
+.hero-title {
+    color: white;
+    font-weight: 800;
+    font-size: 6rem;
+    font-family: 'TransformersMovie', sans-serif;
+    text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+    letter-spacing: -0.025em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-weight: 800;
+    margin: 0;
+    line-height: 1;
+}
+
+/* ================= THEMES HEADING ================= */
+
+.themes-heading {
+    position: relative;
+    text-align: center;
+    margin-bottom: 60px;
+    padding-top: 40px;
+}
+
+/* Ghost background text */
+.themes-ghost {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-display: block;
+
+    font-family: 'TransformersMovie', sans-serif;
+    font-size: 8rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+
+    color: rgba(255, 255, 255, 0.1);
+    filter: blur(1px);
+
+    white-space: nowrap;
+    pointer-events: none;
+    user-select: none;
+
+    animation: ghostFloatThemes 20s ease-in-out infinite;
+}
+
+/* Foreground THEMES title */
+.themes-main-title {
+    position: relative;
+    z-index: 2;
+}
+
+/* Floating ghost animation */
+@keyframes ghostFloatThemes {
+    0%, 100% {
+        transform: translate(-50%, -50%);
+    }
+    50% {
+        transform: translate(-50%, -54%);
+    }
+}
+
+
 /* ============================= */
 /* THEMES PAGE */
 /* ============================= */
 
 .themes-page {
     width: 100%;
-    padding: 120px 0 160px;
+    padding: 0px 0 50px;
     display: flex;
     flex-direction: column;
     align-items: center;

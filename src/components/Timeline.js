@@ -1,90 +1,117 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./Timeline.css";
 
 const schedule = {
     kickoff: {
-        title: "Day 1 – 18 FEB · Kickoff Day",
+        // title: "Day 1 – 18 FEB · Kickoff Day",
+        title: "Day 1 – 18 FEB",
         events: [
-            ["8:30 AM", "Check-in Start", "pink"],
-            ["11:00 AM", "Inauguration", "yellow"],
-            ["12:00 PM", "Hackathon Starts", "cyan"],
-            ["2:00 PM", "Lunch", "green"],
-            ["4:00 PM", "Mentor Session", "blue"],
-            ["8:00 PM", "Dinner", "green"],
-            ["10:00 PM", "DJ Night", "pink"],
+            ["8:30 AM", "Check-in Start"],
+            ["11:00 AM", "Inauguration"],
+            ["12:00 PM", "Hackathon Starts"],
+            ["2:00 PM", "Lunch"],
+            ["4:00 PM", "Mentor Session"],
+            ["8:00 PM", "Dinner"],
+            ["10:00 PM", "DJ Night"],
         ],
     },
     development: {
-        title: "Day 2 – 19 FEB · Development Day",
+        // title: "Day 2 – 19 FEB · Development Day",
+        title: "Day 2 – 19 FEB",
         events: [
-            ["12:00 AM", "RedBull Fun Activity", "pink"],
-            ["7:00 AM", "Result Announcement", "yellow"],
-            ["7:30 AM", "Breakfast", "green"],
-            ["12:00 PM", "Session", "cyan"],
-            ["1:00 PM", "Lunch", "green"],
-            ["4:00 PM", "Session", "blue"],
-            ["8:00 PM", "Dinner", "green"],
+            ["10:00 AM", "Mid Evaluation"],
+            ["2:00 PM", "Mentor Review"],
+            ["11:59 PM", "Submission Freeze"],
         ],
     },
     final: {
-        title: "Day 3 – 20 FEB · Final Showdown",
+        // title: "Day 3 – 20 FEB · Final Showdown",
+        title: "Day 3 – 20 FEB",
         events: [
-            ["1:00 AM", "Judging Round 2", "red"],
-            ["7:00 AM", "Result Announcement", "yellow"],
-            ["7:30 AM", "Breakfast", "green"],
-            ["10:00 AM", "Final Round", "blue"],
-            ["1:00 PM", "Lunch", "green"],
-            ["2:00 PM", "Winner Announcement", "yellow"],
-            ["2:30 PM", "Closing Ceremony", "yellow"],
+            ["1:00 AM", "Judging Round 2"],
+            ["7:00 AM", "Result Announcement"],
+            ["10:00 AM", "Final Round"],
+            ["1:00 PM", "Lunch"],
+            ["3:30 PM", "Closing Ceremony"],
         ],
     },
 };
 
 export default function Timeline() {
     const [day, setDay] = useState("kickoff");
+    const wrapperRef = useRef(null);
+    const fillRef = useRef(null);
+
+    useEffect(() => {
+        const onScroll = () => {
+            if (!wrapperRef.current || !fillRef.current) return;
+
+            const wrap = wrapperRef.current;
+            const rect = wrap.getBoundingClientRect();
+
+            const scrollTop = window.scrollY;
+            const wrapTop = scrollTop + rect.top;
+            const wrapHeight = wrap.offsetHeight;
+            const viewH = window.innerHeight;
+
+            // 🔽 slightly slower + smoother
+            const progress =
+                (scrollTop - wrapTop + viewH * 0.28) /
+                (wrapHeight - viewH * 0.65);
+
+            const clamped = Math.min(Math.max(progress, 0), 1);
+
+            // 🔽 slightly shorter line
+            fillRef.current.style.height = `${clamped * 92}%`;
+        };
+
+        window.addEventListener("scroll", onScroll);
+        onScroll();
+        return () => window.removeEventListener("scroll", onScroll);
+    }, [day]);
 
     return (
         <section className="timeline-page">
-            <h1 className="section-title" style={{marginTop:"-110px", marginBottom:"80px"}}>EVENT TIMELINE</h1>
-            {/* <p className="timeline-sub">⏱ Event in progress!</p> */}
+            <div className="timeline-heading">
+                <span className="timeline-ghost">EVENT TIMELINE</span>
+                <h1 className="timeline-title timeline-main-title">
+                    EVENT TIMELINE
+                </h1>
+            </div>
 
             {/* DAY BUTTONS */}
             <div className="timeline-tabs">
-                <button style={{marginBottom:"50px"}}
-                    className={day === "kickoff" ? "active" : ""}
-                    onClick={() => setDay("kickoff")}
-                >
-                    Kickoff Day
-                </button>
-                <button style={{marginBottom:"50px"}}
-                    className={day === "development" ? "active" : ""}
-                    onClick={() => setDay("development")}
-                >
-                    Development Day
-                </button>
-                <button style={{marginBottom:"50px"}}
-                    className={day === "final" ? "active" : ""}
-                    onClick={() => setDay("final")}
-                >
-                    Final Showdown
-                </button>
+                {Object.keys(schedule).map((k) => (
+                    <button
+                        key={k}
+                        className={day === k ? "active" : ""}
+                        onClick={() => setDay(k)}
+                    >
+                        {k === "kickoff"
+                            ? "Kickoff Day"
+                            : k === "development"
+                                ? "Development Day"
+                                : "Final Showdown"}
+                    </button>
+                ))}
             </div>
 
-            {/* CARD */}
-            <div className="timeline-card" style={{marginBottom:"-30px"}}>
-                <h2 className="timeline-day-title">{schedule[day].title}</h2>
+            <h2 className="timeline-day">{schedule[day].title}</h2>
 
-                <div className="timeline-list">
-                    <div className="timeline-line" />
+            <div className="timeline-wrapper" ref={wrapperRef}>
+                <div className="line-base" />
+                <div className="line-fill" ref={fillRef} />
 
-                    {schedule[day].events.map(([time, text, color], i) => (
-                        <div className="timeline-item" key={i}>
-                            <span className={`dot ${color}`} />
-                            <span className="time">{time}</span>
-                            <span className="event">{text}</span>
-                        </div>
-                    ))}
-                </div>
+                {schedule[day].events.map(([time, text], i) => (
+                    <div
+                        key={i}
+                        className={`event ${i % 2 === 0 ? "left" : "right"}`}
+                    >
+                        <div className="dot" />
+                        <span className="time">{time}</span>
+                        <span className="label">{text}</span>
+                    </div>
+                ))}
             </div>
         </section>
     );

@@ -76,3 +76,14 @@ body::after {
     text-shadow: 0 0 18px rgba(0, 255, 247, 0.8);
 }
 
+html, body {
+  max-width: 100%;
+  height: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+body {
+  position: relative;
+  scroll-behavior: smooth;
+}

@@ -46,25 +46,24 @@
 /* ================================================= */
 
 .hero-title {
-    font-size: 4rem;
-    font-family: 'Orbitron', monospace;
-    letter-spacing: 4px;
+    color: white;
+    font-weight: 800;
+    font-size: 6rem;
+    font-family: 'TransformersMovie', sans-serif;
+    text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+    letter-spacing: -0.025em;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
+    font-weight: 800;
+    margin: 0;
+    line-height: 1;
 }
 
 .hero-normal {
     color: white;
 }
-
-
-/* ================================================= */
-/* GLITCH TITLE */
-/* ================================================= */
-
-
 
 /* ================================================= */
 /* HERO TAGLINE */
@@ -200,30 +199,29 @@ p {
 
 .register-btn {
     padding: 16px 42px;
-    font-size: 1.1rem;
-    font-family: 'Orbitron', monospace;
+    font-size: 2.3rem;
+    font-family: 'transformersmovie', sans-serif;
     letter-spacing: 2px;
 
-    color: #00fff7;
+    color: #ffffff;
     background: transparent;
-    border: 2px solid #00fff7;
+    border: 2px solid #ffffff;
     border-radius: 50px;
 
     cursor: pointer;
 
     box-shadow:
-        0 0 12px rgba(0, 255, 247, 0.6),
-        inset 0 0 12px rgba(0, 255, 247, 0.25);
+        0 0 12px rgba(255, 255, 255, 0.6);
 
     transition: all 0.3s ease;
 }
 
 .register-btn:hover {
-    background: #00fff7;
+    background: #ffffff;
     color: black;
+    text-shadow: none !important;
     box-shadow:
-        0 0 30px rgba(0, 255, 247, 1),
-        0 0 60px rgba(0, 255, 247, 0.6);
+        0 0 30px rgb(255, 255, 255);
     transform: scale(1.05);
 }
 
@@ -248,20 +246,20 @@ p {
 /* KRMU BANNER – STABLE & DECENT */
 /* ============================= */
 
-.krmu-banner {
+/* .krmu-banner {
     max-width: 90%;
     height: auto;
     margin-top: 32px;
     margin-bottom: 28px;
     display: block;
-}
+} */
 
 /* Center wrapper (recommended) */
-.home .banner-wrapper {
+/* .home .banner-wrapper {
     display: flex;
     justify-content: center;
     width: 100%;
-}
+} */
 
 /* =============================== */
 /* TIMELINE SECTION OVERRIDE */
@@ -273,6 +271,9 @@ p {
     padding-right: 4%;
 }
 
+html {
+    scroll-behavior: smooth;
+}
 
 /* ================================================= */
 /* RESPONSIVE */

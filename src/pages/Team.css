@@ -10,17 +10,44 @@
     text-align: center;
 }
 
-/* ============================= */
-/* SECTION TITLE */
-/* ============================= */
+/* ================= TEAM HEADING ================= */
 
-.section-title {
-    font-size: 3.4rem;
+.team-heading-wrapper {
+    position: relative;
+    text-align: center;
     margin-bottom: 120px;
-    color: #ffffff;
-    letter-spacing: 4px;
-    text-shadow: 0 0 18px rgba(0, 255, 247, 0.8);
+    margin-top: -80px;
 }
+
+/* Ghost text */
+.team-ghost {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-display: block;
+
+    font-size: 8rem;
+    font-weight: 800;
+    letter-spacing: 4px;
+
+    color: rgba(255, 255, 255, 0.10);
+    filter: blur(1px);
+
+    font-family: 'TransformersMovie', sans-serif;
+    white-space: nowrap;
+    pointer-events: none;
+    user-select: none;
+
+    animation: ghostFloat 20s ease-in-out infinite;
+}
+
+/* Foreground title */
+.team-main-title {
+    position: relative;
+    z-index: 2;
+}
+
 
 /* ============================= */
 /* GRIDS */
@@ -48,17 +75,17 @@
     position: relative;
     text-align: center;
 
-    background: radial-gradient(
-        circle at top,
-        rgba(255, 215, 0, 0.22),
-        rgba(0, 0, 0, 0.95)
+    background: linear-gradient(
+    145deg,
+    #111111,
+    #0b0b0b
     );
 
     border-radius: 26px;
 
     box-shadow:
-        0 0 35px rgba(255, 215, 0, 0.35),
-        inset 0 0 35px rgba(255, 215, 0, 0.12);
+    0 0 14px rgba(255, 215, 130, 0.15),
+    inset 0 0 10px rgba(255, 215, 130, 0.08);
 
     transition: transform 0.45s ease, box-shadow 0.45s ease;
 }
@@ -69,16 +96,16 @@
     position: absolute;
     inset: -2px;
     border-radius: 28px;
-    border: 1.6px solid rgba(255, 215, 0, 0.55);
+    border: 1px solid rgba(230, 199, 123, 0.2);
     pointer-events: none;
 }
 
 /* HOVER */
 .team-card:hover {
-    transform: translateY(-16px) scale(1.06);
+    transform: translateY(-6px);
     box-shadow:
-        0 0 65px rgba(255, 215, 0, 0.5),
-        inset 0 0 40px rgba(255, 215, 0, 0.35);
+        0 0 22px rgba(255, 215, 130, 0.25),
+        inset 0 0 14px rgba(255, 215, 130, 0.15);
 }
 
 /* ============================= */
@@ -109,11 +136,11 @@
     margin: 8px auto 26px;
     display: block;
 
-    border: 4px solid rgba(255, 215, 0, 0.9);
+    border: 3.5px solid rgba(255, 200, 120, 0.85);
+    
+        box-shadow:
+    0 0 18px rgba(255, 215, 130, 0.35);
 
-    box-shadow:
-        0 0 35px rgba(255, 215, 0, 0.85),
-        0 0 70px rgba(255, 215, 0, 0.4);
 }
 
 /* ============================= */

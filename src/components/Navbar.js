@@ -1,7 +1,3 @@
-// =============================
-// FIXED NAVBAR (SCROLL-SPY + SLIDING INDICATOR)
-// =============================
-
 import { useEffect, useRef, useState } from "react";
 import "./Navbar.css";
 import logo from "../assets/logo.png";
@@ -14,19 +10,15 @@ const sections = [
     { id: "past", label: "Gallery" },
     { id: "sponsors", label: "Prizes" },
     { id: "contact", label: "Our Team" },
-    { id: "faq", label: "FAQ" },
+    { id: "faq", label: "FAQ'S" },
 ];
 
 export default function Navbar() {
-    const [open, setOpen] = useState(false);
     const [active, setActive] = useState(null);
-
     const linksRef = useRef(null);
     const indicatorRef = useRef(null);
 
-    /* ================================================= */
-    /* SCROLL SPY — detect active section while scrolling */
-    /* ================================================= */
+    /* ================= SCROLL SPY ================= */
     useEffect(() => {
         const sectionEls = sections.map(s =>
             document.getElementById(s.id)
@@ -51,9 +43,7 @@ export default function Navbar() {
         return () => window.removeEventListener("scroll", onScroll);
     }, []);
 
-    /* ================================================= */
-    /* MOVE SLIDING INDICATOR */
-    /* ================================================= */
+    /* ================= SLIDING INDICATOR ================= */
     useEffect(() => {
         if (!active || !linksRef.current || !indicatorRef.current) return;
 
@@ -69,15 +59,40 @@ export default function Navbar() {
         }
     }, [active]);
 
-    /* ================================================= */
-    /* CLICK SCROLL */
-    /* ================================================= */
+    /* ================= RIBBON WIND SWAY ================= */
+    useEffect(() => {
+        const ribbon = document.querySelector(".register-ribbon");
+        if (!ribbon) return;
+
+        const move = (e) => {
+            const rect = ribbon.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+
+            ribbon.style.transform = `
+                rotateX(${(-y / 18)}deg)
+                rotateY(${(x / 18)}deg)
+            `;
+        };
+
+        const reset = () => {
+            ribbon.style.transform = "rotateX(0deg) rotateY(0deg)";
+        };
+
+        ribbon.addEventListener("mousemove", move);
+        ribbon.addEventListener("mouseleave", reset);
+
+        return () => {
+            ribbon.removeEventListener("mousemove", move);
+            ribbon.removeEventListener("mouseleave", reset);
+        };
+    }, []);
+
+    /* ================= SCROLL TO SECTION ================= */
     const scrollTo = (id) => {
         const section = document.getElementById(id);
         if (!section) return;
-
         section.scrollIntoView({ behavior: "smooth" });
-        setOpen(false);
     };
 
     return (
@@ -85,32 +100,11 @@ export default function Navbar() {
             {/* BRAND */}
             <div className="brand" onClick={() => scrollTo("home")}>
                 <img src={logo} alt="HackKRMU Logo" className="brand-logo" />
-                <span
-                    className="logo-text"
-                    style={{
-                        marginLeft: "10px",
-                        color: "#cfd8dc",
-                        textShadow: "0 0 18px rgba(0, 255, 247, 0.8)",
-                        fontWeight: "bold",
-                    }}
-                >
-                    HACK KRMU 5.0
-                </span>
+                <span className="logo-text">HACK KRMU 5.0</span>
             </div>
 
-            {/* HAMBURGER */}
-            <div
-                className="hamburger"
-                onClick={() => setOpen(prev => !prev)}
-            >
-                ☰
-            </div>
-
-            {/* LINKS */}
-            <div
-                ref={linksRef}
-                className={`links ${open ? "show" : ""}`}
-            >
+            {/* CENTER LINKS */}
+            <div ref={linksRef} className="links center">
                 {sections.map(({ id, label }) => (
                     <span
                         key={id}
@@ -120,12 +114,19 @@ export default function Navbar() {
                     >
                         {label}
                     </span>
-                    
                 ))}
-
-                {/* 🔥 SINGLE SLIDING INDICATOR */}
                 <span ref={indicatorRef} className="nav-indicator" />
             </div>
+
+            {/* 🔥 REGISTER RIBBON */}
+            <a
+                href="https://docs.google.com/forms/d/e/YOUR_GOOGLE_FORM_ID/viewform"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="register-ribbon"
+            >
+                <span>REGISTER NOW</span>
+            </a>
         </nav>
     );
 }

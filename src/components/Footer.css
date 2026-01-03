@@ -1,0 +1,201 @@
+.footer {
+    background: transparent;
+    padding: 80px 8% 40px;
+    position: relative;
+    border-top: 1px solid rgba(255, 215, 120, 0.18);
+}
+
+/* ================= GRID ================= */
+
+/* .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 60px;
+} */
+
+/* ================= COLUMNS ================= */
+
+.footer-col h2 {
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+    color: #ecb102;
+    text-shadow: 0 0 12px rgba(236, 177, 2, 0.45);
+}
+
+.footer-col h3 {
+    font-size: 1.1rem;
+    margin-bottom: 14px;
+    color: #ffffff;
+}
+
+.footer-col p {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.6;
+}
+
+/* ================= LINKS ================= */
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col li {
+    margin-bottom: 10px;
+}
+
+.footer-col a {
+    color: #ecb102;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.footer-col a:hover {
+    text-shadow: 0 0 10px rgba(236, 177, 2, 0.8);
+}
+
+/* ================= SOCIAL ICONS ================= */
+
+.footer .socials {
+    display: flex;
+    gap: 14px;
+    margin-top: 18px;
+}
+
+.footer .socials a {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(236, 177, 2, 0.65);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #ecb102;
+    font-size: 0.9rem;
+
+    background: radial-gradient(
+        circle at center,
+        rgba(236, 177, 2, 0.18),
+        rgba(0, 0, 0, 0.95)
+    );
+
+    box-shadow:
+        0 0 14px rgba(236, 177, 2, 0.45);
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.footer .socials a:hover {
+    transform: scale(1.15);
+    box-shadow:
+        0 0 26px rgba(236, 177, 2, 0.9);
+}
+
+/* ================= MAP ================= */
+
+.footer-col.map iframe {
+    width: 100%;
+    height: 180px;
+    border-radius: 14px;
+    border: 1px solid rgba(236, 177, 2, 0.3);
+    filter: grayscale(100%) brightness(0.85);
+}
+
+/* ================= BOTTOM TEXT ================= */
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 60px;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* ================= SCROLL TO TOP (UPGRADED) ================= */
+
+.scroll-top {
+    position: absolute;
+    right: 28px;
+    bottom: 28px;
+
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #ecb102;
+
+    background: radial-gradient(
+        circle at center,
+        rgba(236, 177, 2, 0.35),
+        rgba(0, 0, 0, 0.95)
+    );
+
+    border: 1.5px solid rgba(236, 177, 2, 0.7);
+    cursor: pointer;
+
+    box-shadow:
+        0 0 14px rgba(236, 177, 2, 0.65),
+        0 0 30px rgba(236, 177, 2, 0.4);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+/* HUD ROTATING RING */
+.scroll-top::before {
+    content: "";
+    position: absolute;
+    inset: -6px;
+    border-radius: 50%;
+    border: 1px dashed rgba(236, 177, 2, 0.45);
+    animation: rotateHUD 14s linear infinite;
+}
+
+.scroll-top:hover {
+    transform: translateY(-6px) scale(1.1);
+    box-shadow:
+        0 0 26px rgba(236, 177, 2, 0.95),
+        0 0 60px rgba(236, 177, 2, 0.55);
+}
+
+.scroll-top:active {
+    transform: scale(0.95);
+}
+
+@keyframes rotateHUD {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .scroll-top {
+        width: 46px;
+        height: 46px;
+        font-size: 1.2rem;
+    }
+}

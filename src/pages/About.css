@@ -1,46 +1,162 @@
 .about-page {
-    padding: 120px 8% 100px;
+    padding: 0px 8% 120px;
     color: white;
 }
 
-/* ================= TOP ================= */
+/* ================= HERO TITLE STYLE (YOUR EXACT REQUIREMENT) ================= */
+
+.hero-title {
+    color: white;
+    font-weight: 800;
+    font-size: 6rem;
+    font-family: 'TransformersMovie', sans-serif;
+    text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 0;
+    margin-top: 20px;
+    line-height: 1;
+    margin-bottom: -10px;
+}
+
+/* ================= ABOUT HEADING ================= */
+
+.about-heading {
+    position: relative;
+    text-align: center;
+    margin-bottom: 60px;
+    padding-top: 20px;
+}
+
+/* Ghost background text */
+
+.about-ghost {
+    position: absolute;
+    top: 35%;                 /* ✅ center vertically */
+    left: 49.5%;
+    transform: translate(-50%, -50%);
+    font-display: block;
+
+    font-size: 8rem; /* ✅ MUCH wider */
+    font-weight: 800;
+    letter-spacing: 1px;
+
+    color: rgba(255, 255, 255, 0.10);    /* ✅ softer */
+    filter: blur(1px);                    /* depth */
+
+    font-family: 'TransformersMovie', sans-serif;
+    white-space: nowrap;
+    pointer-events: none;
+    user-select: none;
+
+    animation: ghostFloat 20s ease-in-out infinite;
+}
+
+
+/* Foreground ABOUT US */
+.about-main-title {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes ghostFloat {
+    0%, 100% { transform: translate(-50%, -50%); }
+    50% { transform: translate(-50%, -52%); }
+}
+
+@keyframes focusPulse {
+    0%, 100% { opacity: 0.6; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.1); }
+}
+
+/* ================= CONTENT ================= */
 
 .about-top {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 60px;
-    align-items: center;
+    display: block;          /* 👈 simplest fix */
+    max-width: 900px;
+    margin: 0 auto 120px;    /* centers content */
 }
 
-.about-left h2 {
-    font-size: 2.6rem;
-    margin-bottom: 20px;
+
+.about-left {
+    max-width: 900px;
+    margin: 0 auto;   /* center text block */
 }
+
+
+/* .about-left h2 {
+    font-size: 3.5rem;
+    margin-bottom: 24px;
+} */
 
 .about-left p {
     color: #cfd8dc;
-    font-size: 1.05rem;
-    line-height: 1.8;
+    font-size: 1.1rem;
+    line-height: 1.9;
     margin-bottom: 18px;
+    font-family: 'teko', sans-serif;
+    letter-spacing: 1px;
 }
 
-.about-right img {
-    position: relative;
+
+/* .about-right img {
     width: 100%;
+    max-width: 460px;
     border-radius: 16px;
     box-shadow: 0 0 40px rgba(0, 255, 247, 0.25);
-    margin-left: -20px;
-    display: block;
-    block-size: 350px;
-    width: 450px;
-}
+} */
 
 /* ================= PARTNERS ================= */
 
+
+.partners-heading {
+    position: relative;
+    text-align: center;
+    margin-top: 120px;
+}
+
+/* Ghost text */
+.partners-ghost {
+    position: absolute;
+    top: 2%;                 /* center vertically */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-display: block;
+
+    font-size: 7.5rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+
+    color: rgba(255, 255, 255, 0.10);
+    filter: blur(1px);
+
+    font-family: 'TransformersMovie', sans-serif;
+    white-space: nowrap;
+    pointer-events: none;
+    user-select: none;
+
+    animation: ghostFloat 20s ease-in-out infinite;
+    margin-bottom: 10px;
+}
+
+/* Foreground text */
+.partners-main-title {
+    position: relative;
+    z-index: 2;
+}
+
+
 .partners-title {
     text-align: center;
-    font-size: 2.2rem;
-    margin: 100px 0 40px;
+    font-size: 3.5rem;
+    margin: 140px 0 70px;
+    margin-top: 100px;
 }
 
 .partners-grid {
@@ -56,8 +172,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
     transition: transform 0.3s ease;
+}
+
+.partner-card:hover {
+    transform: translateY(-6px);
 }
 
 .partner-card img {
@@ -66,49 +186,137 @@
     object-fit: contain;
 }
 
-.partner-card:hover {
-    transform: translateY(-6px);
+/* ================= PARTNERS – MOVING ROWS ================= */
+
+.partners-section {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    overflow: hidden;
 }
 
-/* ================= SPONSOR CTA ================= */
+/* 🔒 Fixed top row */
+.partners-fixed {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 80px;
+    margin-bottom: 50px;
+}
+
+/* 🚆 Marquee rows */
+.partners-marquee {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding: 20px 0;   /* ✅ THIS FIXES TOP CUTTING */
+    pointer-events: none;  /* prevents hover issues */
+}
+
+.partners-marquee .partner-card {
+    pointer-events: auto;
+}
+
+.partners-marquee .partner-card:hover ~ .marquee-track,
+.partners-marquee:hover .marquee-track {
+    animation-play-state: running;
+}
+
+.marquee-track {
+    display: flex;
+    gap: 30px;
+    width: max-content;
+    align-items: center;   /* ✅ keeps cards vertically centered */
+}
+
+/* Left → Right */
+.partners-marquee.left .marquee-track {
+    animation: marquee-left 5s linear infinite;
+}
+
+/* Right → Left */
+.partners-marquee.right .marquee-track {
+    animation: marquee-right 5s linear infinite;
+}
+
+/* Smooth infinite motion */
+@keyframes marquee-left {
+    from { transform: translateX(-30%); }
+    to { transform: translateX(0%); }
+}
+
+@keyframes marquee-right {
+    from { transform: translateX(0%); }
+    to { transform: translateX(-30%); }
+}
+
+/* Hover pause (premium feel) */
+.partners-marquee:hover .marquee-track {
+    animation-play-state: paused;
+}
+
+/* ================= FIXED PARTNERS – SMALLER CARDS ================= */
+
+.partners-fixed .partner-card {
+    width: 180px;      /* 🔥 controls card width */
+    height: 90px;      /* 🔥 controls card height */
+
+    padding: 12px;
+    border-radius: 16px;
+
+    background: linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #f5f5f5 100%
+    );
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.25),
+        inset 0 1px 0 rgba(255,255,255,0.7);
+
+        margin-bottom: 20px;
+}
+
+.partners-fixed .partner-card img {
+    max-width: 110px;       /* ↓ smaller logo */
+    max-height: 48px;
+}
+
+
+
+/* ================= CTA ================= */
 
 .sponsor-cta {
-    margin-top: 80px;
+    margin-top: 100px;
     display: flex;
     justify-content: center;
 }
 
 .sponsor-btn {
-    padding: 16px 44px;
-    font-family: "Orbitron", monospace;
+    padding: 18px 50px;
+    font-family: "TransformersMovie", sans-serif;
     font-size: 2rem;
     letter-spacing: 2px;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    border-radius: 50px;
     text-decoration: none;
-
-    color: #00fff7;
-    border: 2px solid #00fff7;
-    border-radius: 40px;
-
     background: transparent;
-
     box-shadow:
-        0 0 14px rgba(0, 255, 247, 0.5),
-        inset 0 0 10px rgba(0, 255, 247, 0.2);
-
+        0 0 18px rgb(247, 247, 247);
     transition: all 0.35s ease;
+    margin-bottom: -80px;
+    margin-top: 30px;
 }
 
 .sponsor-btn:hover {
+    background: #ffffff;
     color: #000;
-    background: #00fff7;
-
+    text-shadow: none !important;
     box-shadow:
-        0 0 30px rgba(0, 255, 247, 0.9),
-        0 0 80px rgba(0, 255, 247, 0.5);
-
-    transform: translateY(-2px);
+        0 0 40px rgba(0, 0, 0, 0.9);
+    transform: translateY(-3px);
 }
-
 
 /* ================= RESPONSIVE ================= */
 
@@ -120,5 +328,9 @@
 
     .partners-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero-title {
+        font-size: 3.8rem;
     }
 }

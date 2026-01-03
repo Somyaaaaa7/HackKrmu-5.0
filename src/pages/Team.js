@@ -32,7 +32,7 @@ const Card = ({
 
         {/* 📞 Contact number (ONLY if provided) */}
         {phone && (
-            <div className="phone" style={{marginLeft:"-10px"}}>
+            <div className="phone" style={{ marginLeft: "-10px" }}>
                 📞 <a href={`tel:${phone}`}>{phone}</a>
             </div>
         )}
@@ -70,9 +70,12 @@ const Card = ({
 export default function Team() {
     return (
         <div className="team-section">
-            <h2 className="section-title" style={{ marginTop: "-80px" }}>
-                OUR TEAM
-            </h2>
+            <div className="team-heading-wrapper">
+                <span className="team-ghost">OUR TEAM</span>
+                <h2 className="hero-title team-main-title">
+                    OUR TEAM
+                </h2>
+            </div>
 
             {/* ================= CONVENORS ================= */}
             <div className="team-grid">
@@ -103,7 +106,7 @@ export default function Team() {
 
             {/* ================= STUDENT ORGANIZERS ================= */}
             <div className="team-grid2">
-                
+
                 <Card
                     image={krish}
                     name="Krish Agarwal"

@@ -4,7 +4,7 @@
 
 .prizes-page {
     min-height: 100vh;
-    padding: 140px 20px;
+    padding: 150px 20px;
     background: #000;
     display: flex;
     flex-direction: column;
@@ -13,16 +13,47 @@
 }
 
 /* ================================================= */
-/* TITLE */
+/*                       TITLE */
 /* ================================================= */
 
-.prizes-heading {
-    font-size: 3.4rem;
-    margin-bottom: 120px;
-    color: #ffffff;
-    letter-spacing: 4px;
-    text-shadow: 0 0 18px rgba(0, 255, 247, 0.8);
+/* ================= PRIZES HEADING ================= */
+
+.prizes-heading-wrapper {
+    position: relative;
+    text-align: center;
+    margin-bottom: 140px;
+    margin-top: -130px; /* keeps your layout exactly */
 }
+
+/* Ghost text */
+.prizes-ghost {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-display: block;
+
+    font-size: 8rem;
+    font-weight: 800;
+    letter-spacing: 4px;
+
+    color: rgba(255, 255, 255, 0.10);
+    filter: blur(1px);
+
+    font-family: 'TransformersMovie', sans-serif;
+    white-space: nowrap;
+    pointer-events: none;
+    user-select: none;
+
+    animation: ghostFloat 20s ease-in-out infinite;
+}
+
+/* Foreground title */
+.prizes-main-title {
+    position: relative;
+    z-index: 2;
+}
+
 
 /* ================================================= */
 /* PODIUM */
@@ -72,6 +103,7 @@
 
 /* TITLE */
 .prize-title {
+
     font-size: 1rem;
     opacity: 0.85;
 }

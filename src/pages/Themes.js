@@ -20,9 +20,11 @@ const themes = [
 export default function Themes() {
     return (
         <section className="themes-page">
-            <h2 className="section-title" style={{ marginTop: "-100px", marginBottom: "40px" }}>
-                THEMES
-            </h2>
+            <div className="themes-heading">
+                
+                <span className="themes-ghost">THEMES</span>
+                <h2 className="hero-title themes-main-title">THEMES</h2>
+            </div>
 
             <div className="theme-grid">
                 {themes.map((theme, index) => (

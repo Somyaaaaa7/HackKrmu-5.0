@@ -37,15 +37,19 @@ export default function FAQ() {
 
   return (
     <section className="faq-page">
-      <h1 className="section-title" style={{marginTop:"-110px", marginBottom: "70px"}}>Frequently Asked Questions</h1>
+      <div className="faq-heading-wrapper">
+        <span className="faq-ghost">FAQ</span>
+        <h1 className="hero-title faq-main-title">
+          FAQ'S
+        </h1>
+      </div>
 
       <div className="faq-container">
         {faqs.map((item, index) => (
           <div
             key={index}
-            className={`faq-item ${
-              activeIndex === index ? "active" : ""
-            }`}
+            className={`faq-item ${activeIndex === index ? "active" : ""
+              }`}
           >
             <button
               className="faq-question"

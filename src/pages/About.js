@@ -1,7 +1,5 @@
 import "./About.css";
-
-// Main image
-import aboutMain from "../assets/about/about.jpg";
+// import aboutMain from "../assets/about/about.jpg";
 
 // Partner logos
 import iskcon from "../assets/about/iskcon.png";
@@ -32,124 +30,109 @@ import devlovers from "../assets/about/devlovers.png";
 
 export default function About() {
     return (
-        <section className="about-page">
-            {/* ================= TOP SECTION ================= */}
+        <section className="about-page" id="about">
+
+            {/* ================= HEADING ================= */}
+            <div className="about-heading">
+                <span className="about-ghost">ABOUT US</span>
+                <h1 className="hero-title about-main-title">ABOUT US</h1>
+            </div>
+
+            {/* ================= CONTENT ================= */}
             <div className="about-top">
                 <div className="about-left">
+                    {/* <h2>What is Hack KRMU?</h2> */}
 
-                    <h2 style={{ marginTop: "-125px", marginLeft: "-140px", fontSize: "50px" }}>What is Hack KRMU?</h2>
-
-                    <p style={{ marginTop: "60px", marginLeft: "-150px" }}>
-                        HackKRMU is the flagship annual hackathon hosted by KR Mangalam University, bringing together innovators, developers, designers, and problem-solvers from across the country under one roof.
+                    <p>
+                        HackKRMU is the flagship annual hackathon hosted by KR Mangalam University,
+                        bringing together innovators, developers, designers, and problem-solvers
+                        from across the country under one roof.
                     </p>
 
-                    <p style={{ marginLeft: "-155px" }}>
-                        With the 5th iteration, HackKRMU is set to mark its biggest and most ambitious edition ever. What started as a campus initiative has now grown into a large-scale innovation festival, witnessing 1200+ participants, 200+ teams, and an ever-growing community of tech enthusiasts in previous editions.
+                    <p>
+                        With the 5th iteration, HackKRMU is set to mark its biggest and most ambitious
+                        edition ever. What started as a campus initiative has now grown into a
+                        large-scale innovation festival with 1200+ participants and 200+ teams.
                     </p>
 
-                    <p style={{ marginLeft: "-175px" }}>
-                        HackKRMU 5.0 is more than just a hackathon ,it’s a 54-hour journey of creativity, collaboration, and cutting-edge innovation. Participants will work on real-world problem statements, explore emerging technologies, attend expert-led sessions, and compete for exciting prizes, recognition, and opportunities.
-                        This milestone edition aims to push boundaries, encourage bold ideas, and create solutions that matter making HackKRMU 5.0 a platform where ideas turn into impact.
-                    </p>
-
-                </div>
-
-                <div className="about-right">
-                    <img src={aboutMain} alt="Hack KRMU Winners" />
-
-                    <p style={{ marginLeft: "50px", marginTop:"50px", color: "#000000ff", }}>
-                        .
+                    <p>
+                        HackKRMU 5.0 is more than just a hackathon — it’s a 54-hour journey of creativity,
+                        collaboration, and innovation where ideas turn into real-world impact.
                     </p>
                 </div>
+
+                {/* <div className="about-right">
+                    <img src={aboutMain} alt="Hack KRMU Event" />
+                </div> */}
+
             </div>
 
             {/* ================= PARTNERS ================= */}
-            <h3 className="partners-title" style={{ fontSize: "50px", marginBottom: "70px", marginTop: "100px" }}>Our Trusted Partners</h3>
 
-            <div className="partners-grid">
-                <div className="partner-card">
-                    <img src={iskcon} alt="ISKCON Gurugram" />
+            <div className="partners-heading">
+                <span className="partners-ghost">OUR TRUSTED PARTNERS</span>
+                <h5 className="hero-title partners-main-title">
+                    OUR TRUSTED PARTNERS
+                </h5>
+
+                {/* 🔒 FIXED TOP ROW (first 5) */}
+                <div className="partners-fixed">
+                    {[iskcon, codingninjas, hackquest, gdg, mindspark].map((logo, i) => (
+                        <div className="partner-card" key={i}>
+                            <img src={logo} alt="Partner Logo" />
+                        </div>
+                    ))}
                 </div>
-                <div className="partner-card">
-                    <img src={codingninjas} alt="Coding Ninjas" />
+
+                {/* ➡️ MOVING ROW 1 (left → right) */}
+                <div className="partners-marquee left">
+                    <div className="marquee-track">
+                        {[
+                            codeoncampus, hacktheleague, givemycertificate, ocd, msla,
+                            thepublicsquare, hackthemountains, devstation, threeway, ooview,
+                            // 🔁 duplicate starts
+                            codeoncampus, hacktheleague, givemycertificate, ocd, msla,
+                            thepublicsquare, hackthemountains, devstation, threeway, ooview,
+                            // 🔁 duplicate starts
+                            codeoncampus, hacktheleague, givemycertificate, ocd, msla,
+                            thepublicsquare, hackthemountains, devstation, threeway, ooview
+                        ].map((logo, i) => (
+                            <div className="partner-card" key={i}>
+                                <img src={logo} alt="Partner Logo" />
+                            </div>
+                        ))}
+                    </div>
                 </div>
-                <div className="partner-card">
-                    <img src={hackquest} alt="HackQuest" />
+
+                {/* ⬅️ MOVING ROW 2 (right → left) */}
+                <div className="partners-marquee right">
+                    <div className="marquee-track" style={{ marginBottom: "-20px" }}>
+                        {[
+                            sudanstech, ccg, hackcbs, azure, oreodroiders,
+                            devsdungeon, tversiton, codesetgo, tfc, devlovers,
+                            // 🔁 duplicate starts
+                            sudanstech, ccg, hackcbs, azure, oreodroiders,
+                            devsdungeon, tversiton, codesetgo, tfc, devlovers,
+                            // 🔁 duplicate starts
+                            sudanstech, ccg, hackcbs, azure, oreodroiders,
+                            devsdungeon, tversiton, codesetgo, tfc, devlovers,
+                        ].map((logo, i) => (
+                            <div className="partner-card" key={i}>
+                                <img src={logo} alt="Partner Logo" />
+                            </div>
+                        ))}
+
+                    </div>
                 </div>
-                <div className="partner-card">
-                    <img src={gdg} alt="GDG Cloud Noida" />
-                </div>
-                <div className="partner-card">
-                    <img src={mindspark} alt="MindSpark Technology" />
-                </div>
-                <div className="partner-card">
-                    <img src={codeoncampus} alt="Code On Campus" />
-                </div>
-                <div className="partner-card">
-                    <img src={hacktheleague} alt="HackTheLeague" />
-                </div>
-                <div className="partner-card">
-                    <img src={givemycertificate} alt="Give My Certificate" />
-                </div>
-                <div className="partner-card">
-                    <img src={ocd} alt="OCD" />
-                </div>
-                <div className="partner-card">
-                    <img src={msla} alt="MSLA" />
-                </div>
-                <div className="partner-card">
-                    <img src={thepublicsquare} alt="The Public Square" />
-                </div>
-                <div className="partner-card">
-                    <img src={hackthemountains} alt="Hack The Mountains" />
-                </div>
-                <div className="partner-card">
-                    <img src={devstation} alt="DevStation" />
-                </div>
-                <div className="partner-card">
-                    <img src={threeway} alt="ThreeWay" />
-                </div>
-                <div className="partner-card">
-                    <img src={ooview} alt="OOView" />
-                </div>
-                <div className="partner-card">
-                    <img src={sudanstech} alt="Sudan Tech" />
-                </div>
-                <div className="partner-card">
-                    <img src={ccg} alt="CCG" />
-                </div>
-                <div className="partner-card">
-                    <img src={hackcbs} alt="HackCBS" />
-                </div>
-                <div className="partner-card">
-                    <img src={azure} alt="Azure" />
-                </div>
-                <div className="partner-card">
-                    <img src={oreodroiders} alt="Oreo Droiders" />
-                </div>
-                <div className="partner-card">
-                    <img src={devsdungeon} alt="DevDungeon" />
-                </div>
-                <div className="partner-card">
-                    <img src={tversiton} alt="Tversiton" />
-                </div>
-                <div className="partner-card">
-                    <img src={codesetgo} alt="CodeSetGo" />
-                </div>
-                <div className="partner-card">
-                    <img src={tfc} alt="TFC" />
-                </div>
-                <div className="partner-card">
-                    <img src={devlovers} alt="DevLovers" />
-                </div>
+
+                <div className="sponsor-cta">
+                        <a href="/sponsorship" className="sponsor-btn">
+                            BECOME OUR SPONSOR
+                        </a>
+                    </div>
+
             </div>
 
-            {/* ================= SPONSORSHIP CTA ================= */}
-            <div className="sponsor-cta">
-                <a href="/sponsorship" className="sponsor-btn" style={{ marginBottom: "-60px" }}>
-                    BECOME OUR SPONSOR
-                </a>
-            </div>
         </section>
     );
 }

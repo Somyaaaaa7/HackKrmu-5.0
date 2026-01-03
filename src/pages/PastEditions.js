@@ -87,9 +87,13 @@ const rows = [
 export default function PastEditions() {
     return (
         <section className="past-gallery">
-            <h2 className="section-title" style={{ marginTop: "-100px", marginBottom: "90px", fontFamily: "Orbitron, monospace"}}>
-                GALLERY
-            </h2>
+            
+            <div className="gallery-heading">
+                <span className="gallery-ghost">GALLERY</span>
+                <h2 className="hero-title gallery-main-title">
+                    GALLERY
+                </h2>
+            </div>
 
             <div className="honeycomb">
                 {rows.map((row, r) => (

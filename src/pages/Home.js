@@ -10,7 +10,7 @@ import Timeline from "../components/Timeline";
 import PastEditions from "./PastEditions";
 import Sponsors from "./Prizes";
 import Contact from "./Team";
-import krmuBanner from "../assets/krmu-banner.png";
+// import krmuBanner from "../assets/krmu-banner.png";
 import About from "./About";
 import GlitchText from "../components/GlitchText";
 import Countdown from "../components/Countdown"
@@ -53,21 +53,21 @@ export default function Home() {
             {/* ================================================= */}
             <section id="home" className="page-section home">
 
-                {/* KRMU UNIVERSITY BANNER */}
+                {/* KRMU UNIVERSITY BANNER
                 <img style={{ marginBottom: "-20px" }}
                     src={krmuBanner}
                     alt="K R Mangalam University"
                     className="krmu-banner"
-                />
+                /> */}
 
                 {/* HERO */}
                 <h1 className="hero-title" style={{ marginTop: "37px" }}>
-                    <span className="hero-normal" style={{ marginRight: "30px" }} >HACK KRMU </span>
+                    <span className="hero-normal" style={{ marginRight: "30px", }} >HACK KRMU </span>
                     <GlitchText text="5.0" />
                 </h1>
 
                 {/* EVENT DATE */}
-                <div className="event-dates" style={{ fontSize: "30px", marginBottom: "30px", marginTop: "-10px" }}>
+                <div className="event-dates" style={{ fontSize: "30px", marginBottom: "30px", marginTop: "30px" }}>
                     18<span>th</span> Feb – 20<span>th</span> Feb 2026
                 </div>
 
@@ -187,7 +187,7 @@ export default function Home() {
                 <FAQ />
             </section>
 
-            <Divider />
+            {/* <Divider /> */}
 
         </>
     );
