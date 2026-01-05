@@ -82,7 +82,8 @@
 
 .timeline-tabs button:hover {
     border-color: #ffffff;
-    box-shadow: 0 0 12px rgba(0, 255, 247, 0.6);
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.6);
+    background-color: #ffffff;
 }
 
 .timeline-tabs .active {
@@ -105,6 +106,8 @@
     font-family: 'transformersmovie', sans-serif;
     font-weight: 100;
     font-style: normal;
+    font-size: 2.5rem;
+    letter-spacing: 0.3rem;
     position: relative;
     max-width: 900px;
     margin: auto;
@@ -185,7 +188,7 @@
 }
 
 /* MOBILE */
-@media (max-width: 900px) {
+/* @media (max-width: 900px) {
     .event {
         width: 100%;
         left: 0 !important;
@@ -201,4 +204,4 @@
     .dot {
         left: 13px !important;
     }
-}
+} */

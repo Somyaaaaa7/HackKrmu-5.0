@@ -120,7 +120,7 @@ export default function Team() {
                 <Card
                     image={krish}
                     name="Krish Agarwal"
-                    role="Operations Head"
+                    role="Operations Lead"
                     phone="+91 9310189324"
                     linkedin="https://www.linkedin.com/in/krish-agarwal-140920301/"
                     instagram="https://www.instagram.com/_aggarwal_krish_?igsh=MXJ4djRoNmdqcHgxbA=="
@@ -129,7 +129,7 @@ export default function Team() {
                 <Card
                     image={somya}
                     name="Somya Sharma"
-                    role="Technical Head"
+                    role="Technical Lead"
                     phone="+91 9205038742"
                     linkedin="https://www.linkedin.com/in/somya-sharma-486a22305/"
                     instagram="https://www.instagram.com/somyaaaaa.7?igsh=ZXAzbGU0N3I5emt2&utm_source=qr"
@@ -138,7 +138,7 @@ export default function Team() {
                 <Card
                     image={anuj}
                     name="Anuj Narain"
-                    role="Event Head"
+                    role="Event Lead"
                     phone="+91 9811625462"
                     linkedin="https://www.linkedin.com/in/narainanuj/"
                     instagram="https://www.instagram.com/anuj_narain?igsh=MXJ6dWs2ZTRxdnBhag=="

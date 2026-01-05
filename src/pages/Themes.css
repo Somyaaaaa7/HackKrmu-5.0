@@ -172,7 +172,7 @@
 /* RESPONSIVE */
 /* ============================= */
 
-@media (max-width: 1024px) {
+/* @media (max-width: 1024px) {
     .theme-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -186,4 +186,4 @@
     .theme-card {
         width: 90vw;
     }
-}
+} */

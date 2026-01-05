@@ -158,7 +158,7 @@
    MOBILE
 ============================= */
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     .countdown {
         flex-wrap: wrap;
         gap: 14px;
@@ -172,4 +172,4 @@
     .time-box span {
         font-size: 1.6rem;
     }
-}
+} */

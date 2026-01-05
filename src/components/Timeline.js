@@ -13,15 +13,20 @@ const schedule = {
             ["4:00 PM", "Mentor Session"],
             ["8:00 PM", "Dinner"],
             ["10:00 PM", "DJ Night"],
+            ["11:00 PM", "Judgement Round 1"],
         ],
     },
     development: {
         // title: "Day 2 – 19 FEB · Development Day",
         title: "Day 2 – 19 FEB",
         events: [
-            ["10:00 AM", "Mid Evaluation"],
-            ["2:00 PM", "Mentor Review"],
-            ["11:59 PM", "Submission Freeze"],
+            ["12:00 AM", "Redbull Fun Activity"],
+            ["7:00 AM", "Result Announcement"],
+            ["7:30 AM", "Breakfast"],
+            ["12:00 PM", "Mentor Session"],
+            ["1:00 PM", "Lunch"],
+            ["4:00 PM", "Mentor Session"],
+            ["8:00 PM", "Dinner"],
         ],
     },
     final: {
@@ -30,9 +35,11 @@ const schedule = {
         events: [
             ["1:00 AM", "Judging Round 2"],
             ["7:00 AM", "Result Announcement"],
+            ["7:30 AM", "Breakfast"],
             ["10:00 AM", "Final Round"],
             ["1:00 PM", "Lunch"],
-            ["3:30 PM", "Closing Ceremony"],
+            ["2:00 PM", "Winner Announcement"],
+            ["2:30 PM", "Closing Ceremony"],
         ],
     },
 };

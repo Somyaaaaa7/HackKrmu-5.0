@@ -9,8 +9,10 @@
     font-family: 'Orbitron', monospace;
     margin-left: '50px';
     font-style: italic;
-    font-size: 4rem;
+    font-size: 5rem;
     letter-spacing: 4px;
+
+    margin-top: 5px;
 
     color: white;
     text-shadow: none;

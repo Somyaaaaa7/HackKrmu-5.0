@@ -48,10 +48,10 @@
 .hero-title {
     color: white;
     font-weight: 800;
-    font-size: 5.5rem;
+    font-size: 6rem;
     font-family: 'TransformersMovie', sans-serif;
     text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
-    letter-spacing: -0.025em;
+    /* letter-spacing: -0.025em; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -374,7 +374,26 @@ html {
     transform: scale(0.95);
 }
 
-/* ================= RESPONSIVE ================= */
+
+/* ================================================= */
+/* RESPONSIVE */
+/* ================================================= */
+
+/* @media (max-width: 900px) {
+    .prize-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .glitch {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .krmu-banner {
+        max-width: 100%;
+    }
+}
 
 @media (max-width: 768px) {
     .hero-cta {
@@ -387,27 +406,4 @@ html {
         width: 52px;
         height: 52px;
     }
-}
-
-
-
-/* ================================================= */
-/* RESPONSIVE */
-/* ================================================= */
-
-@media (max-width: 900px) {
-    .prize-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .glitch {
-        font-size: 3rem;
-    }
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .krmu-banner {
-        max-width: 100%;
-    }
-}
+} */

@@ -177,7 +177,7 @@
 /* RESPONSIVE (KEEPS SHAPE) */
 /* ============================= */
 
-@media (max-width: 1200px) {
+/* @media (max-width: 1200px) {
     .hex-wrap {
         width: 200px;
         height: 175px;
@@ -200,4 +200,4 @@
         margin-bottom: 0;
         flex-wrap: wrap;
     }
-}
+} */

@@ -341,7 +341,7 @@
 
 /* ================= RESPONSIVE ================= */
 
-@media (max-width: 1024px) {
+/* @media (max-width: 1024px) {
     .about-top {
         grid-template-columns: 1fr;
         text-align: center;
@@ -354,4 +354,4 @@
     .hero-title {
         font-size: 3.8rem;
     }
-}
+} */

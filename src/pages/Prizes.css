@@ -316,7 +316,7 @@
 /* MOBILE */
 /* ================================================= */
 
-@media (max-width: 900px) {
+/* @media (max-width: 900px) {
     .podium-wrapper {
         flex-direction: column;
         gap: 90px;
@@ -325,4 +325,4 @@
     .podium-base {
         display: none;
     }
-}
+} */

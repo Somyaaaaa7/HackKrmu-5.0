@@ -193,7 +193,7 @@
 
 /* ================= RESPONSIVE ================= */
 
-@media (max-width: 900px) {
+/* @media (max-width: 900px) {
     .footer-grid {
         grid-template-columns: 1fr 1fr;
         gap: 28px;
@@ -213,4 +213,4 @@
     .brand-socials {
         justify-content: center;
     }
-}
+} */
