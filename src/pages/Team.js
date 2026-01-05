@@ -112,15 +112,15 @@ export default function Team() {
             {/* ================= STUDENT ORGANIZERS ================= */}
 
             <div className="role-heading2">
-                <h2>STUDENT ORGANIZERS</h2>
+                <h2>LEAD ORGANIZERS</h2>
             </div>
 
-            <div className="team-grid2">
+            <div className="team-grid">
 
                 <Card
                     image={krish}
                     name="Krish Agarwal"
-                    role="Sponsorship Head"
+                    role="Operations Head"
                     phone="+91 9310189324"
                     linkedin="https://www.linkedin.com/in/krish-agarwal-140920301/"
                     instagram="https://www.instagram.com/_aggarwal_krish_?igsh=MXJ4djRoNmdqcHgxbA=="
@@ -138,7 +138,7 @@ export default function Team() {
                 <Card
                     image={anuj}
                     name="Anuj Narain"
-                    role="Operations Head"
+                    role="Event Head"
                     phone="+91 9811625462"
                     linkedin="https://www.linkedin.com/in/narainanuj/"
                     instagram="https://www.instagram.com/anuj_narain?igsh=MXJ6dWs2ZTRxdnBhag=="

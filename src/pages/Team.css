@@ -14,8 +14,8 @@
     margin-top: 70px !important;
     margin-bottom: 80px;
 
-    font-family: "transformersmovie";
-    font-size: 2.5rem !important;
+    font-family: "TransformersMovie" sans-serif;
+    font-size: 3rem !important;
     font-weight: 600;
     font-style: normal;
     color: #ffffff;
@@ -24,10 +24,10 @@
 
 .role-heading2 {
     margin-top: 90px;
-    margin-bottom: -5px;
+    margin-bottom: 85px;
 
-    font-family: "transformersmovie";
-    font-size: 2.5rem !important;
+    font-family: "TransformersMovie" sans-serif;
+    font-size: 3rem !important;
     font-weight: 600;
     font-style: normal;
     color: #ffffff;

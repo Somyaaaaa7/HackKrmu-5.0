@@ -8,8 +8,8 @@ export default function Footer() {
                 {/* BRAND */}
                 <div className="footer-col brand">
                     <div className="brand-stack">
-                        <span className="brand-title" style={{marginBottom: '15px'}}>HACK KRMU 5.0</span>
-                        <span className="brand-sub" style={{marginBottom: '15px'}}>International Hackathon</span>
+                        <span className="brand-title" style={{marginBottom: '25px'}}>HACK KRMU 5.0</span>
+                        <span className="footer-col" style={{marginBottom: '10px'}}>Social Media</span>
                         <div className="brand-socials">
                             <a
                                 href="https://www.instagram.com/hackkrmu.official"
