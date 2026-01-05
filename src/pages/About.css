@@ -27,7 +27,7 @@
 .about-heading {
     position: relative;
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 50px;
     padding-top: 20px;
 }
 
@@ -231,12 +231,12 @@
 
 /* Left → Right */
 .partners-marquee.left .marquee-track {
-    animation: marquee-left 5s linear infinite;
+    animation: marquee-left 15s linear infinite;
 }
 
 /* Right → Left */
 .partners-marquee.right .marquee-track {
-    animation: marquee-right 5s linear infinite;
+    animation: marquee-right 15s linear infinite;
 }
 
 /* Smooth infinite motion */

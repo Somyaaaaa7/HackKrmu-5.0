@@ -63,11 +63,11 @@ export default function Home() {
                 {/* HERO */}
                 <h1 className="hero-title" style={{ marginTop: "37px" }}>
                     <span className="hero-normal" style={{ marginRight: "30px", }} >HACK KRMU </span>
-                    <GlitchText text="5.0" />
+                    <span className="hero-glitch" style={{ fontSize: "5rem" }}><GlitchText text="5.0" /></span>
                 </h1>
 
                 {/* EVENT DATE */}
-                <div className="event-dates" style={{ fontSize: "30px", marginBottom: "30px", marginTop: "30px" }}>
+                <div className="event-dates" style={{ fontSize: "30px", marginBottom: "50px", marginTop: "50px" }}>
                     18<span>th</span> Feb – 20<span>th</span> Feb 2026
                 </div>
 
@@ -85,9 +85,19 @@ export default function Home() {
                         REGISTER NOW
                     </a>
 
+                    <a
+                        href="https://www.instagram.com/hackkrmu.official"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="insta-btn"
+                        aria-label="Instagram"
+                    >
+                        IG
+                    </a>
+
                     {/* 👇 NEW TEXT */}
                     <p className="tagline-below">
-                        54 Hours • 2 Days • 1 Amazing Experience
+                        54 Hours • 3 Days • 1 Amazing Experience
                     </p>
 
                 </div>

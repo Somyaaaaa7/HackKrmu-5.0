@@ -10,6 +10,30 @@
     text-align: center;
 }
 
+.role-heading {
+    margin-top: 70px !important;
+    margin-bottom: 80px;
+
+    font-family: "transformersmovie";
+    font-size: 2.5rem !important;
+    font-weight: 600;
+    font-style: normal;
+    color: #ffffff;
+    text-shadow: none !important;
+}
+
+.role-heading2 {
+    margin-top: 90px;
+    margin-bottom: -5px;
+
+    font-family: "transformersmovie";
+    font-size: 2.5rem !important;
+    font-weight: 600;
+    font-style: normal;
+    color: #ffffff;
+    text-shadow: none !important;
+}
+
 /* ================= TEAM HEADING ================= */
 
 .team-heading-wrapper {

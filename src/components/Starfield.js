@@ -95,7 +95,7 @@ export default function Starfield() {
 
             // ✨ BRIGHT STAR SETTINGS
             ctx.strokeStyle = "rgba(255, 255, 255, 1)";
-            ctx.lineWidth = 2;
+            ctx.lineWidth = 4;
             ctx.shadowBlur = 20;
             ctx.shadowColor = "rgba(255, 255, 255, 0.95)";
 

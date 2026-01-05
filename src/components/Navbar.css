@@ -179,6 +179,96 @@
     0 14px 36px rgba(0,0,0,0.6);
 }
 
+
+/* ================= REGISTER NOW – PREMIUM FLOATING PILL ================= */
+
+.register-pill {
+  position: absolute;
+  right: 32px;
+  top: 55%;
+
+  /* Base position */
+  transform: translateY(-50%);
+
+  padding: 14px 36px;
+  border-radius: 999px;
+
+  font-family: 'TransformersMovie', sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 2.5px;
+  font-weight: 700;
+
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  background: linear-gradient(
+    to bottom,
+    #ff4d4d 0%,
+    #e63939 55%,
+    #c92f2f 100%
+  );
+
+  border: 1px solid rgba(255, 255, 255, 0.28);
+
+  box-shadow:
+    inset 0 2px 3px rgba(255, 255, 255, 0.35),
+    inset 0 -4px 6px rgba(0, 0, 0, 0.4),
+    0 8px 22px rgba(0, 0, 0, 0.55);
+
+  cursor: pointer;
+  z-index: 1500;
+
+  /* 🎈 ALWAYS FLOATING */
+  animation: float-air 3.6s ease-in-out infinite;
+
+  transition:
+    filter 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+/* ================= HOVER ================= */
+
+.register-pill:hover {
+  filter: brightness(1.12);
+  box-shadow:
+    inset 0 3px 4px rgba(255, 255, 255, 0.45),
+    inset 0 -6px 8px rgba(0, 0, 0, 0.45),
+    0 14px 36px rgba(255, 77, 77, 0.75);
+}
+
+/* ================= ACTIVE ================= */
+
+.register-pill:active {
+  animation-play-state: paused;
+  transform: translateY(-50%) scale(0.96);
+}
+
+/* ================= FLOAT KEYFRAMES ================= */
+
+@keyframes float-air {
+  0% {
+    transform: translateY(-50%) translateY(0);
+  }
+  50% {
+    transform: translateY(-50%) translateY(-7px);
+  }
+  100% {
+    transform: translateY(-50%) translateY(0);
+  }
+}
+
+/* ================= REDUCED MOTION SAFETY ================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .register-pill {
+    animation: none;
+  }
+}
+
+
+
+
 /* ================= 🎞️ KEYFRAMES ================= */
 
 /* Gentle left-right fabric sway */

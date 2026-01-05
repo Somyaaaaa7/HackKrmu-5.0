@@ -120,13 +120,14 @@ export default function Navbar() {
 
             {/* 🔥 REGISTER RIBBON */}
             <a
-                href="https://docs.google.com/forms/d/e/YOUR_GOOGLE_FORM_ID/viewform"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="register-ribbon"
-            >
-                <span>REGISTER NOW</span>
-            </a>
+    href="https://docs.google.com/forms/d/e/YOUR_GOOGLE_FORM_ID/viewform"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="register-pill"
+>
+    REGISTER NOW
+</a>
+
         </nav>
     );
 }

@@ -1,20 +1,24 @@
 import "./Themes.css";
 
 // IMPORT IMAGES
-import ai from "../assets/themes/ai.jpg";
-import web3 from "../assets/themes/web3.jpg";
+import edtech from "../assets/themes/edtech.jpg";
 import cyber from "../assets/themes/cyber.jpg";
-import iot from "../assets/themes/iot.jpg";
+import sustain from "../assets/themes/sustain.jpg";
+import health from "../assets/themes/health.jpg";
+import agri from "../assets/themes/agri.jpg";
+import smartcity from "../assets/themes/smartcity.jpg";
+import blockchain from "../assets/themes/blockchain.jpg";
 import open from "../assets/themes/open.jpg";
-import fintech from "../assets/themes/fintech.jpg";
 
 const themes = [
-    { title: "AI & ML", image: ai },
-    { title: "Web3 & Blockchain", image: web3 },
-    { title: "Cybersecurity", image: cyber },
-    { title: "IoT & Hardware", image: iot },
+    { title: "EdTech", image: edtech },
+    { title: "Cybersecurity & Threat Detection", image: cyber },
+    { title: "ClimateTech & Carbon Tracking", image: sustain },
+    { title: "HealthTech & MedTech", image: health },
+    { title: "AgriTech & Rural Development", image: agri },
+    { title: "Smart Cities & Logistics", image: smartcity },
+    { title: "Crypto & Blockchain", image: blockchain },
     { title: "Open Innovation", image: open },
-    { title: "FinTech / HealthTech", image: fintech },
 ];
 
 export default function Themes() {

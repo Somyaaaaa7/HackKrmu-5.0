@@ -78,6 +78,11 @@ export default function Team() {
             </div>
 
             {/* ================= CONVENORS ================= */}
+
+            <div className="role-heading">
+                <h2>CONVENORS</h2>
+            </div>
+
             <div className="team-grid">
                 <Card
                     variant="gold"
@@ -105,12 +110,17 @@ export default function Team() {
             </div>
 
             {/* ================= STUDENT ORGANIZERS ================= */}
+
+            <div className="role-heading2">
+                <h2>STUDENT ORGANIZERS</h2>
+            </div>
+
             <div className="team-grid2">
 
                 <Card
                     image={krish}
                     name="Krish Agarwal"
-                    role="Student Organizer"
+                    role="Sponsorship Head"
                     phone="+91 9310189324"
                     linkedin="https://www.linkedin.com/in/krish-agarwal-140920301/"
                     instagram="https://www.instagram.com/_aggarwal_krish_?igsh=MXJ4djRoNmdqcHgxbA=="
@@ -119,7 +129,7 @@ export default function Team() {
                 <Card
                     image={somya}
                     name="Somya Sharma"
-                    role="Student Organizer"
+                    role="Technical Head"
                     phone="+91 9205038742"
                     linkedin="https://www.linkedin.com/in/somya-sharma-486a22305/"
                     instagram="https://www.instagram.com/somyaaaaa.7?igsh=ZXAzbGU0N3I5emt2&utm_source=qr"
@@ -128,7 +138,7 @@ export default function Team() {
                 <Card
                     image={anuj}
                     name="Anuj Narain"
-                    role="Student Organizer"
+                    role="Operations Head"
                     phone="+91 9811625462"
                     linkedin="https://www.linkedin.com/in/narainanuj/"
                     instagram="https://www.instagram.com/anuj_narain?igsh=MXJ6dWs2ZTRxdnBhag=="

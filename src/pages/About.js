@@ -43,6 +43,10 @@ export default function About() {
                 <div className="about-left">
                     {/* <h2>What is Hack KRMU?</h2> */}
 
+                    {/* <div className="about-right">
+                    <img src={aboutMain} alt="Hack KRMU Event" />
+                </div> */}
+
                     <p>
                         HackKRMU is the flagship annual hackathon hosted by KR Mangalam University,
                         bringing together innovators, developers, designers, and problem-solvers
@@ -126,10 +130,10 @@ export default function About() {
                 </div>
 
                 <div className="sponsor-cta">
-                        <a href="/sponsorship" className="sponsor-btn">
-                            BECOME OUR SPONSOR
-                        </a>
-                    </div>
+                    <a href="/sponsorship" className="sponsor-btn">
+                        BECOME OUR SPONSOR
+                    </a>
+                </div>
 
             </div>
 
