@@ -77,15 +77,24 @@ export default function Home() {
                 <Countdown />
 
                 {/* 🔥 REGISTER NOW BUTTON */}
-                <div style={{ marginTop: "50px" }}>
+                {/* <div style={{ marginTop: "50px" }}>
                     <a
                         href="https://docs.google.com/forms/d/e/YOUR_GOOGLE_FORM_ID/viewform"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="register-btn"
-                    >
+                        className="register-btn">
+                        REGISTER NOW
+                    </a> */}
+
+                <div>
+                    <a
+                        href="/register"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="register-btn">
                         REGISTER NOW
                     </a>
+
 
                     <a
                         href="https://www.instagram.com/hackkrmu.official"
@@ -136,7 +145,7 @@ export default function Home() {
                     Track prizes & exclusive goodies for winners 🚀
                 </p> */}
 
-            </section>
+            </section >
 
             <Divider />
 

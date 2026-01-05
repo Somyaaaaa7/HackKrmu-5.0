@@ -11,6 +11,8 @@ import Sponsorship from "./pages/Sponsorship";
 import FAQ from "./components/FAQ";
 import Footer from "./components/Footer";
 
+import RegisterationOpeningSoon from "./pages/RegisterationOpeningSoon";
+
 
 import "./App.css";
 
@@ -28,6 +30,7 @@ function App() {
       <main className="app-container">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/register" element={<RegisterationOpeningSoon />} />
           <Route path="/about" element={<About />} />
           <Route path="/prizes" element={<Prizes />} />
           <Route path="/sponsorship" element={<Sponsorship />} />

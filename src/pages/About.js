@@ -130,10 +130,21 @@ export default function About() {
                 </div>
 
                 <div className="sponsor-cta">
-                    <a href="/sponsorship" className="sponsor-btn">
+                    <a
+                        href="https://drive.google.com/file/d/1SJt_47v5dbU4EpgPWvN9eRW-BszpzJZ1/view?usp=sharing"
+                        className="sponsor-btn"
+                        target="_blank"
+                        rel="noopener noreferrer">
                         BECOME OUR SPONSOR
                     </a>
                 </div>
+
+                {/* 
+                <div className="sponsor-cta">
+                    <a href="/sponsorship" className="sponsor-btn">
+                        BECOME OUR SPONSOR
+                    </a>
+                </div> */}
 
             </div>
 
