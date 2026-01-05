@@ -2,11 +2,16 @@ import "./About.css";
 import aboutMain from "../assets/about/about.jpg";
 
 // Partner logos
-import iskcon from "../assets/about/iskcon.png";
+import codecrafters from "../assets/about/codecrafters.png";
+import balsamiq from "../assets/about/balsamiq.png";
+import tws from "../assets/about/tws.png";
+import interviewbuddy from "../assets/about/interviewbuddy.png";
+import xyz from "../assets/about/xyz.png";
+// import iskcon from "../assets/about/iskcon.png";
+// import hackquest from "../assets/about/hackquest.png";
+// import gdg from "../assets/about/gdg.png";
+// import mindspark from "../assets/about/mindspark.png";
 import codingninjas from "../assets/about/codingninjas.png";
-import hackquest from "../assets/about/hackquest.png";
-import gdg from "../assets/about/gdg.png";
-import mindspark from "../assets/about/mindspark.png";
 import codeoncampus from "../assets/about/codeoncampus.png";
 import hacktheleague from "../assets/about/hacktheleague.png";
 import givemycertificate from "../assets/about/givemycertificate.png";
@@ -80,11 +85,39 @@ export default function About() {
                 </h5>
 
                 {/* 🔒 FIXED TOP ROW (first 5) */}
+
                 <div className="partners-fixed">
-                    {[iskcon, codingninjas, hackquest, gdg, mindspark].map((logo, i) => (
-                        <div className="partner-card" key={i}>
-                            <img src={logo} alt="Partner Logo" />
-                        </div>
+                    {[
+                        {
+                            logo: codecrafters,
+                            url: "https://codecrafters.io"
+                        },
+                        {
+                            logo: balsamiq,
+                            url: "https://balsamiq.com"
+                        },
+                        {
+                            logo: tws,
+                            url: "https://www.threewaystudio.world"   // change if different
+                        },
+                        {
+                            logo: interviewbuddy,
+                            url: "https://interviewbuddy.in"
+                        },
+                        {
+                            logo: xyz,
+                            url: "https://xyz.com"              // change to real site
+                        }
+                    ].map((partner, i) => (
+                        <a
+                            key={i}
+                            href={partner.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="partner-card"
+                        >
+                            <img src={partner.logo} alt="Partner Logo" />
+                        </a>
                     ))}
                 </div>
 
@@ -93,13 +126,13 @@ export default function About() {
                     <div className="marquee-track">
                         {[
                             codeoncampus, hacktheleague, givemycertificate, ocd, msla,
-                            thepublicsquare, hackthemountains, devstation, threeway, ooview,
+                            thepublicsquare, hackthemountains, devstation, threeway, ooview, codingninjas,
                             // 🔁 duplicate starts
                             codeoncampus, hacktheleague, givemycertificate, ocd, msla,
-                            thepublicsquare, hackthemountains, devstation, threeway, ooview,
+                            thepublicsquare, hackthemountains, devstation, threeway, ooview, codingninjas,
                             // 🔁 duplicate starts
                             codeoncampus, hacktheleague, givemycertificate, ocd, msla,
-                            thepublicsquare, hackthemountains, devstation, threeway, ooview
+                            thepublicsquare, hackthemountains, devstation, threeway, ooview, codingninjas,
                         ].map((logo, i) => (
                             <div className="partner-card" key={i}>
                                 <img src={logo} alt="Partner Logo" />
