@@ -26,7 +26,7 @@
 /* Ghost background text */
 .themes-ghost {
     position: absolute;
-    top: 40%;
+    top: 35%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-display: block;
@@ -52,13 +52,13 @@
     z-index: 2;
 }
 
-/* Floating ghost animation */
-@keyframes ghostFloatThemes {
+/* 🎈 SAFE FLOAT (Y ONLY) */
+@keyframes ghostFloatThemesY {
     0%, 100% {
-        transform: translate(-50%, -50%);
+        transform: translateY(0);
     }
     50% {
-        transform: translate(-50%, -54%);
+        transform: translateY(-14px);
     }
 }
 

@@ -17,13 +17,12 @@
 /* Ghost text */
 .faq-ghost {
   position: absolute;
-  top: 20%;
+  top: 15%;
   left: 50%;
   transform: translate(-50%, -50%);
 
   font-size: 8.5rem;
   font-weight: 800;
-  letter-spacing: 20px;
 
   font-family: "TransformersMovie", sans-serif;
   color: rgba(255, 255, 255, 0.1);
@@ -43,14 +42,6 @@
   line-height: 1.1;
   
 }
-
-/* Responsive */
-@media (max-width: 768px) {
-  .faq-ghost {
-    font-size: 4.2rem;
-  }
-}
-
 
 /* CONTAINER */
 .faq-container {

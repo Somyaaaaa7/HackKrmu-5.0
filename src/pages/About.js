@@ -1,5 +1,5 @@
 import "./About.css";
-// import aboutMain from "../assets/about/about.jpg";
+import aboutMain from "../assets/about/about.jpg";
 
 // Partner logos
 import iskcon from "../assets/about/iskcon.png";
@@ -65,9 +65,9 @@ export default function About() {
                     </p>
                 </div>
 
-                {/* <div className="about-right">
+                <div className="about-right">
                     <img src={aboutMain} alt="Hack KRMU Event" />
-                </div> */}
+                </div>
 
             </div>
 

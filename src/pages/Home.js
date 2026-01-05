@@ -16,6 +16,8 @@ import GlitchText from "../components/GlitchText";
 import Countdown from "../components/Countdown"
 import FAQ from "../components/FAQ";
 
+import instagramIcon from "../assets/icons/instagram.png";
+
 
 // UI Components
 import Divider from "../components/Divider";
@@ -90,10 +92,10 @@ export default function Home() {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="insta-btn"
-                        aria-label="Instagram"
-                    >
-                        IG
+                        aria-label="Instagram">
+                        <img src={instagramIcon} alt="Instagram" />
                     </a>
+
 
                     {/* 👇 NEW TEXT */}
                     <p className="tagline-below">

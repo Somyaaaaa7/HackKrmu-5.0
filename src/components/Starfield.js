@@ -124,6 +124,17 @@ export default function Starfield() {
                 ctx.moveTo(x2, y2);
                 ctx.lineTo(x1, y1);
                 ctx.stroke();
+
+                // ⭐ DRAW STAR DOT (HEAD)
+                // const radius = Math.max(1.8, 4 * (1 - star.z / canvas.width));
+
+                // ctx.beginPath();
+                // ctx.arc(x1, y1, radius, 0, Math.PI * 2);
+                // ctx.fillStyle = "rgba(255,255,255,1)";
+                // ctx.shadowBlur = 25;
+                // ctx.shadowColor = "rgba(255,255,255,1)";
+                // ctx.fill();
+
             });
 
             requestAnimationFrame(animate);

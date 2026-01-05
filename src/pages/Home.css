@@ -48,7 +48,7 @@
 .hero-title {
     color: white;
     font-weight: 800;
-    font-size: 6rem;
+    font-size: 5.5rem;
     font-family: 'TransformersMovie', sans-serif;
     text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
     letter-spacing: -0.025em;
@@ -210,6 +210,8 @@ p {
         0 0 12px rgba(255, 255, 255, 0.6);
 
     transition: all 0.3s ease;
+
+    margin-left: -10px;
 }
 
 .register-btn:hover {
@@ -278,7 +280,8 @@ html {
     margin-top: 50px;
 
     display: inline-flex;
-    align-items: center;       /* vertical alignment */
+    align-items: center;
+    /* vertical alignment */
     justify-content: center;
 
     gap: 24px;
@@ -286,14 +289,15 @@ html {
     /* slight left bias for register */
     transform: translateX(-28px);
 
-    white-space: nowrap;      /* 🔥 prevents wrap */
+    white-space: nowrap;
+    /* 🔥 prevents wrap */
 }
 
 /* ================= REGISTER BUTTON ================= */
 
 .register-btn {
     padding: 16px 42px;
-    font-size: 2.3rem;
+    font-size: 2.2rem;
     font-family: 'TransformersMovie', sans-serif;
     letter-spacing: 2px;
 
@@ -329,57 +333,42 @@ html {
 /* ================= INSTAGRAM BUTTON (RIGHT) ================= */
 
 .insta-btn {
-    width: 52px;
-    height: 52px;
-    border-radius: 50%;
-
-    display: inline-flex;     /* 🔥 keeps inline alignment */
+    display: inline-flex;
     align-items: center;
     justify-content: center;
 
-    font-family: 'TransformersMovie', sans-serif;
-    font-size: 2rem;
+    width: 70px;
+    height: 70px;
 
-    color: #ffffff;
-    background: transparent;
+    margin-left: 50px;
 
+    border-radius: 50%;
     border: 2px solid #ffffff;
 
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
-
-    text-decoration: none;
-    text-shadow: none !important;
-    cursor: pointer;
-
-    /* 🔥 THIS LINE FIXES THE DROP */
-    vertical-align: middle;
-
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease,
-        background 0.3s ease;
-
-        margin-left: 37px;
-        margin-top: 40px;
-}
-
-.insta-btn:hover {
-    background: #ffffff;
-    color: #000;
-    transform: scale(1.08);
-    box-shadow: 0 0 26px rgba(255, 255, 255, 0.9);
-}
-
-
-.insta-btn:hover {
-    background: #ffffff;
-    color: #000;
-
-    transform: scale(1.08);
+    background: transparent;
 
     box-shadow:
-        0 0 28px rgba(255, 255, 255, 0.9);
+        0 0 16px rgba(255, 255, 255, 0.6),
+        inset 0 0 10px rgba(255, 255, 255, 0.25);
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.insta-btn img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    filter: invert(1);
+    /* makes black icon white */
+}
+
+.insta-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow:
+        0 0 28px rgba(255, 255, 255, 0.9),
+        inset 0 0 14px rgba(255, 255, 255, 0.35);
+}
+
 
 .insta-btn:active {
     transform: scale(0.95);

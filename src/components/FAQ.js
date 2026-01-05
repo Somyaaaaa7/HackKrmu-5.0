@@ -38,7 +38,7 @@ export default function FAQ() {
   return (
     <section className="faq-page">
       <div className="faq-heading-wrapper">
-        <span className="faq-ghost">FAQ</span>
+        <span className="faq-ghost">FAQ'S</span>
         <h1 className="hero-title faq-main-title">
           FAQ'S
         </h1>
