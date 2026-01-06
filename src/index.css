@@ -82,3 +82,71 @@ body {
   scroll-behavior: smooth;
 }
 
+
+
+
+
+
+/* ================= CUSTOM CURSOR ================= */
+
+#custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 48px;
+    height: 48px;
+
+    background: url("./assets/cursor/cursor.png") center/contain no-repeat;
+
+    /* ✅ WHITE by default */
+    filter: invert(1);
+
+    pointer-events: none;
+    z-index: 9999;
+
+    transform: translate(-50%, -50%);
+    transition:
+        width 0.2s ease,
+        height 0.2s ease,
+        transform 0.15s ease,
+        filter 0.15s ease;
+}
+
+/* Hide default cursor */
+body {
+    cursor: none;
+}
+
+/* Magnetic hover (size only) */
+#custom-cursor.magnetic {
+    width: 64px;
+    height: 64px;
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* 🔥 BLACK cursor on buttons & links */
+#custom-cursor.dark {
+    filter: invert(0); /* BLACK */
+}
+
+/* ================= GLOBAL CURSOR KILL ================= */
+
+/* Hide system cursor EVERYWHERE */
+*,
+*::before,
+*::after {
+    cursor: none !important;
+}
+
+a,
+button,
+input,
+textarea,
+select,
+iframe {
+    cursor: none !important;
+}
+
+
+
+

@@ -13,6 +13,9 @@ import Footer from "./components/Footer";
 
 import RegisterationOpeningSoon from "./pages/RegisterationOpeningSoon";
 
+import Cursor from "./components/Cursor";
+
+
 
 import "./App.css";
 
@@ -21,6 +24,9 @@ function App() {
     <Router>
       {/* 🌌 GLOBAL STARFIELD BACKGROUND */}
       <Starfield />
+
+      {/* 🎯 CUSTOM CURSOR */}
+      <Cursor />
 
       {/* UI OVERLAYS */}
       <Navbar />

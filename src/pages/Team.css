@@ -78,16 +78,11 @@
 /* GRIDS */
 /* ============================= */
 
-.team-grid,
-.team-grid2 {
+.team-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 60px;
     justify-items: center;
-}
-
-.team-grid2 {
-    margin-top: 90px;
 }
 
 /* ============================= */

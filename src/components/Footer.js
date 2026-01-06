@@ -8,8 +8,8 @@ export default function Footer() {
                 {/* BRAND */}
                 <div className="footer-col brand">
                     <div className="brand-stack">
-                        <span className="brand-title" style={{marginBottom: '25px'}}>HACK KRMU 5.0</span>
-                        <span className="footer-col" style={{marginBottom: '10px'}}>Social Media</span>
+                        <span className="brand-title" style={{ marginBottom: '25px' }}>HACK KRMU 5.0</span>
+                        <span className="footer-col" style={{ marginBottom: '10px' }}>Social Media</span>
                         <div className="brand-socials">
                             <a
                                 href="https://www.instagram.com/hackkrmu.official"
@@ -31,8 +31,8 @@ export default function Footer() {
 
                 {/* VENUE */}
                 <div className="footer-col">
-                    <h3 style={{marginLeft: '-10px', marginBottom:"10px"}}>Venue</h3>
-                    <p style={{marginLeft: '-8px'}}>
+                    <h3 style={{ marginLeft: '-10px', marginBottom: "10px" }}>Venue</h3>
+                    <p style={{ marginLeft: '-8px' }}>
                         K.R. Mangalam University<br />
                         Sohna Road, Gurugram<br />
                         Haryana – 122103
@@ -41,7 +41,7 @@ export default function Footer() {
 
                 {/* LINKS */}
                 <div className="footer-col">
-                    <h3 style={{marginBottom: '10px'}}>Links</h3>
+                    <h3 style={{ marginBottom: '10px' }}>Links</h3>
                     <a
                         href="https://www.krmangalam.edu.in/"
                         target="_blank"
@@ -53,14 +53,18 @@ export default function Footer() {
                 </div>
 
                 {/* MAP */}
-                <div className="footer-col map">
-                    <h3 style={{marginBottom: '10px'}}>Location</h3>
-                    <iframe
-                        title="KRMU Location"
-                        src="https://maps.google.com/maps?q=KR%20Mangalam%20University&t=&z=14&ie=UTF8&iwloc=&output=embed"
-                        loading="lazy"
-                    />
-                </div>
+<div className="footer-col map">
+    <h3 style={{ marginBottom: "10px" }}>Location</h3>
+
+    <div className="map-wrapper">
+        <iframe
+            title="KRMU Location"
+            src="https://www.google.com/maps?q=K.R.%20Mangalam%20University,%20Gurugram&output=embed"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"/>
+    </div>
+</div>
+
             </div>
 
             <div className="footer-bottom">
@@ -75,7 +79,7 @@ export default function Footer() {
             >
                 ↑
             </button>
-            
+
         </footer>
     );
 }

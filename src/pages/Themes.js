@@ -18,7 +18,7 @@ const themes = [
     { title: "AgriTech & Rural Development", image: agri },
     { title: "Smart Cities & Logistics", image: smartcity },
     { title: "Crypto & Blockchain", image: blockchain },
-    { title: "Open Innovation", image: open },
+    { title: "Open Innovation", image: open},
 ];
 
 export default function Themes() {
@@ -30,7 +30,7 @@ export default function Themes() {
                 <h2 className="hero-title themes-main-title">THEMES</h2>
             </div>
 
-            <div className="theme-grid">
+            <div className="theme-grid" style={{marginBottom:"-20px"}}>
                 {themes.map((theme, index) => (
                     <div className="theme-card" key={index}>
                         {/* FRONT */}

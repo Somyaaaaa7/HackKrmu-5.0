@@ -29,33 +29,33 @@ const faqs = [
   {
     q: "I have more questions. Who can I contact?",
     a: "You can reach out to the organizing committee via email at Info.hackkrmu@gmail.com or through our official social media handles."
-  },
+  }
 ];
 
 export default function FAQ() {
   const [activeIndex, setActiveIndex] = useState(null);
 
+  const toggleFAQ = (index) => {
+    setActiveIndex(activeIndex === index ? null : index);
+  };
+
   return (
-    <section className="faq-page">
+    <section className="faq-page no-dark-cursor">
       <div className="faq-heading-wrapper">
         <span className="faq-ghost">FAQ'S</span>
-        <h1 className="hero-title faq-main-title">
-          FAQ'S
-        </h1>
+        <h1 className="hero-title faq-main-title">FAQ'S</h1>
       </div>
 
       <div className="faq-container">
         {faqs.map((item, index) => (
           <div
             key={index}
-            className={`faq-item ${activeIndex === index ? "active" : ""
-              }`}
+            className={`faq-item ${activeIndex === index ? "active" : ""}`}
+            onClick={() => toggleFAQ(index)}
           >
             <button
               className="faq-question"
-              onClick={() =>
-                setActiveIndex(activeIndex === index ? null : index)
-              }
+              type="button"
             >
               {item.q}
               <span className="faq-icon">

@@ -148,7 +148,7 @@
     align-items: center;
     justify-content: center;
 
-    cursor: pointer;
+    cursor: none !important;
     z-index: 9999;
 
     box-shadow:
@@ -190,6 +190,44 @@
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
 }
+
+/* ================= MAP FIX ================= */
+
+/* ================= MAP – HYBRID CURSOR MODE ================= */
+
+.map-wrapper {
+    position: relative;
+    width: 100%;
+    height: 110px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Default state → custom cursor works */
+.map-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    border: 1px solid rgba(236,177,2,0.3);
+
+    /* 🔒 Block interaction by default */
+    pointer-events: none;
+
+    /* Muted look */
+    filter: grayscale(100%) brightness(0.9);
+    transition: filter 0.35s ease;
+}
+
+/* Hover → map lights up (still custom cursor) */
+.map-wrapper:hover iframe {
+    filter: grayscale(0%) brightness(1.05);
+}
+
+/* Click → allow Google interaction (Google cursor appears) */
+.map-wrapper:active iframe {
+    pointer-events: auto;
+}
+
 
 /* ================= RESPONSIVE ================= */
 
