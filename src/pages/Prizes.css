@@ -89,10 +89,24 @@
 
 /* FLOATING MEDAL */
 .medal {
-    font-size: 2.2rem;
+    font-size: 3rem;                 /* Bigger & premium */
     margin-bottom: 12px;
     animation: float 3s ease-in-out infinite;
 }
+
+/* Color tuning per medal */
+.prize-card.first .medal {
+    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.9));
+}
+
+.prize-card.second .medal {
+    filter: drop-shadow(0 0 10px rgba(180, 220, 255, 0.9));
+}
+
+.prize-card.third .medal {
+    filter: drop-shadow(0 0 10px rgba(255, 120, 120, 0.9));
+}
+
 
 /* AMOUNT */
 .prize-amount {
@@ -311,6 +325,56 @@
     text-transform: uppercase;
 }
 
+/* ================= SCROLLING PRIZE POOL ================= */
+
+.scrolling-prize {
+    display: inline-block;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: #00fff7;
+
+    text-shadow:
+        0 0 12px rgba(0, 255, 247, 0.9),
+        0 0 30px rgba(0, 255, 247, 0.6),
+        0 0 70px rgba(0, 255, 247, 0.35);
+
+    animation: prizePulse 2.4s ease-in-out infinite;
+}
+
+/* shimmer scan */
+/* .scrolling-prize::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        120deg,
+        transparent 35%,
+        rgba(255,255,255,0.55),
+        transparent 70%
+    );
+    opacity: 0.35;
+    animation: prizeScan 3s ease-in-out infinite;
+}
+
+@keyframes prizeScan {
+    0% { transform: translateX(-120%); }
+    60% { transform: translateX(120%); }
+    100% { transform: translateX(120%); }
+} */
+
+@keyframes prizePulse {
+    0%,100% {
+        text-shadow:
+            0 0 12px rgba(0, 255, 247, 0.8),
+            0 0 30px rgba(0, 255, 247, 0.5);
+    }
+    50% {
+        text-shadow:
+            0 0 20px rgba(0, 255, 247, 1),
+            0 0 50px rgba(0, 255, 247, 0.85),
+            0 0 100px rgba(0, 255, 247, 0.6);
+    }
+}
 
 /* ================================================= */
 /* MOBILE */

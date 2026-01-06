@@ -10,14 +10,12 @@ import Timeline from "../components/Timeline";
 import PastEditions from "./PastEditions";
 import Sponsors from "./Prizes";
 import Contact from "./Team";
-// import krmuBanner from "../assets/krmu-banner.png";
 import About from "./About";
 import GlitchText from "../components/GlitchText";
-import Countdown from "../components/Countdown"
+import Countdown from "../components/Countdown";
 import FAQ from "../components/FAQ";
 
 import instagramIcon from "../assets/icons/instagram.png";
-
 
 // UI Components
 import Divider from "../components/Divider";
@@ -53,163 +51,105 @@ export default function Home() {
             {/* ================================================= */}
             {/* HERO + PRIZE POOL (SAME PAGE) */}
             {/* ================================================= */}
-            <section id="home" className="page-section home">
-
-                {/* KRMU UNIVERSITY BANNER
-                <img style={{ marginBottom: "-20px" }}
-                    src={krmuBanner}
-                    alt="K R Mangalam University"
-                    className="krmu-banner"
-                /> */}
+            <section id="home" className="page-section home shimmer-bg">
 
                 {/* HERO */}
                 <h1 className="hero-title" style={{ marginTop: "37px" }}>
-                    <span className="hero-normal" style={{ marginRight: "30px", }} >HACK KRMU </span>
-                    <span className="hero-glitch" style={{ fontSize: "5rem" }}><GlitchText text="5.0" /></span>
+                    <span className="hero-normal" style={{ marginRight: "30px" }}>
+                        HACK KRMU
+                    </span>
+                    <span className="hero-glitch" style={{ fontSize: "5rem" }}>
+                        <GlitchText text="5.0" />
+                    </span>
                 </h1>
 
                 {/* EVENT DATE */}
-                <div className="event-dates" style={{ fontSize: "30px", marginBottom: "50px", marginTop: "50px" }}>
+                <div
+                    className="event-dates"
+                    style={{ fontSize: "30px", marginBottom: "50px", marginTop: "50px" }}
+                >
                     18<span>th</span> Feb – 20<span>th</span> Feb 2026
                 </div>
 
-
                 <Countdown />
 
-                {/* 🔥 REGISTER NOW BUTTON */}
-                {/* <div style={{ marginTop: "50px" }}>
-                    <a
-                        href="https://docs.google.com/forms/d/e/YOUR_GOOGLE_FORM_ID/viewform"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="register-btn">
-                        REGISTER NOW
-                    </a> */}
-
+                {/* REGISTER + INSTAGRAM */}
                 <div>
                     <a
                         href="/register"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="register-btn">
+                        className="register-btn"
+                    >
                         REGISTER NOW
                     </a>
-
 
                     <a
                         href="https://www.instagram.com/hackkrmu.official"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="insta-btn"
-                        aria-label="Instagram">
+                        aria-label="Instagram"
+                    >
                         <img src={instagramIcon} alt="Instagram" />
                     </a>
 
-
-                    {/* 👇 NEW TEXT */}
                     <p className="tagline-below">
                         54 Hours • 3 Days • 1 Amazing Experience
                     </p>
-
                 </div>
 
-
-                {/* <p className="tagline">Innovate • Build • Disrupt</p> */}
-
-                {/* Spacer between hero and prizes */}
                 <div style={{ height: "80px" }} />
-
-                {/* ================= PRIZE POOL =================
-                <h2 className="section-title">Prize Pool Worth</h2>
-
-                <div className="prize-total">₹5,00,000</div>npm
-
-                <div className="prize-grid">
-                    <div className="prize-card gold">
-                        <h3>1st Prize</h3>
-                        <p>₹50,000</p>
-                    </div>
-
-                    <div className="prize-card silver">
-                        <h3>2nd Prize</h3>
-                        <p>₹25,000</p>
-                    </div>
-
-                    <div className="prize-card bronze">
-                        <h3>3rd Prize</h3>
-                        <p>₹15,000</p>
-                    </div>
-                </div>
-
-                <p className="prize-note">
-                    Track prizes & exclusive goodies for winners 🚀
-                </p> */}
-
-            </section >
+            </section>
 
             <Divider />
 
-            {/* ================================================= */}
             {/* ABOUT */}
-            {/* ================================================= */}
             <section id="about" className="page-section">
                 <About />
             </section>
 
             <Divider />
 
-            {/* ================================================= */}
             {/* THEMES */}
-            {/* ================================================= */}
             <section id="themes" className="page-section">
                 <Themes />
             </section>
 
             <Divider />
 
-            {/* TIMELINE (NEW) */}
+            {/* TIMELINE */}
             <section id="timeline" className="page-section timeline-section">
                 <Timeline />
             </section>
 
             <Divider />
 
-            {/* ================================================= */}
             {/* GALLERY */}
-            {/* ================================================= */}
             <section id="past" className="page-section">
                 <PastEditions />
             </section>
 
             <Divider />
 
-            {/* ================================================= */}
             {/* SPONSORS */}
-            {/* ================================================= */}
             <section id="sponsors" className="page-section">
                 <Sponsors />
             </section>
 
             <Divider />
 
-            {/* ================================================= */}
-            {/* CONTACT / TEAM */}
-            {/* ================================================= */}
+            {/* TEAM */}
             <section id="contact" className="page-section">
                 <Contact />
             </section>
 
             <Divider />
 
-            {/* ================================================= */}
             {/* FAQ */}
-            {/* ================================================= */}
             <section id="faq" className="page-section">
                 <FAQ />
             </section>
-
-            {/* <Divider /> */}
-
         </>
     );
 }

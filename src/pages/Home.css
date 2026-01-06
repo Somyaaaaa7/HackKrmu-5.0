@@ -369,9 +369,52 @@ html {
         inset 0 0 14px rgba(255, 255, 255, 0.35);
 }
 
-
 .insta-btn:active {
     transform: scale(0.95);
+}
+
+/* ============================= */
+/* FULL PAGE SHIMMER BACKGROUND */
+/* ============================= */
+
+.shimmer-bg {
+    position: relative;
+    overflow: hidden;
+}
+
+.shimmer-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        120deg,
+        transparent 30%,
+        rgba(255, 255, 255, 0.12),
+        transparent 70%
+    );
+
+    animation: shimmerScan 6s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.home > * {
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes shimmerScan {
+    0% { transform: translateX(-120%); }
+    60% { transform: translateX(120%); }
+    100% { transform: translateX(120%); }
+}
+
+/* Disable shimmer on mobile (recommended) */
+@media (max-width: 768px) {
+    .shimmer-bg::after {
+        display: none;
+    }
 }
 
 
