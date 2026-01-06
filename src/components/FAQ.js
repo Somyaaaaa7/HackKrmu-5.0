@@ -8,7 +8,7 @@ const faqs = [
   },
   {
     q: "Who can participate and what is the team size",
-    a: "Hack KRMU 4.0 is open to all undergraduate and postgraduate students from any college or university. Participants can form teams of 2 to 4 members."
+    a: "Hack KRMU 5.0 is open to all undergraduate and postgraduate students from any college or university. Participants can form teams of 2 to 4 members."
   },
   {
     q: "What should I bring?",
