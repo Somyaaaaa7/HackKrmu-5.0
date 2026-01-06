@@ -4,7 +4,7 @@ import "./FAQ.css";
 const faqs = [
   {
     q: "What is Hack KRMU 5.0?",
-    a: "Hack KRMU 4.0 is a 54-hour hackathon organized by K.R. Mangalam University that brings together innovative minds to build impactful solutions using technology. Participants collaborate, ideate, and develop projects under mentorship, competing for exciting prizes and recognition."
+    a: "Hack KRMU 5.0 is a 54-hour hackathon organized by K.R. Mangalam University that brings together innovative minds to build impactful solutions using technology. Participants collaborate, ideate, and develop projects under mentorship, competing for exciting prizes and recognition."
   },
   {
     q: "Who can participate and what is the team size",
