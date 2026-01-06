@@ -5,8 +5,6 @@
     padding: 20px 10% 18px;
     border-top: 1px solid rgba(236, 177, 2, 0.22);
     position: relative;
-
-    /* 🔥 IMPORTANT FIXES */
     overflow: visible !important;
     min-height: 180px;
 }
@@ -17,7 +15,6 @@
     display: grid;
     grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
     gap: 32px;
-
     width: 100%;
     align-items: start;
 }
@@ -28,7 +25,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 8px; /* base spacing */
+    gap: 6px;
 }
 
 .brand-title {
@@ -36,22 +33,34 @@
     font-weight: 700;
     letter-spacing: 2px;
     color: #ecb102;
-    white-space: nowrap; /* 🔥 prevents breaking */
+    white-space: nowrap;
     text-shadow: 0 0 8px rgba(236,177,2,0.5);
-    margin-bottom: 2px;
 }
 
 .brand-sub {
     font-size: 0.78rem;
     color: rgba(255,255,255,0.7);
+    max-width: 260px;
+    line-height: 1.4;
+    margin-top: 20px;
 }
 
 /* ================= SOCIALS ================= */
 
+.social-label {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 20px;
+    margin-top: 15px;
+    font-size: 0.8rem !important;
+    color: white !important;
+    text-shadow: white !important;
+    font-family: 'transformersmovie' sans-serif;
+}
+
 .brand-socials {
     display: flex;
-    gap: 10px;
-    margin-top: 4px;
+    gap: 0px;
 }
 
 .brand-socials a {
@@ -59,16 +68,20 @@
     height: 28px;
     border-radius: 50%;
     border: 1px solid rgba(236,177,2,0.7);
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     font-size: 0.75rem;
     color: #ecb102;
     background: rgba(0,0,0,0.85);
-
     box-shadow: 0 0 8px rgba(236,177,2,0.45);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-left: 25px;
+}
+
+.brand-socials a:hover {
+    transform: translateY(-2px) scale(1.1);
+    box-shadow: 0 0 14px rgba(236,177,2,0.8);
 }
 
 /* ================= OTHER COLUMNS ================= */
@@ -76,7 +89,7 @@
 .footer-col h3 {
     font-size: 1.2rem;
     margin-bottom: 6px;
-    color: #ffffff;
+    color: #ffffff ;
     margin-top: 2px;
 }
 
@@ -94,14 +107,36 @@
     text-decoration: none;
 }
 
+.single-link:hover {
+    text-decoration: underline;
+}
+
 /* ================= MAP ================= */
 
-.footer-col.map iframe {
+.map-wrapper {
+    position: relative;
     width: 100%;
     height: 110px;
     border-radius: 10px;
+    overflow: hidden;
+}
+
+.map-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
     border: 1px solid rgba(236,177,2,0.3);
+    pointer-events: none;
     filter: grayscale(100%) brightness(0.9);
+    transition: filter 0.35s ease;
+}
+
+.map-wrapper:hover iframe {
+    filter: grayscale(0%) brightness(1.05);
+}
+
+.map-wrapper:active iframe {
+    pointer-events: auto;
 }
 
 /* ================= BOTTOM ================= */
@@ -113,119 +148,62 @@
     color: rgba(255,255,255,0.55);
 }
 
-/* Align brand column with other headings */
-.footer-col.brand {
-    padding-top: 6px;
-}
-
-/* ================= SCROLL TO TOP – STABLE FIX ================= */
+/* ================= SCROLL TO TOP – PROGRESS RING ================= */
 
 .scroll-top {
-    position: fixed;          /* 🔥 KEY FIX */
-    right: 18px;
-    bottom: 16px;
+    position: fixed;
+    right: 22px;
+    bottom: 18px;
 
-    width: 40px;
-    height: 40px;
-    border-radius: 60%;
-    margin-right: 15px;
-    margin-bottom: 5px;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
 
-    background: radial-gradient(
-        circle at center,
-        rgba(0, 0, 0, 0.9) 0%,
-        rgba(0, 0, 0, 0.65) 45%,
-        rgba(0, 0, 0, 0.95) 75%
-    );
+    /* Scroll progress border */
+    background:
+        conic-gradient(
+            #00fff7 var(--scroll, 0deg),
+            rgba(255,255,255,0.25) 0deg
+        );
 
-    border: 1.5px solid rgba(255, 255, 255, 0.9);
-    color: #ffffff;
-
-    font-size: 1.2rem;
-    font-weight: 800;
+    padding: 2px; /* thickness of border */
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    cursor: none !important;
+    cursor: pointer;
     z-index: 9999;
 
-    box-shadow:
-        0 0 16px rgb(255, 255, 255),
-        0 0 30px rgb(255, 255, 255);
-
-    transition:
-        transform 0.35s ease,
-        box-shadow 0.35s ease;
-
-    /* 🔥 CRITICAL */
-    pointer-events: auto;
+    border: none;
 }
 
-/* SAFE HUD RING */
+/* Inner circle */
 .scroll-top::before {
     content: "";
     position: absolute;
-    inset: -4px; /* reduced */
-
+    inset: 2px;
     border-radius: 50%;
-    border: 1px dashed rgba(255, 255, 255, 0.45);
-
-    animation: rotateHUD 18s linear infinite;
-
-    /* 🔥 PREVENT LAYOUT EFFECT */
-    pointer-events: none;
+    background: rgba(0,0,0,0.85);
+    transition: background 0.25s ease;
 }
 
-/* HOVER */
-.scroll-top:hover {
-    transform: translateY(-4px) scale(1.08);
-    background-color: white !important;
-    border-color: black;
-}
-
-/* ROTATION */
-@keyframes rotateHUD {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-
-/* ================= MAP FIX ================= */
-
-/* ================= MAP – HYBRID CURSOR MODE ================= */
-
-.map-wrapper {
+/* Arrow */
+.scroll-top .arrow {
     position: relative;
-    width: 100%;
-    height: 110px;
-    border-radius: 10px;
-    overflow: hidden;
+    z-index: 2;
+    color: #ffffff;
+    font-size: 1.4rem;
+    transition: color 0.25s ease;
 }
 
-/* Default state → custom cursor works */
-.map-wrapper iframe {
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-    border: 1px solid rgba(236,177,2,0.3);
-
-    /* 🔒 Block interaction by default */
-    pointer-events: none;
-
-    /* Muted look */
-    filter: grayscale(100%) brightness(0.9);
-    transition: filter 0.35s ease;
+/* HOVER → SOLID CYAN */
+.scroll-top:hover::before {
+    background: #ffffff;
 }
 
-/* Hover → map lights up (still custom cursor) */
-.map-wrapper:hover iframe {
-    filter: grayscale(0%) brightness(1.05);
-}
-
-/* Click → allow Google interaction (Google cursor appears) */
-.map-wrapper:active iframe {
-    pointer-events: auto;
+.scroll-top:hover .arrow {
+    color: #000000;
 }
 
 
@@ -234,7 +212,6 @@
 /* @media (max-width: 900px) {
     .footer-grid {
         grid-template-columns: 1fr 1fr;
-        gap: 28px;
     }
 }
 
