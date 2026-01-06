@@ -31,8 +31,8 @@ export default function Footer() {
 
                 {/* VENUE */}
                 <div className="footer-col">
-                    <h3 style={{ marginLeft: '-10px', marginBottom: "10px" }}>Venue</h3>
-                    <p style={{ marginLeft: '-8px' }}>
+                    <h3 style={{ marginLeft: '10px', marginBottom: "10px" }}>Venue</h3>
+                    <p style={{ marginLeft: '-30px', marginTop:"20px" }}>
                         K.R. Mangalam University<br />
                         Sohna Road, Gurugram<br />
                         Haryana – 122103
@@ -41,13 +41,12 @@ export default function Footer() {
 
                 {/* LINKS */}
                 <div className="footer-col">
-                    <h3 style={{ marginBottom: '10px' }}>Links</h3>
+                    <h3 style={{ marginBottom: '15px', marginLeft:"35px" }}>Links</h3>
                     <a
                         href="https://www.krmangalam.edu.in/"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="single-link"
-                    >
+                        className="single-link">
                         University Website
                     </a>
                 </div>
