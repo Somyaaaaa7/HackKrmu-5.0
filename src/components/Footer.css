@@ -198,13 +198,13 @@
 }
 
 /* HOVER → SOLID CYAN */
-.scroll-top:hover::before {
+/* .scroll-top:hover::before {
     background: #ffffff;
 }
 
 .scroll-top:hover .arrow {
     color: #000000;
-}
+} */
 
 
 /* ================= RESPONSIVE ================= */

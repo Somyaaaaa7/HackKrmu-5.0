@@ -32,6 +32,8 @@ import tversiton from "../assets/about/tversiton.png";
 import codesetgo from "../assets/about/codesetgo.png";
 import tfc from "../assets/about/tfc.png";
 import devlovers from "../assets/about/devlovers.png";
+import gdgnewdelhi from "../assets/about/gdgnewdelhi.png";
+import omi from "../assets/about/omi.png";
 
 export default function About() {
     return (
@@ -87,7 +89,16 @@ export default function About() {
                 {/* 🔒 FIXED TOP ROW (first 5) */}
 
                 <div className="partners-fixed">
+                
                     {[
+                        {
+                            logo: gdgnewdelhi,
+                            url: "https://gdg.community.dev/gdg-new-delhi/"
+                        },
+                        {
+                            logo: omi,
+                            url: "https://www.omi.me"
+                        },
                         {
                             logo: codecrafters,
                             url: "https://codecrafters.io"
@@ -98,7 +109,7 @@ export default function About() {
                         },
                         {
                             logo: tws,
-                            url: "https://www.threewaystudio.world"   // change if different
+                            url: "https://www.threewaystudio.world"   
                         },
                         {
                             logo: interviewbuddy,
@@ -106,7 +117,7 @@ export default function About() {
                         },
                         {
                             logo: xyz,
-                            url: "https://xyz.com"              // change to real site
+                            url: "https://xyz.com"             
                         }
                     ].map((partner, i) => (
                         <a
