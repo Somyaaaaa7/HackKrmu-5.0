@@ -1,13 +1,32 @@
 // =============================
 // SECTION DIVIDER COMPONENT
 // =============================
-// Purpose:
-// - Visually separates full-page sections
-// - Used between sections in Home.js
-// - Styling & animation handled entirely via CSS
 
 import "./Divider.css";
 
 export default function Divider() {
-    return <div className="divider" />;
+    return (
+        <div className="divider-wrapper">
+            <div className="divider-line" />
+
+            <div className="divider-text">
+                <span>
+                    HACK KRMU 5.0 • HACK KRMU 5.0 • HACK KRMU 5.0 • HACK KRMU 5.0 •
+                    HACK KRMU 5.0 • HACK KRMU 5.0 •
+                </span>
+                <span>
+                    HACK KRMU 5.0 • HACK KRMU 5.0 • HACK KRMU 5.0 • HACK KRMU 5.0 •
+                    HACK KRMU 5.0 • HACK KRMU 5.0 •
+                </span>
+                <span>
+                    HACK KRMU 5.0 • HACK KRMU 5.0 • HACK KRMU 5.0 • HACK KRMU 5.0 •
+                    HACK KRMU 5.0 • HACK KRMU 5.0 •
+                </span>
+                <span>
+                    HACK KRMU 5.0 • HACK KRMU 5.0 • HACK KRMU 5.0 • HACK KRMU 5.0 •
+                    HACK KRMU 5.0 • HACK KRMU 5.0 •
+                </span>
+            </div>
+        </div>
+    );
 }

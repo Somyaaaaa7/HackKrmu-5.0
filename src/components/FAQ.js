@@ -26,7 +26,7 @@ const faqs = [
     q: "Is there any registration fee?",
     a: "Yes, there is a nominal registration fee of INR 699 per team"
   },
-  {
+  { 
     q: "I have more questions. Who can I contact?",
     a: "You can reach out to the organizing committee via email at Info.hackkrmu@gmail.com or through our official social media handles."
   }

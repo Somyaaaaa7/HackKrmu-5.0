@@ -11,6 +11,7 @@ import vishwanil from "../assets/team/vishwanil.jpg";
 import anuj from "../assets/team/anuj.jpg";
 import krish from "../assets/team/krish.jpg";
 import somya from "../assets/team/somya.jpg";
+import mrinal from "../assets/team/mrinal.jpg";
 
 /* ============================= */
 /* CARD COMPONENT */
@@ -145,6 +146,24 @@ export default function Team() {
                 />
 
             </div>
+
+            <div className="role-heading2">
+                <h2>LEAD VOLUNTEER</h2>
+            </div>
+            <div className="team-grid-2">
+
+                <Card
+                    image={mrinal}
+                    name="Mrinal Prakash"
+                    role="Volunteer Lead"
+                    // phone="+91 9310189324"
+                    linkedin="https://www.linkedin.com/in/mrinal-prakash-fullstackdeveloper"
+                // instagram="https://www.instagram.com/_aggarwal_krish_?igsh=MXJ4djRoNmdqcHgxbA=="
+                />
+
+            </div>
+
+
         </div>
     );
 }

@@ -1,70 +1,124 @@
 /* ================================================= */
-/* SECTION DIVIDER */
+/* SECTION DIVIDER – MOVING TEXT (FIXED) */
 /* ================================================= */
-/*
-
-Purpose:
-- Visually separates full-page sections
-- Subtle neon glow + pulse
-- Does NOT interfere with scroll-snap
-*/
 
 :root {
-    --neon: #00fff7;          /* CYAN / BLUE */
+    --neon: #00fff7;
     --neon-glow: rgba(0, 255, 247, 0.9);
 }
 
+/* ================= WRAPPER ================= */
 
-.divider {
+.divider-wrapper {
+    position: relative;
+    width: 100%;
+    height: 48px;                 /* 🔥 Enough height to avoid clipping */
+    margin: 40px 0;
+    overflow: hidden;
+    pointer-events: none;
+
+    /* Soft edge mask (prevents hard cut) */
+    mask-image: linear-gradient(
+        90deg,
+        transparent 0%,
+        black 10%,
+        black 90%,
+        transparent 100%
+    );
+}
+
+/* ================= LINE ================= */
+
+.divider-line {
+    position: absolute;
+    top: 50%;
+    left: 50%;
     width: 80%;
     height: 2px;
+    transform: translate(-50%, -50%);
 
-    /* Controlled spacing between sections */
-    margin: 12px auto;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--neon),
+        transparent
+    );
 
-    /* Neon gradient line */
-    background: linear-gradient(90deg,
-            transparent,
-            var(--neon),
-            transparent);
-
-    /* Glow + visibility */
-    box-shadow: 0 0 14px rgba(0, 255, 247, 0.8);
+    box-shadow: 0 0 14px var(--neon-glow);
     opacity: 0.85;
 
-    /* Subtle pulse animation */
     animation: pulse 3s ease-in-out infinite;
-
-    /* Prevent divider from being a snap point */
-    scroll-snap-align: none;
-
-    /* Smooth hover feedback */
-    transition: box-shadow 0.4s ease, opacity 0.4s ease;
 }
 
-/* Hover glow (desktop only, subtle) */
-.divider:hover {
-    box-shadow: 0 0 22px var(--neon-glow);
+/* ================= MOVING TEXT ================= */
+
+.divider-text {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+
+    width: 200%;
+    white-space: nowrap;
+
+    animation: scrollText 24s linear infinite;
+    will-change: transform;
 }
 
-/* ================================================= */
-/* PULSE ANIMATION */
-/* ================================================= */
-/* Gentle brightness breathing — not distracting */
+.divider-text span {
+    display: inline-flex;
+    align-items: center;
+
+    font-family: "Orbitron", monospace;
+    font-size: 0.8rem;
+    letter-spacing: 4px;
+    color: var(--neon);
+
+    padding-right: 48px;
+
+    text-shadow:
+        0 0 6px rgba(0, 255, 247, 0.9),
+        0 0 14px rgba(0, 255, 247, 0.6);
+
+    opacity: 0.9;
+}
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes scrollText {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
 
 @keyframes pulse {
     0% {
         opacity: 0.55;
         box-shadow: 0 0 8px rgba(0, 255, 247, 0.5);
     }
-
     50% {
         opacity: 1;
         box-shadow: 0 0 18px rgba(0, 255, 247, 0.9);
     }
-
     100% {
         opacity: 0.55;
         box-shadow: 0 0 8px rgba(0, 255, 247, 0.5);
+    }
+}
+
+/* ================= MOBILE SAFETY ================= */
+
+@media (max-width: 768px) {
+    .divider-wrapper {
+        height: 40px;
+        margin: 28px 0;
+    }
+
+    .divider-text span {
+        font-size: 0.7rem;
+        letter-spacing: 3px;
     }
 }

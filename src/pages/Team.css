@@ -85,6 +85,14 @@
     justify-items: center;
 }
 
+.team-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 60px;
+    justify-items: center;
+    margin-bottom: -120PX;
+}
+
 /* ============================= */
 /* GOLD JUDGE CARD */
 /* ============================= */
