@@ -154,39 +154,83 @@ body {
   }
 }
 
-/* ================= FORCE HOME PAGE SCROLL (CRITICAL FIX) ================= */
+/* ================= ULTIMATE MOBILE SCROLL & TOUCH FIX ================= */
 
-@media screen and (max-width: 768px) {
+/* 1. RESET THE FOUNDATION */
+* {
+    /* Prevents padding from breaking widths */
+    box-sizing: border-box; 
+    
+    /* PREVENTS "STUCK" SCROLLING ON TOUCH DEVICES */
+    /* This tells the browser: "Let the user scroll normally" */
+    touch-action: pan-y; 
+    -webkit-tap-highlight-color: transparent;
+}
 
-    /* 1. TARGET EVERY POSSIBLE HOME SELECTOR */
-    /* I've included common names. If your class is different, add it here. */
-    #home, .home, .home-page, 
-    .hero, .hero-section, .landing-page,
-    .main-section, .app-header {
-        
-        /* BREAK THE LOCK */
-        height: auto !important;         /* Stop forcing screen height */
-        min-height: 100vh !important;    /* Allow it to be tall, but grow if needed */
-        max-height: none !important;     /* Remove any limits */
-        
-        /* ENABLE SCROLLING */
-        overflow-y: visible !important;  
+/* 2. UNLOCK THE MAIN WINDOW */
+html {
+    overflow-x: hidden !important; /* Stop left-right wobble */
+    overflow-y: scroll !important; /* Force a scrollbar to exist */
+    height: 100% !important;
+    
+    /* FORCE SMOOTH SCROLLING (iOS & Android) */
+    -webkit-overflow-scrolling: touch !important; 
+    scroll-behavior: smooth !important;
+}
+
+body {
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    height: auto !important;
+    min-height: 100% !important;
+    position: relative !important;
+    width: 100% !important;
+}
+
+/* 3. UNLOCK REACT/FRAMEWORK ROOTS */
+#root, .App, .main-wrapper {
+    height: auto !important;
+    min-height: 100vh !important;
+    overflow-y: visible !important;
+    overflow-x: hidden !important;
+    display: block !important;
+}
+
+/* 4. BACKGROUND CLICK-THROUGH FIX (CRITICAL!) */
+/* If you use Particles, Canvas, or Fixed Backgrounds, they often BLOCK scrolling. */
+/* This code makes your finger "pass through" them to scroll the page. */
+canvas, 
+.particles-js-canvas-el, 
+.background-container, 
+.video-background,
+#tsparticles {
+    pointer-events: none !important; /* IGNORE TOUCHES */
+    z-index: -1 !important;          /* SEND TO BACK */
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* 5. FORCE ALL SECTIONS TO SCROLL */
+/* This unlocks Home, Team, Prizes, etc. all at once. */
+section, 
+.page, 
+.section, 
+.container,
+div[class*="page"],    /* Selects any class containing "page" */
+div[class*="section"]  /* Selects any class containing "section" */
+{
+    @media screen and (max-width: 768px) {
+        height: auto !important;
+        min-height: 100vh !important; /* Grow tall */
+        overflow-y: visible !important;
         overflow-x: hidden !important;
         
-        /* LAYOUT FIXES */
-        position: relative !important;   /* Stop it from being 'fixed' to the screen */
-        display: flex !important;
-        flex-direction: column !important;
-        padding-bottom: 100px !important; /* Add space at bottom to scroll */
-    }
-
-    /* 2. UNLOCK PARENT CONTAINERS */
-    /* Sometimes a wrapper div (like 'App' or 'div#root') is the one locked */
-    html, body, #root, .App {
-        height: auto !important;
-        min-height: 100% !important;
-        overflow-y: auto !important;
-        position: static !important; /* 'fixed' body prevents scrolling */
+        /* Remove strict locking */
+        position: relative !important; 
+        max-height: none !important;
     }
 }
 
