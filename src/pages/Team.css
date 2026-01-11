@@ -273,50 +273,91 @@
 
 /* ================= FIX TEAM GHOST TEXT (MOBILE) ================= */
 
+/* ================= MOBILE TEAM PAGE FIXES ================= */
+
+/* ================= TEAM PAGE MOBILE FIX (ORIGINAL COLORS) ================= */
+
 @media screen and (max-width: 768px) {
 
-    /* 1. CONTAINER FIX */
-    /* We must allow the ghost text to spill outside the box without being cut off */
-    .team-heading, 
+    /* 1. UNLOCK PAGE SCROLLING */
+    .team-page, .team-section, #team {
+        display: block !important;
+        height: auto !important;
+        min-height: 100vh !important;
+        overflow-y: visible !important;
+        padding-top: 100px !important;
+        padding-bottom: 100px !important;
+        background-color: none !important;
+    }
+
+    /* 2. TITLE WRAPPER */
+    .team-heading-wrapper,
     .section-title-wrapper { 
         position: relative !important;
-        overflow: visible !important; /* CRITICAL: Shows the full text */
+        overflow: visible !important;
         height: auto !important;
-        min-height: 100px !important; /* Give it vertical space */
+        min-height: 100px !important;
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
         margin-bottom: 40px !important;
+        margin-top: 0 !important;
     }
 
-    /* 2. GHOST TEXT STYLING */
-    .team-ghost, 
-    .ghost-text { 
+    /* 3. MAIN TITLE ("OUR TEAM") - RESTORE WHITE COLOR */
+    .team-main-title, .hero-title, .section-title {
+        position: relative !important;
+        z-index: 2 !important;
+        font-size: 3.5rem !important;
+        text-align: center !important;
+        
+        /* RESTORE ORIGINAL WHITE STYLE */
+        color: #ffffff !important; 
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5) !important;
+        font-family: 'TransformersMovie', sans-serif !important; /* Ensure font matches */
+    }
+
+    /* 4. GHOST TEXT (Background) */
+    .team-ghost, .ghost-text { 
         display: block !important;
-        
-        /* Size & Look */
-        font-size: 4.5rem !important; /* Large enough to look cool */
-        opacity: 0.35 !important; /* Visible but subtle */
+        font-size: 4.5rem !important;
+        opacity: 0.35 !important; /* Lower opacity like desktop */
         color: rgba(255, 255, 255, 0.3) !important;
-        
-        /* Positioning (Dead Center) */
         position: absolute !important;
-        top: 18% !important;
+        top: 27% !important;
         left: 49% !important;
         transform: translate(-50%, -50%) !important;
-        
-        /* Layout Safety */
         width: 100% !important;
         text-align: center !important;
-        white-space: nowrap !important; /* Keep on one line */
-        pointer-events: none !important;
+        white-space: nowrap !important;
         z-index: 0 !important;
     }
 
-    /* 3. MAIN TITLE (Ensure it sits on top) */
-    .team-main-title,
-    .hero-title {
-        position: relative !important;
-        z-index: 2 !important;
+    /* 5. SUBTITLES ("CONVENORS") - RESTORE ORIGINAL LOOK */
+    .team-subtitle, .convenors-title, h2 {
+        font-size: 1.8rem !important;
+        margin-bottom: 30px !important;
+        margin-top: 20px !important;
+        text-align: center !important;
+        
+        /* RESTORE WHITE WITH CYAN GLOW */
+        color: #ffffff !important; 
+        text-shadow: 0 0 15px rgba(0, 255, 247, 0.6) !important;
+        font-family: 'Orbitron', sans-serif !important; /* Match your subtitle font */
+    }
+
+    /* 6. CARD LAYOUT (Stack Vertically) */
+    .team-grid, .team-container, .members-wrapper {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 40px !important;
+        width: 100% !important;
+    }
+
+    .team-card, .member-card {
+        width: 100% !important;
+        max-width: 320px !important;
+        margin: 0 auto !important;
     }
 }
