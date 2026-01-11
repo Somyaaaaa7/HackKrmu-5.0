@@ -350,17 +350,177 @@
 
 /* ================= RESPONSIVE ================= */
 
-/* @media (max-width: 1024px) {
+/* =================================================================
+   MOBILE RESPONSIVE FIXES (FINAL REINFORCED)
+   Only affects screens smaller than 768px. Desktop remains 100% same.
+================================================================= */
+
+@media screen and (max-width: 768px) {
+
+    /* --- GLOBAL CONTAINER FIX --- */
+    /* Ensures padding doesn't add to width, preventing side cut-off */
+    * {
+        box-sizing: border-box; 
+    }
+
+    .about-page {
+        /* width: 100% !important; */
+        max-width: 100vw !important;
+        padding: 30px 20px 100px !important; /* Safe side padding */
+        overflow-x: hidden !important;
+    }
+
+    /* --- TEXT LAYOUT FIX (The "Squeezed Text" Issue) --- */
+    /* We turn OFF the desktop Grid and switch to a vertical Column */
     .about-top {
-        grid-template-columns: 1fr;
-        text-align: center;
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        margin: 0 !important;
+        gap: 40px !important;
     }
 
+    /* Force the text block to take full width */
+    .about-left {
+        /* width: 100% !important; */
+        max-width: 100% !important;
+        text-align: center !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .about-left p {
+        font-size: 1rem !important;
+        line-height: 1.6 !important;
+        width: 100% !important;
+    }
+
+    /* --- IMAGE FIX --- */
+    .about-right {
+        /* width: 100% !important; */
+        justify-content: center !important;
+        margin: 0 !important;
+    }
+
+    .about-right img {
+        width: 100% !important;
+        /* max-width: 350px !important; Keeps it looking nice */
+        height: auto !important;
+        margin: 0 !important;
+        box-shadow: 0 0 20px rgba(0, 255, 247, 0.2) !important;
+    }
+
+    /* --- PARTNERS FIX (The "Cut Off" Issue) --- */
+    /* Forces 2 columns. Impossible for items to slide off screen now. */
+    .partners-fixed, 
     .partners-grid {
-        grid-template-columns: repeat(2, 1fr);
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important; /* 2 Columns Only */
+        gap: 15px !important;
+        /* width: 100% !important; */
+        padding: 0 !important;
+        margin: 40px 0 !important;
     }
 
-    .hero-title {
-        font-size: 3.8rem;
+    .partners-fixed .partner-card,
+    .partners-grid .partner-card {
+        /* width: 100% !important; */
+        height: 70px !important;
+        margin: 0 !important;
+        padding: 10px !important;
     }
-} */
+
+    .partner-card img {
+        /* max-width: 90% !important; */
+        max-height: 40px !important;
+        object-fit: contain !important;
+    }
+
+    /* --- TITLE & BUTTON FIXES --- */
+    .hero-title, 
+    .partners-title {
+        font-size: 2.5rem !important; /* Shrink giant text */
+        /* width: 100% !important; */
+        text-align: center !important;
+        line-height: 1.1 !important;
+        margin-top: 20px !important;
+    }
+
+    .sponsor-btn {
+        font-size: 1.2rem !important;
+        padding: 15px 30px !important;
+        white-space: nowrap !important; /* Prevents text breaking */
+        /* width: auto !important; */
+        display: inline-block !important;
+        margin-top: 30px !important;
+    }
+}
+
+/* ================= FIX GHOST TEXT CLIPPING (MOBILE) ================= */
+
+@media screen and (max-width: 768px) {
+    
+    /* 1. STOP THE CUT-OFF (Critical Step) */
+    /* This tells the container "Let the background text spill out, don't clip it" */
+    .about-heading, 
+    .partners-heading {
+        overflow: visible !important; 
+        position: relative !important;
+        z-index: 1 !important;
+        margin-bottom: 40px !important; /* Adds space so it doesn't overlap content below */
+    }
+
+    /* 2. STYLE THE GHOST TEXT */
+    .about-ghost{
+        display: block !important;
+        visibility: visible !important;
+        
+        /* Make it visible enough to see */
+        opacity: 0.2 !important; 
+        color: rgba(255, 255, 255, 0.5) !important;
+        
+        /* Size it perfectly for mobile width */
+        font-size: 4.5rem !important; 
+        width: 100% !important;
+        
+        /* CENTER IT */
+        position: absolute !important;
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        
+        /* Ensure it stays behind */
+        z-index: -1 !important;
+        pointer-events: none !important;
+        white-space: nowrap !important;
+    }
+    
+    /* 3. TWEAK POSITION IF NEEDED */
+    /* Sometimes 'About' needs to sit slightly higher to look centered */
+    .about-ghost {
+        top: 45% !important;
+    }
+}
+
+/* ================= HIDE PARTNERS GHOST (MOBILE ONLY) ================= */
+
+@media screen and (max-width: 768px) {
+    
+    /* 1. Remove the background "Partners" text on mobile */
+    .partners-ghost {
+        display: none !important;
+    }
+
+    /* 2. Fix spacing since the ghost text is gone */
+    /* This ensures the title doesn't have huge empty gaps above/below it */
+    .partners-heading {
+        height: auto !important;
+        min-height: 0 !important;
+        margin-top: 50px !important;
+        margin-bottom: 20px !important;
+        display: block !important;
+    }
+}
+
+
+

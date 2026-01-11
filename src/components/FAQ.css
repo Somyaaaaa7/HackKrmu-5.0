@@ -142,16 +142,56 @@
 
 
 /* MOBILE */
-/* @media (max-width: 768px) {
-  .faq-page {
-    padding: 120px 7% 100px;
-  }
 
-  .faq-title {
-    font-size: 2.4rem;
-  }
 
-  .faq-question {
-    font-size: 1rem;
-  }
-} */
+/* ================= FIX FAQ GHOST TEXT (MOBILE) ================= */
+
+@media screen and (max-width: 768px) {
+
+    /* 1. CONTAINER FIX */
+    /* Allows the ghost text to float without getting cut off */
+    .faq-heading, 
+    .section-title-wrapper { 
+        position: relative !important;
+        overflow: visible !important; /* CRITICAL: Shows the full background text */
+        height: auto !important;
+        min-height: 100px !important; /* Adds vertical breathing room */
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        margin-bottom: 40px !important;
+    }
+
+    /* 2. GHOST TEXT STYLING */
+    .faq-ghost, 
+    .ghost-text { 
+        display: block !important;
+        
+        /* Size: FAQ is short, so we can make it bigger than others */
+        font-size: 5rem !important; 
+        
+        /* Visibility */
+        opacity: 0.35 !important;
+        color: rgba(255, 255, 255, 0.3) !important;
+        
+        /* Center Positioning */
+        position: absolute !important;
+        top: 20% !important;
+        left: 56% !important;
+        transform: translate(-50%, -50%) !important;
+        
+        /* Layout Safety */
+        width: 100% !important;
+        text-align: center !important;
+        white-space: nowrap !important;
+        pointer-events: none !important;
+        z-index: 0 !important; /* Sit behind main title */
+    }
+
+    /* 3. MAIN TITLE (Ensure it sits on top) */
+    .faq-main-title,
+    .hero-title {
+        position: relative !important;
+        z-index: 2 !important;
+    }
+}

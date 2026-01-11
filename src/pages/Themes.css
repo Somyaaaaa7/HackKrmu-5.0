@@ -172,18 +172,77 @@
 /* RESPONSIVE */
 /* ============================= */
 
-/* @media (max-width: 1024px) {
+/* ================= MOBILE FIXES FOR THEMES (Add to bottom of themes.css) ================= */
+
+@media screen and (max-width: 768px) {
+
+    /* 1. CONTAINER & PADDING FIX */
+    .themes-page {
+        width: 100% !important;
+        padding: 40px 20px 100px !important; /* Safe padding prevents edge touching */
+        overflow-x: hidden !important;
+    }
+
+    /* 2. STACK CARDS VERTICALLY */
     .theme-grid {
-        grid-template-columns: repeat(2, 1fr);
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 30px !important; /* Space between cards */
+        margin-top: 20px !important;
+        width: 100% !important;
+    }
+
+    /* 3. RESIZE CARDS TO FIT PHONE */
+    .theme-card {
+        width: 100% !important;
+        max-width: 320px !important; /* Perfect width for mobile */
+        height: 180px !important;
+        margin: 0 !important;
+    }
+
+    /* 4. FIX GHOST TEXT (The "THEMES" Background) */
+    .themes-ghost {
+        /* Force Display */
+        display: block !important;
+        visibility: visible !important;
+        
+        /* Make it Visible */
+        opacity: 0.25 !important; /* Higher opacity to ensure you see it */
+        color: rgba(255, 255, 255, 0.3) !important;
+        
+        /* Sizing */
+        font-size: 5rem !important; /* Large but fits screen */
+        white-space: nowrap !important;
+        
+        /* Positioning (Dead Center) */
+        position: absolute !important;
+        top: 50% !important;
+        left: 40% !important;
+        transform: translate(-50%, -50%) !important;
+        
+        /* Layout Safety */
+        width: 100% !important;
+        text-align: center !important;
+        z-index: -1 !important; /* Sit behind the main title */
+        pointer-events: none !important;
+    }
+
+    /* 5. FIX HEADING CONTAINER (Stops the cut-off) */
+    .themes-heading {
+        position: relative !important;
+        overflow: visible !important; /* CRITICAL: This allows the text to show */
+        z-index: 1 !important;
+        background: transparent !important;
+        margin-bottom: 40px !important;
+    }
+
+    /* 6. MAIN TITLE SIZE */
+    .hero-title {
+        font-size: 3rem !important;
+        z-index: 2 !important;
+        position: relative !important;
     }
 }
 
-@media (max-width: 600px) {
-    .theme-grid {
-        grid-template-columns: 1fr;
-    }
 
-    .theme-card {
-        width: 90vw;
-    }
-} */

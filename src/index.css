@@ -129,21 +129,28 @@ body {
     filter: invert(0); /* BLACK */
 }
 
-/* ================= GLOBAL CURSOR KILL ================= */
+/* ===================================================== */
+/* ================= MOBILE / TOUCH DEVICES ============ */
+/* ===================================================== */
 
-/* Hide system cursor EVERYWHERE */
-*,
-*::before,
-*::after {
-    cursor: none !important;
-}
+/* 👉 Explicitly disable custom cursor on touch */
+@media (hover: none) and (pointer: coarse) {
 
-a,
-button,
-input,
-textarea,
-select,
-iframe {
-    cursor: none !important;
+  #custom-cursor {
+    display: none !important;
+  }
+
+  body,
+  *,
+  *::before,
+  *::after,
+  a,
+  button,
+  input,
+  textarea,
+  select,
+  iframe {
+    cursor: auto !important;
+  }
 }
 

@@ -209,23 +209,131 @@
 
 /* ================= RESPONSIVE ================= */
 
-/* @media (max-width: 900px) {
-    .footer-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-}
+/* ================= FINAL FOOTER FIX: FULL WIDTH MAP + CENTERED HEADINGS ================= */
 
-@media (max-width: 600px) {
-    .footer-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
+@media screen and (max-width: 768px) {
+
+    /* 1. CONTAINER */
+    .footer {
+        padding: 40px 15px 100px !important;
+        text-align: center !important;
     }
 
-    .brand-stack {
-        align-items: center;
+    /* 2. THE GRID (2 Columns Side-by-Side) */
+    .footer-grid {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 30px 10px !important;
+        width: 100% !important;
+        justify-items: center !important;
+    }
+
+    /* --- ITEM 1: BRAND (Logo) --- */
+    /* Spans Full Width at Top */
+    .footer-grid > *:nth-child(1) {
+        grid-column: 1 / -1 !important; 
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 100% !important;
+        margin-bottom: 10px !important;
+        border-bottom: 1px solid rgba(255,255,255,0.1) !important;
+        padding-bottom: 20px !important;
+    }
+
+    /* --- ITEM 2 & 3: VENUE & LINKS --- */
+    /* These sit side-by-side in the middle. We just force centering. */
+    
+    /* Target the Venue Column (2nd item) */
+    .footer-grid > *:nth-child(2) {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important; /* Centers the content block */
+        text-align: center !important;  /* Centers the text */
+        width: 100% !important;
+    }
+
+    /* Target the Links Column (3rd item) */
+    .footer-grid > *:nth-child(3) {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        width: 100% !important;
+    }
+
+    /* Force Headings to Center */
+    .footer-col h3 {
+        text-align: center !important;
+        width: 100% !important;
+        margin-bottom: 15px !important;
+        margin-left: 10px !important;
+    }
+
+    .footer-col h4{
+        margin-left: -5px;
+    }
+
+    /* --- ITEM 4: LOCATION (Map + Heading) --- */
+    /* THIS IS THE FIX: Spans Full Width at Bottom */
+    .footer-grid > *:nth-child(4) {
+        grid-column: 1 / -1 !important; /* Span across both columns */
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 100% !important;
+        margin-top: 10px !important;
+    }
+
+    /* Make the Map Huge and Centered */
+    .map-wrapper {
+        width: 100% !important;
+        height: 220px !important; /* Good height for mobile */
+        border-radius: 12px !important;
+        margin-top: 15px !important;
+    }
+
+    .map-wrapper iframe {
+        filter: none !important; /* Keep it colorful */
+    }
+
+    .brand-title{
+        margin-left: 14px;
+        font-size: 1.5rem;
+    }
+
+    .brand-sub{
+        font-size: 0.9rem;
+    }
+
+    /* 3. TEXT & SOCIALS ALIGNMENT */
+    .brand-sub, .footer-col p, .single-link {
+        text-align: center !important;
     }
 
     .brand-socials {
-        justify-content: center;
+        justify-content: center !important;
+        margin-top: 10px !important;
     }
-} */
+    
+    .brand-socials a { margin: 0 6px !important; }
+
+    /* 4. SCROLL BUTTON */
+    .scroll-top {
+        bottom: 20px !important;
+        right: 20px !important;
+    }
+
+    .footer-bottom{
+        margin-bottom: -30px;
+    }
+
+    .social-label{
+        margin-left: 3px;
+        margin-bottom: 2px;
+    }
+
+    .brand-socials{
+        margin-left: 5px;
+    }
+}

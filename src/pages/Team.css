@@ -271,17 +271,52 @@
 /* RESPONSIVE */
 /* ============================= */
 
-/* @media (max-width: 768px) {
-    .team-card {
-        width: 260px;
+/* ================= FIX TEAM GHOST TEXT (MOBILE) ================= */
+
+@media screen and (max-width: 768px) {
+
+    /* 1. CONTAINER FIX */
+    /* We must allow the ghost text to spill outside the box without being cut off */
+    .team-heading, 
+    .section-title-wrapper { 
+        position: relative !important;
+        overflow: visible !important; /* CRITICAL: Shows the full text */
+        height: auto !important;
+        min-height: 100px !important; /* Give it vertical space */
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        margin-bottom: 40px !important;
     }
 
-    .team-card img {
-        width: 130px;
-        height: 130px;
+    /* 2. GHOST TEXT STYLING */
+    .team-ghost, 
+    .ghost-text { 
+        display: block !important;
+        
+        /* Size & Look */
+        font-size: 4.5rem !important; /* Large enough to look cool */
+        opacity: 0.35 !important; /* Visible but subtle */
+        color: rgba(255, 255, 255, 0.3) !important;
+        
+        /* Positioning (Dead Center) */
+        position: absolute !important;
+        top: 18% !important;
+        left: 49% !important;
+        transform: translate(-50%, -50%) !important;
+        
+        /* Layout Safety */
+        width: 100% !important;
+        text-align: center !important;
+        white-space: nowrap !important; /* Keep on one line */
+        pointer-events: none !important;
+        z-index: 0 !important;
     }
 
-    .section-title {
-        font-size: 2.2rem;
+    /* 3. MAIN TITLE (Ensure it sits on top) */
+    .team-main-title,
+    .hero-title {
+        position: relative !important;
+        z-index: 2 !important;
     }
-} */
+}

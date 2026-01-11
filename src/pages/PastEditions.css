@@ -177,27 +177,98 @@
 /* RESPONSIVE (KEEPS SHAPE) */
 /* ============================= */
 
-/* @media (max-width: 1200px) {
+/* ================= GALLERY FIX: DENSE HONEYCOMB (3-2-3 PATTERN) ================= */
+
+/* ================= FINAL MOBILE GALLERY FIX (3-2 PATTERN + FULL BOTTOM ROW) ================= */
+
+/* ================= FINAL GALLERY FIX: 3-2 PATTERN + SOLID BOTTOM BLOCK ================= */
+
+@media screen and (max-width: 768px) {
+
+    /* 1. RESET CONTAINER */
+    .past-gallery {
+        width: 100% !important;
+        padding: 40px 0 100px !important;
+        overflow-x: hidden !important;
+    }
+
+    /* 2. FLATTEN HTML LIST */
+    .hex-row {
+        display: contents !important;
+    }
+
+    /* 3. CREATE 6-COLUMN GRID */
+    .honeycomb {
+        display: grid !important;
+        grid-template-columns: repeat(6, 1fr) !important;
+        width: 100% !important;
+        max-width: 380px !important; /* Uses full phone width */
+        margin: 0 auto !important;
+        padding: 0 10px !important;
+        gap: 8px !important;
+    }
+
+    /* 4. BASE HEXAGON STYLE */
     .hex-wrap {
-        width: 200px;
-        height: 175px;
+        width: 100% !important;
+        grid-column: span 2 !important; /* Default: span 2 cols */
+        height: 100px !important;
+        margin: 0 !important;
+        margin-bottom: -22px !important; /* Pull rows together */
+        position: relative !important;
     }
 
-    .hex-row.offset {
-        margin-left: 104px;
+    /* 5. THE PATTERN (Applies to top 10 items) */
+    
+    /* Standard Row (3 items) */
+    .hex-wrap:nth-child(5n+1),
+    .hex-wrap:nth-child(5n+2),
+    .hex-wrap:nth-child(5n+3) {
+        margin-top: 0 !important;
+        z-index: 1 !important;
     }
-}
 
-@media (max-width: 900px) {
-    .hex-wrap {
-        width: 160px;
-        height: 140px;
+    /* Indented Row (2 items) - Pushed down to fit in "V" */
+    .hex-wrap:nth-child(5n+4) {
+        grid-column: 2 / span 2 !important; /* Left Center */
+        margin-top: 25px !important;
+        z-index: 2 !important;
+    }
+    .hex-wrap:nth-child(5n) {
+        grid-column: 4 / span 2 !important; /* Right Center */
+        margin-top: 25px !important;
+        z-index: 2 !important;
     }
 
-    .hex-row,
-    .hex-row.offset {
-        margin-left: 0;
-        margin-bottom: 0;
-        flex-wrap: wrap;
+    /* 6. THE FIX: MANUAL OVERRIDE FOR BOTTOM 6 TILES (11-16) */
+    /* We "turn off" the pattern here and force two straight rows of 3 */
+
+    /* -- ROW 5: Force items 11, 12, 13 to be a straight row -- */
+    .hex-wrap:nth-child(11) { 
+        grid-column: 1 / span 2 !important; margin-top: 0 !important; z-index: 1 !important; 
     }
-} */
+    .hex-wrap:nth-child(12) { 
+        grid-column: 3 / span 2 !important; margin-top: 0 !important; z-index: 1 !important; 
+    }
+    .hex-wrap:nth-child(13) { 
+        grid-column: 5 / span 2 !important; margin-top: 0 !important; z-index: 1 !important; 
+        display: block !important; /* Ensures it shows up */
+    }
+
+    /* -- ROW 6: Force items 14, 15, 16 to be a straight row directly below -- */
+    .hex-wrap:nth-child(14) { 
+        grid-column: 1 / span 2 !important; margin-top: 0 !important; z-index: 1 !important; 
+    }
+    .hex-wrap:nth-child(15) { 
+        grid-column: 3 / span 2 !important; margin-top: 0 !important; z-index: 1 !important; 
+    }
+    .hex-wrap:nth-child(16) { 
+        grid-column: 5 / span 2 !important; margin-top: 0 !important; z-index: 1 !important; 
+        display: block !important; /* Fixes orphan issue */
+    }
+
+    /* 7. TITLE & GHOST FIXES */
+    .gallery-heading { margin-bottom: 30px !important; height: auto !important; }
+    .gallery-ghost { font-size: 5rem !important; top: 45% !important; left: 59% !important; transform: translate(-50%, -50%) !important; }
+} 
+

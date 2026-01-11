@@ -188,20 +188,65 @@
 }
 
 /* MOBILE */
-/* @media (max-width: 900px) {
-    .event {
-        width: 100%;
-        left: 0 !important;
-        text-align: left;
-        padding-left: 60px;
+
+/* ================= MOBILE FIXES FOR TIMELINE (REFINED SIZE) ================= */
+
+@media screen and (max-width: 768px) {
+
+    /* 1. RESET CONTAINER PADDING */
+    .timeline-section {
+        padding: 30px 15px 80px !important; /* Slightly reduced top/bottom padding */
+        width: 100% !important;
+        overflow-x: hidden !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
     }
 
-    .line-base,
-    .line-fill {
-        left: 20px;
+    /* 2. FIX THE GIANT TITLE ("EVENT TIMELINE") */
+    .timeline-section .hero-title {
+        font-size: 2.2rem !important; /* ↓ Reduced from 3rem */
+        width: 100% !important;
+        text-align: center !important;
+        line-height: 1 !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        margin-bottom: 20px !important; /* ↓ Reduced gap below title */
     }
 
-    .dot {
-        left: 13px !important;
+    /* 3. FIX THE BUTTONS CONTAINER */
+    .timeline-section div {
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 15px !important; /* ↓ Reduced gap between buttons */
     }
-} */
+
+    /* 4. BUTTON STYLING (Smaller & Tighter) */
+    .timeline-section button, 
+    .timeline-section .day-btn { 
+        width: 100% !important;
+        max-width: 280px !important; /* Slightly narrower max-width */
+        margin: 4px 0 !important;    /* ↓ Reduced vertical margin */
+        font-size: 1.5rem !important; /* ↓ Reduced from 1.1rem */
+        padding: 10px 16px !important; /* ↓ Reduced padding */
+    }
+
+    /* 5. HIDE TIMELINE GHOST TEXT */
+    .timeline-ghost {
+        display: none !important;
+    }
+
+    /* 6. CENTER THE "DAY 1 - 18 FEB" TEXT */
+    .timeline-section h2, 
+    .timeline-date-heading {
+        font-size: 2.5rem !important; /* ↓ Reduced from 1.8rem */
+        text-align: center !important;
+        width: 100% !important;
+        margin-top: 20px !important; /* ↓ Reduced gap above date */
+        margin-bottom: 10px !important; /* Added small bottom margin for safety */
+    }
+
+    .timeline-wrapper{
+        font-size: 1rem;
+    }
+}
