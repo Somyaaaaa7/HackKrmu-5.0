@@ -387,27 +387,33 @@ html {
     position: absolute;
     inset: 0;
 
-    background: linear-gradient(
-        120deg,
-        transparent 30%,
-        rgba(255, 255, 255, 0.12),
-        transparent 70%
-    );
+    background: linear-gradient(120deg,
+            transparent 30%,
+            rgba(255, 255, 255, 0.12),
+            transparent 70%);
 
     animation: shimmerScan 6s ease-in-out infinite;
     pointer-events: none;
     z-index: 1;
 }
 
-.home > * {
+.home>* {
     position: relative;
     z-index: 2;
 }
 
 @keyframes shimmerScan {
-    0% { transform: translateX(-120%); }
-    60% { transform: translateX(120%); }
-    100% { transform: translateX(120%); }
+    0% {
+        transform: translateX(-120%);
+    }
+
+    60% {
+        transform: translateX(120%);
+    }
+
+    100% {
+        transform: translateX(120%);
+    }
 }
 
 /* Disable shimmer on mobile (recommended) */
@@ -422,3 +428,31 @@ html {
 /* RESPONSIVE */
 /* ================================================= */
 
+
+@media (max-width: 768px) {
+
+    .page-section {
+        min-height: auto;
+        min-width: auto;
+        margin-top: 0px;
+        margin-bottom: -50px;
+    }
+}
+
+.hero-title {
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-size: clamp(2.4rem, 9vw, 3.2rem);
+    gap: 5px;
+    text-align: center;
+}
+
+.register-btn {
+    font-size: 1.3rem;
+    padding: 14px 32px;
+}
+
+.insta-btn {
+    width: 52px;
+    height: 52px;
+}
