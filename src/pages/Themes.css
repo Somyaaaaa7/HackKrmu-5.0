@@ -104,7 +104,7 @@
 
     box-shadow:
         0 0 18px rgb(255, 255, 255),
-        inset 0 0 14px rgba(255, 255, 255, 0.955);
+        inset 0 0 14px rgba(255, 255, 255, 0.674);
 
     transition:
         transform 0.5s ease,
@@ -157,7 +157,7 @@
     transform: rotateX(8deg) rotateZ(-1deg);
     box-shadow:
         0 0 35px rgb(255, 255, 255),
-        0 0 80px rgba(255, 255, 255, 0.912);
+        0 0 80px rgba(255, 255, 255, 0.621);
 }
 
 .theme-card:hover .theme-face.front {

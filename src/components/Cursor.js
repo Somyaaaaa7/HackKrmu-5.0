@@ -13,7 +13,7 @@ export default function CustomCursor() {
         let cursorX = 0;
         let cursorY = 0;
 
-        const speed = 0.18;
+        const speed = 0.30;
 
         // Smooth cursor follow
         const animate = () => {
