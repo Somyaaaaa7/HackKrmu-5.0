@@ -271,93 +271,121 @@
 /* RESPONSIVE */
 /* ============================= */
 
-/* ================= FIX TEAM GHOST TEXT (MOBILE) ================= */
+/* ================================================= */
+/* 📱 MOBILE ONLY — REMOVE TEAM GHOST HEADING */
+/* ================================================= */
 
-/* ================= MOBILE TEAM PAGE FIXES ================= */
+@media (max-width: 768px) {
 
-/* ================= TEAM PAGE MOBILE FIX (ORIGINAL COLORS) ================= */
+  .team-ghost {
+    display: none !important;
+  }
 
-@media screen and (max-width: 768px) {
-
-    /* 1. UNLOCK PAGE SCROLLING */
-    .team-page, .team-section, #team {
-        display: block !important;
-        height: auto !important;
-        min-height: 100vh !important;
-        overflow-y: visible !important;
-        padding-top: 100px !important;
-        padding-bottom: 100px !important;
-        background-color: none !important;
-    }
-
-    /* 2. TITLE WRAPPER */
-    .team-heading-wrapper,
-    .section-title-wrapper { 
-        position: relative !important;
-        overflow: visible !important;
-        height: auto !important;
-        min-height: 100px !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        margin-bottom: 40px !important;
-        margin-top: 0 !important;
-    }
-
-    /* 3. MAIN TITLE ("OUR TEAM") - RESTORE WHITE COLOR */
-    .team-main-title, .hero-title, .section-title {
-        position: relative !important;
-        z-index: 2 !important;
-        font-size: 3.5rem !important;
-        text-align: center !important;
-        
-        /* RESTORE ORIGINAL WHITE STYLE */
-        color: #ffffff !important; 
-        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5) !important;
-        font-family: 'TransformersMovie', sans-serif !important; /* Ensure font matches */
-    }
-
-    /* 4. GHOST TEXT (Background) */
-    .team-ghost, .ghost-text { 
-        display: block !important;
-        font-size: 4.5rem !important;
-        opacity: 0.35 !important; /* Lower opacity like desktop */
-        color: rgba(255, 255, 255, 0.3) !important;
-        position: absolute !important;
-        top: 27% !important;
-        left: 49% !important;
-        transform: translate(-50%, -50%) !important;
-        width: 100% !important;
-        text-align: center !important;
-        white-space: nowrap !important;
-        z-index: 0 !important;
-    }
-
-    /* 5. SUBTITLES ("CONVENORS") - RESTORE ORIGINAL LOOK */
-    .team-subtitle, .convenors-title, h2 {
-        font-size: 1.8rem !important;
-        margin-bottom: 30px !important;
-        margin-top: 20px !important;
-        text-align: center !important;
-        
-        /* RESTORE WHITE WITH CYAN GLOW */
-        color: #ffffff !important; 
-        text-shadow: 0 0 15px rgba(0, 255, 247, 0.6) !important;
-        font-family: 'Orbitron', sans-serif !important; /* Match your subtitle font */
-    }
-
-    /* 6. CARD LAYOUT (Stack Vertically) */
-    .team-grid, .team-container, .members-wrapper {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        gap: 40px !important;
-        width: 100% !important;
-    }
-
-    .team-card, .member-card {
-        width: 100% !important;
-        max-width: 320px !important;
-        margin: 0 auto !important;
-    }
+  /* Tighten spacing since ghost is gone */
+  .team-heading-wrapper {
+    margin-top: 0 !important;
+    margin-bottom: 60px !important;
+  }
 }
+/* ================================================= */
+/* 📱 MOBILE ONLY — FIX OUR TEAM HEADING */
+/* ================================================= */
+
+@media (max-width: 768px) {
+
+  /* Reduce huge gap above OUR TEAM */
+  .team-section {
+    padding-top: 40px !important;   /* was too large */
+  }
+
+  .team-heading-wrapper {
+    margin-top: 0 !important;
+    margin-bottom: 40px !important;
+  }
+
+  /* Increase OUR TEAM heading size */
+  .team-main-title,
+  .team-heading-wrapper h2 {
+    font-size: 2.6rem !important;   /* bigger & bold */
+    letter-spacing: 2px;
+  }
+
+  /* Reduce gap between OUR TEAM and CONVENORS */
+  .role-heading,
+  .role-heading2 {
+    margin-top: 36px !important;
+    margin-bottom: 40px !important;
+  }
+}
+/* ================================================= */
+/* ❌ REMOVE TEAM GHOST HEADING — ALL DEVICES */
+/* ================================================= */
+
+.team-ghost {
+  display: none !important;
+}
+
+/* Tighten spacing since ghost is gone */
+.team-heading-wrapper {
+  margin-top: 0 !important;
+  margin-bottom: 48px !important;
+}
+/* ================================================= */
+/* 🖥️ DESKTOP ONLY — TIGHTEN SPACE ABOVE OUR TEAM */
+/* ================================================= */
+
+@media (min-width: 1025px) {
+
+  /* Reduce overall section top padding */
+  .team-section {
+    padding-top: 10px !important;   /* was too large */
+  }
+
+  /* Pull OUR TEAM heading upward */
+  .team-heading-wrapper {
+    margin-top: 0 !important;       /* remove negative/extra gap */
+    margin-bottom: 16px !important; /* clean spacing below heading */
+  }
+
+  /* Optional: slightly tighten heading line-height */
+  .team-main-title {
+    line-height: 0.1;
+  }
+}
+/* 🔥 REMOVE SPACE BELOW YELLOW SPONSOR BOX */
+.sponsor-cta {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* 🔥 IF THE BOX ITSELF HAS MARGIN */
+.sponsor-btn {
+  margin-bottom: 0 !important;
+}
+
+/* 🔥 PULL FAQ SECTION UP */
+.faq-page {
+  margin-top: -40px !important;
+}
+
+
+
+
+/* ============================= */
+/* RESPONSIVE */
+/* ============================= */
+
+/* @media (max-width: 768px) {
+  .team-card {
+      width: 260px;
+  }
+
+  .team-card img {
+      width: 130px;
+      height: 130px;
+  }
+
+  .section-title {
+      font-size: 2.2rem;
+  }
+} */

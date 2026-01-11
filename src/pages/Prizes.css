@@ -380,117 +380,74 @@
 /* MOBILE */
 /* ================================================= */
 
-/* ================= FINAL MOBILE FIXES (PRIZES PAGE) ================= */
-
-/* ================= FINAL MOBILE FIXES (GHOST TEXT FORCED) ================= */
-
-@media screen and (max-width: 768px) {
-
-    /* 1. PAGE CONTAINER */
+/* ================================================= */
+  /* 📱 MOBILE ONLY */
+  /* ================================================= */
+  
+  @media (max-width: 900px) {
+  
     .prizes-page {
-        height: auto !important;
-        min-height: 100vh !important;
-        padding: 80px 15px 120px !important;
-        overflow-x: hidden !important;
-        overflow-y: visible !important;
-        display: flex !important;
-        flex-direction: column !important;
-        justify-content: flex-start !important;
-        background-color: transparent !important;
+      padding: 100px 16px;
     }
-
-    /* 2. TITLE WRAPPER (The Box holding the text) */
-    .prizes-heading-wrapper {
-        margin-top: 0 !important;
-        margin-bottom: 150px !important;
-        position: relative !important;
-        height: 100px !important; /* Force a height so the ghost has space */
-        width: 100% !important;
-        display: flex !important;
-        justify-content: center !important;
-        align-items: center !important;
-        overflow: visible !important; /* CRITICAL: Don't cut off the big text */
-        z-index: 1 !important;
-    }
-
-    /* 3. GHOST TEXT (The Fix) */
-    .prizes-ghost {
-        /* Fix the syntax error from the original desktop code */
-        display: block !important; 
-        visibility: visible !important;
-
-        /* Make it BIG and VISIBLE */
-        font-size: 5rem !important; 
-        color: rgba(255, 255, 255, 0.3) !important; /* Increased brightness */
-        opacity: 0.4 !important; /* Much higher opacity to test visibility */
-        
-        /* Positioning */
-        position: absolute !important;
-        top: 40% !important;
-        left: 54% !important;
-        transform: translate(-50%, -50%) !important;
-        
-        /* Layout */
-        width: 100% !important;
-        text-align: center !important;
-        white-space: nowrap !important;
-        z-index: -1 !important; /* Sit behind the main title */
-        
-        /* Remove blur for now to ensure it renders */
-        filter: none !important; 
-    }
-
-    /* 4. MAIN TITLE */
+  
     .prizes-main-title {
-        font-size: 3.5rem !important;
-        line-height: 1 !important;
-        position: relative !important;
-        z-index: 10 !important; /* Sit clearly on top */
+      font-size: 2.2rem;
     }
-
-    /* 5. PRIZE POOL TEXT */
-    .prize-pool {
-        margin-top: 10px !important;
-        margin-bottom: 50px !important;
-        width: 100% !important;
-        padding: 0 10px !important;
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        position: relative !important;
-        z-index: 10 !important;
-    }
-
-    .prize-pool-text {
-        font-size: 1.4rem !important;
-        line-height: 1.5 !important;
-        white-space: normal !important;
-        text-align: center !important;
-        width: 100% !important;
-        word-wrap: break-word !important;
-    }
-
-    /* 6. CARDS & LAYOUT */
+  
     .podium-wrapper {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        gap: 30px !important;
-        width: 100% !important;
-        margin-top: 0 !important;
+      flex-direction: column;
+      gap: 80px;
     }
-
-    .podium-column { width: 100% !important; display: flex !important; flex-direction: column !important; align-items: center !important; }
-    .podium-column.first { order: -1 !important; margin-bottom: 10px !important; }
-    .podium-base { display: none !important; }
-    
+  
+    .podium-base {
+      display: none;
+    }
+  
     .prize-card {
-        width: 100% !important;
-        max-width: 320px !important;
-        padding: 30px 20px !important;
-        margin: 0 !important;
+      width: 240px;
+      padding: 32px 20px;
     }
-    .prize-card.first { transform: scale(1.05) !important; box-shadow: 0 0 40px rgba(255, 215, 0, 0.3) !important; }
-    .prize-amount { font-size: 2.2rem !important; }
-    .medal { font-size: 2.5rem !important; }
-}
+  
+    .prize-amount {
+      font-size: 2.2rem;
+    }
+  
+    .track-prizes {
+      margin-top: 80px;
+    }
+  
+    .prize-pool {
+      margin-top: 60px;
+    }
+  
+    .prize-pool-text {
+      font-size: 1.4rem;
+      letter-spacing: 2px;
+    }
+  
+    .prize-pool-line {
+      width: 240px;
+    }
+  }
+  /* ================================================= */
+/* 🖥️ DESKTOP ONLY — FIX HUGE SPACE ABOVE PRIZES */
+/* ================================================= */
+
+@media (min-width: 901px) {
+
+    /* Reduce top padding of page */
+    .prizes-page {
+      padding-top: 0px !important;   /* was 150px */
+      padding-bottom: 100px !important;
+    }
+  
+    /* Tighten heading spacing */
+    .prizes-heading-wrapper {
+      margin-bottom: 64px !important; /* was 120px */
+    }
+  
+    /* Optional: slightly tighten title line height */
+    .prizes-main-title {
+      line-height: 1.1;
+    }
+  }

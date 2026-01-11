@@ -172,77 +172,111 @@
 /* RESPONSIVE */
 /* ============================= */
 
-/* ================= MOBILE FIXES FOR THEMES (Add to bottom of themes.css) ================= */
+/* ================================================= */
+/* 📱 MOBILE & TABLET */
+/* ================================================= */
 
-@media screen and (max-width: 768px) {
+@media (max-width: 900px) {
 
-    /* 1. CONTAINER & PADDING FIX */
-    .themes-page {
-        width: 100% !important;
-        padding: 40px 20px 100px !important; /* Safe padding prevents edge touching */
-        overflow-x: hidden !important;
-    }
+  .hero-title {
+    font-size: 2.8rem;
+    letter-spacing: 0.5px;
+  }
 
-    /* 2. STACK CARDS VERTICALLY */
-    .theme-grid {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        gap: 30px !important; /* Space between cards */
-        margin-top: 20px !important;
-        width: 100% !important;
-    }
+  .themes-ghost {
+    display: none;
+  }
 
-    /* 3. RESIZE CARDS TO FIT PHONE */
-    .theme-card {
-        width: 100% !important;
-        max-width: 320px !important; /* Perfect width for mobile */
-        height: 180px !important;
-        margin: 0 !important;
-    }
+  .themes-heading {
+    margin-bottom: 30px;
+    padding-top: 20px;
+  }
 
-    /* 4. FIX GHOST TEXT (The "THEMES" Background) */
-    .themes-ghost {
-        /* Force Display */
-        display: block !important;
-        visibility: visible !important;
-        
-        /* Make it Visible */
-        opacity: 0.25 !important; /* Higher opacity to ensure you see it */
-        color: rgba(255, 255, 255, 0.3) !important;
-        
-        /* Sizing */
-        font-size: 5rem !important; /* Large but fits screen */
-        white-space: nowrap !important;
-        
-        /* Positioning (Dead Center) */
-        position: absolute !important;
-        top: 50% !important;
-        left: 40% !important;
-        transform: translate(-50%, -50%) !important;
-        
-        /* Layout Safety */
-        width: 100% !important;
-        text-align: center !important;
-        z-index: -1 !important; /* Sit behind the main title */
-        pointer-events: none !important;
-    }
+  /* ONE CARD PER ROW */
+  .theme-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    padding-inline: 16px;
+    margin-top: 30px;
+  }
 
-    /* 5. FIX HEADING CONTAINER (Stops the cut-off) */
-    .themes-heading {
-        position: relative !important;
-        overflow: visible !important; /* CRITICAL: This allows the text to show */
-        z-index: 1 !important;
-        background: transparent !important;
-        margin-bottom: 40px !important;
-    }
+  /* LANDSCAPE CARD */
+  .theme-card {
+    aspect-ratio: 16 / 9;
+    height: auto;
+    max-width: 100%;
+  }
 
-    /* 6. MAIN TITLE SIZE */
-    .hero-title {
-        font-size: 3rem !important;
-        z-index: 2 !important;
-        position: relative !important;
-    }
+  .theme-title {
+    font-size: 0.95rem;
+  }
+
+  /* TAP TO SHOW IMAGE */
+  .theme-card.mobile-show-image .theme-image {
+    opacity: 1;
+  }
+
+  .theme-card.mobile-show-image .theme-title {
+    opacity: 0;
+  }
+}
+/* ================================================= */
+/* ❌ REMOVE THEMES GHOST TEXT (DESKTOP + MOBILE) */
+/* ================================================= */
+
+.themes-ghost {
+  display: none !important;
 }
 
+/* Clean up spacing that ghost was creating */
+.themes-heading {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 24px;   /* clean, tight spacing */
+}
+.theme-grid {
+  margin-top: 24px;   /* was too large */
+}
+/* ================================================= */
+/* FIX: MAKE THEME IMAGES FILL THE CARD (ALL DEVICES) */
+/* ================================================= */
 
+.theme-image {
+  background-size: cover !important;   /* fills the box */
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+/* ================================================= */
+/* 🔥 FIX HUGE SPACE ABOVE THEMES HEADING */
+/* ================================================= */
+
+/* Target ONLY THEMES heading */
+.themes-heading,
+#themes .section-heading,
+.section-heading.themes {
+  margin-top: 0px !important;    /* ⬅️ tight */
+  margin-bottom: 22px !important;
+  padding-top: 0 !important;
+}
+
+/* If THEMES comes after a divider line */
+.line + .themes-heading,
+.section-divider + .themes-heading {
+  margin-top: 0px !important;
+}
+
+/* Safety: prevent inherited large margins */
+.themes-heading h2 {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* 📱 MOBILE — EVEN TIGHTER */
+@media (max-width: 768px) {
+  .themes-heading,
+  #themes .section-heading,
+  .section-heading.themes {
+    margin-top: 6px !important;
+    margin-bottom: 24px !important;
+  }
+}

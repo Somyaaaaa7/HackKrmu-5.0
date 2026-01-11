@@ -189,64 +189,130 @@
 
 /* MOBILE */
 
-/* ================= MOBILE FIXES FOR TIMELINE (REFINED SIZE) ================= */
+/* ================================================= */
+/* 📱 MOBILE — SAME TIMELINE, SCALED DOWN */
+/* ================================================= */
 
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
 
-    /* 1. RESET CONTAINER PADDING */
-    .timeline-section {
-        padding: 30px 15px 80px !important; /* Slightly reduced top/bottom padding */
-        width: 100% !important;
-        overflow-x: hidden !important;
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
+  .timeline-page {
+    padding: 60px 16px 80px;
+  }
+
+  .timeline-title {
+    font-size: 3rem;
+  }
+
+  .timeline-heading {
+    margin-bottom: 36px;
+  }
+
+  .timeline-tabs {
+    gap: 10px;
+    margin-bottom: 32px;
+  }
+
+  .timeline-tabs button {
+    font-size: 0.95rem;
+    padding: 8px 14px;
+  }
+
+  .timeline-day {
+    font-size: 1.6rem;
+    margin-bottom: 36px;
+  }
+
+  .timeline-wrapper {
+    max-width: 100%;
+    padding-bottom: 60px;
+  }
+
+  /* KEEP LINE CENTERED */
+  .line-base,
+  .line-fill {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* SAME LEFT / RIGHT LOGIC */
+  .event {
+    width: 50%;
+    padding: 20px 18px;
+  }
+
+  .event.left {
+    left: 0;
+    text-align: right;
+  }
+
+  .event.right {
+    left: 50%;
+    text-align: left;
+  }
+
+  .dot {
+    top: 28px;
+    width: 12px;
+    height: 12px;
+  }
+
+  .event.left .dot {
+    right: -6px;
+  }
+
+  .event.right .dot {
+    left: -6px;
+  }
+
+  .time {
+    font-size: 0.75rem;
+  }
+
+  .label {
+    font-size: 1.05rem;
+  }
+}
+ /* ================================================= */
+/* 🖥️ DESKTOP ONLY — FIX HUGE SPACE ABOVE PRIZES */
+/* ================================================= */
+
+@media (min-width: 901px) {
+
+    /* Reduce top padding of page */
+    .prizes-page {
+      padding-top: 0px !important;   /* was 150px */
+      padding-bottom: 100px !important;
     }
-
-    /* 2. FIX THE GIANT TITLE ("EVENT TIMELINE") */
-    .timeline-section .hero-title {
-        font-size: 2.2rem !important; /* ↓ Reduced from 3rem */
-        width: 100% !important;
-        text-align: center !important;
-        line-height: 1 !important;
-        flex-wrap: wrap !important;
-        justify-content: center !important;
-        margin-bottom: 20px !important; /* ↓ Reduced gap below title */
+  
+    /* Tighten heading spacing */
+    .prizes-heading-wrapper {
+      margin-bottom: 64px !important; /* was 120px */
     }
-
-    /* 3. FIX THE BUTTONS CONTAINER */
-    .timeline-section div {
-        flex-wrap: wrap !important;
-        justify-content: center !important;
-        gap: 15px !important; /* ↓ Reduced gap between buttons */
+  
+    /* Optional: slightly tighten title line height */
+    .prizes-main-title {
+      line-height: 1.1;
     }
+  }
+  /* ================================================= */
+/* 🖥️ DESKTOP ONLY — FIX SPACE ABOVE EVENT TIMELINE */
+/* ================================================= */
 
-    /* 4. BUTTON STYLING (Smaller & Tighter) */
-    .timeline-section button, 
-    .timeline-section .day-btn { 
-        width: 100% !important;
-        max-width: 280px !important; /* Slightly narrower max-width */
-        margin: 4px 0 !important;    /* ↓ Reduced vertical margin */
-        font-size: 1.5rem !important; /* ↓ Reduced from 1.1rem */
-        padding: 10px 16px !important; /* ↓ Reduced padding */
-    }
+@media (min-width: 769px) {
 
-    /* 5. HIDE TIMELINE GHOST TEXT */
-    .timeline-ghost {
-        display: none !important;
-    }
+  /* Reduce huge top gap */
+  .timeline-page {
+    padding-top: 0px !important;   /* was 80px */
+  }
 
-    /* 6. CENTER THE "DAY 1 - 18 FEB" TEXT */
-    .timeline-section h2, 
-    .timeline-date-heading {
-        font-size: 2.5rem !important; /* ↓ Reduced from 1.8rem */
-        text-align: center !important;
-        width: 100% !important;
-        margin-top: 20px !important; /* ↓ Reduced gap above date */
-        margin-bottom: 10px !important; /* Added small bottom margin for safety */
-    }
+  /* Ensure heading sits tight */
+  .timeline-heading {
+    margin-top: 0 !important;
+    margin-bottom: 40px !important;
+  }
 
-    .timeline-wrapper{
-        font-size: 1rem;
-    }
+  /* Optional: tighten title glow spacing */
+  .timeline-title {
+    line-height: 1.05;
+  }
 }

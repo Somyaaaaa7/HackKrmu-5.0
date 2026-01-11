@@ -266,9 +266,6 @@
   }
 }
 
-
-
-
 /* ================= 🎞️ KEYFRAMES ================= */
 
 /* Gentle left-right fabric sway */
@@ -298,4 +295,775 @@
 
 /* ================= REDUCED MOTION SAFETY ================= */
 
+/* ================================================= */
+/* MOBILE & TABLET */
+/* ================================================= */
 
+@media (max-width: 1024px) {
+
+  .about-page {
+    padding: 0 20px 120px;
+  }
+
+  /* 🔥 GHOST OFF ON MOBILE */
+  .section-heading .ghost-text {
+    display: none;
+  }
+
+  .section-heading h2 {
+    font-size: 2rem;
+  }
+
+  .about-top {
+    grid-template-columns: 1fr;
+    gap: 60px;
+    text-align: center;
+  }
+
+  .about-right img {
+    margin: 0 auto;
+    max-width: 340px;
+  }
+
+  .partner-card {
+    width: 150px;
+    height: 80px;
+  }
+
+  .partner-card img {
+    max-width: 90px;
+  }
+
+  .marquee-track {
+    animation-duration: 32s;
+  }
+}
+
+/* ================================================= */
+/* SMALL PHONES */
+/* ================================================= */
+
+@media (max-width: 480px) {
+
+  .hero-title {
+    flex-direction: column;
+    font-size: 2.6rem;
+  }
+
+  .partner-card {
+    width: 140px;
+    height: 70px;
+  }
+
+  .partner-card img {
+    max-width: 80px;
+  }
+}
+/* ================================================= */
+/* 🔥 FINAL HARD RESET — REMOVE EXTRA / GHOST HEADINGS */
+/* ================================================= */
+
+/* Kill ALL ghost / background heading text */
+.ghost-text,
+.about-ghost,
+.partners-ghost {
+  display: none !important;
+}
+
+/* Ensure only ONE heading is visible */
+.section-heading h2,
+.about-heading h2,
+.partners-heading h2 {
+  display: block;
+  position: relative;
+  z-index: 1;
+
+  font-family: "TransformersMovie", sans-serif;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  letter-spacing: 2px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* Clean spacing */
+.section-heading,
+.about-heading,
+.partners-heading {
+  margin: 100px 0 60px;
+}
+/* ================================================= */
+/* 🔥 FINAL MOBILE HERO ALIGNMENT FIX */
+/* ================================================= */
+
+@media (max-width: 768px) {
+
+    /* HERO WRAPPER */
+    .hero,
+    .hero-section,
+    .home-hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+  
+    /* TITLE LINE: HACK KRMU 5.0 */
+    .hero-title {
+      display: flex !important;
+      flex-direction: column !important;   /* STACK */
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 6px;
+      width: 100%;
+      text-align: center;
+    }
+  
+    /* HACK KRMU */
+    .hero-title span:first-child,
+    .hero-title .title-text {
+      font-size: 2rem;
+      line-height: 1.2;
+    }
+  
+    /* 5.0 */
+    .hero-title span:last-child,
+    .hero-title .title-number {
+      font-size: 3rem;
+      line-height: 1;
+    }
+  
+    /* DATE */
+    .hero-date,
+    .hero-subtitle {
+      text-align: center;
+      margin: 12px auto;
+      font-size: 0.95rem;
+    }
+  
+    /* COUNTDOWN */
+    .countdown,
+    .timer {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 20px auto;
+    }
+  
+    /* REGISTER BUTTON */
+    .hero button,
+    .register-btn {
+      margin: 24px auto 0;
+      display: block;
+    }
+  }
+/* ================================================= */
+/* 🔥 MOBILE SPACING FIX — PARTNERS SECTION */
+/* ================================================= */
+
+@media (max-width: 768px) {
+
+  /* Reduce space below heading */
+  .partners-heading,
+  .section-heading {
+    margin-bottom: 24px !important;
+  }
+
+  /* Reduce top margin of logo grid */
+  .partners-fixed {
+    margin-top: 16px !important;
+  }
+}
+/* ================================================= */
+/* ✅ MOBILE: MOVING MARQUEE WITH 3 ROWS (WORKING) */
+/* ================================================= */
+
+@media (max-width: 768px) {
+
+    /* Marquee container */
+    .partners-marquee {
+      position: relative;
+      height: 230px;            /* space for 3 rows */
+      overflow: hidden;
+    }
+  
+    /* Keep original animation */
+    .partners-marquee .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: marquee-left 25s linear infinite;
+    }
+  
+    /* Duplicate rows using pseudo-layers */
+    .partners-marquee .marquee-track {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  
+    .partners-marquee .marquee-track::before,
+    .partners-marquee .marquee-track::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      display: flex;
+      gap: 14px;
+    }
+  
+    /* Row 2 */
+    .partners-marquee .marquee-track::before {
+      top: 78px;
+    }
+  
+    /* Row 3 */
+    .partners-marquee .marquee-track::after {
+      top: 156px;
+    }
+  
+    /* Cards sizing */
+    .partners-marquee .partner-card {
+      width: 120px;
+      height: 60px;
+      margin-right: 14px;
+    }
+  
+    .partners-marquee .partner-card img {
+      max-width: 85%;
+      max-height: 34px;
+    }
+  }
+  /* ================================================= */
+/* ✅ MOBILE: SHOW ONLY TOP PARTNER IMAGES */
+/* ================================================= */
+
+@media (max-width: 768px) {
+
+    /* Hide scrolling marquee on mobile */
+    .partners-marquee {
+      display: none !important;
+    }
+  
+    /* Ensure fixed partners stay visible */
+    .partners-fixed {
+      display: flex !important;
+      justify-content: center;
+      gap: 14px;
+    }
+  }
+/* ================================================= */
+/* ✅ MOBILE: HIDE LAST ABOUT PARAGRAPH */
+/* ================================================= */
+
+@media (max-width: 768px) {
+
+    .about-left p:last-of-type {
+      display: none;
+    }
+  
+  }
+ /* ================================================= */
+/* CENTER IMAGE + PROPER SPACING */
+/* ================================================= */
+
+.about-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* GAP BEFORE & AFTER IMAGE */
+  margin: 60px 0;   /* ⬅️ controls space above & below photo */
+}
+
+.about-right img {
+  max-width: 480px;
+  width: 100%;
+  border-radius: 18px;
+
+  /* REMOVE UNWANTED INLINE SPACING */
+  display: block;
+
+  box-shadow:
+    0 0 40px rgba(0, 255, 247, 0.18),
+    inset 0 0 20px rgba(0, 255, 247, 0.12);
+}
+@media (max-width: 768px) {
+
+  .about-right {
+    margin: 24px 0 16px;
+  }
+
+  .section-heading {
+    margin: 24px 0 20px;  /* tight & clean */
+  }
+}
+/* ================================================= */
+/* 🔥 FORCE MINIMAL GAP (FINAL OVERRIDE) */
+/* ================================================= */
+
+.about-right {
+  margin-bottom: 16px !important;   /* image → heading gap */
+}
+
+.section-heading {
+  margin-top: 16px !important;
+  margin-bottom: 16px !important;
+}
+@media (max-width: 768px) {
+
+  .about-right {
+    margin-bottom: 12px !important;
+  }
+
+  .section-heading {
+    margin-top: 12px !important;
+    margin-bottom: 12px !important;
+  }
+}
+.about-left p {
+  margin-bottom: -10px !important;
+}
+/* ===================================== */
+/* 🔥 KILL TEXT → IMAGE GAP (REAL FIX) */
+/* ===================================== */
+
+.about-left p {
+  margin: 0 0 8px;   /* tiny spacing between paragraphs */
+}
+
+.about-left p:last-child {
+  margin-bottom: 0; /* ❌ no gap before image */
+}
+/* ================================================= */
+/* 🔥 FORCE REMOVE GAP: SPONSOR → THEMES */
+/* ================================================= */
+
+.sponsor-cta {
+  margin-top: 16px !important;     /* ⬅️ reduce space above button */
+  margin-bottom: 8px !important;  /* ⬅️ reduce space below button */
+}
+
+.partners-heading {
+  margin-bottom: 12px !important; /* ⬅️ remove extra section gap */
+}
+
+/* In case THEMES is a section heading */
+.section-heading,
+.themes-heading {
+  margin-top: 12px !important;    /* ⬅️ pull THEMES up */
+}
+@media (max-width: 768px) {
+  .sponsor-cta {
+    margin-top: 12px !important;
+    margin-bottom: 6px !important;
+  }
+
+  .section-heading,
+  .themes-heading {
+    margin-top: 8px !important;
+  }
+}
+/* ================================================= */
+/* 📱 MOBILE ONLY — SHRINK SPONSOR BUTTON */
+/* ================================================= */
+
+@media (max-width: 768px) {
+
+  .sponsor-btn {
+    font-size: 1.2rem;          /* smaller text */
+    padding: 12px 28px;         /* smaller button */
+    letter-spacing: 1px;
+
+    border-width: 2px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+  }
+}
+/* ================================================= */
+/* 🔥 REMOVE HUGE GAP AFTER "BECOME OUR SPONSOR" */
+/* ================================================= */
+
+/* Tighten sponsor button spacing */
+.sponsor-cta {
+  margin-top: 16px !important;
+  margin-bottom: 12px !important;
+}
+
+/* Kill extra space after partners section */
+.partners-heading {
+  padding-bottom: 0 !important;
+  margin-bottom: 16px !important;
+}
+
+/* Pull THEMES section up */
+.themes-heading {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+@media (max-width: 768px) {
+  .sponsor-cta {
+    margin-top: 12px !important;
+    margin-bottom: 8px !important;
+  }
+
+  .partners-heading {
+    margin-bottom: 12px !important;
+  }
+}
+/* ================================================= */
+/* 🔥 KILL SPACE AFTER "BECOME OUR SPONSOR" (REAL FIX) */
+/* ================================================= */
+
+/* Remove forced bottom padding from About section */
+.about-page {
+  padding-bottom: 24px !important;   /* was 140px */
+}
+
+/* Safety: ensure CTA itself stays tight */
+.sponsor-cta {
+  margin-bottom: 16px !important;
+}
+@media (max-width: 768px) {
+  .about-page {
+    padding-bottom: 16px !important;
+  }
+
+  .sponsor-cta {
+    margin-bottom: 12px !important;
+  }
+}
+/* ================================================= */
+/* 🔥 FIX GAP: ABOUT IMAGE → PARTNERS HEADING */
+/* ================================================= */
+
+/* Reduce space AFTER about section */
+.about-top {
+  margin-bottom: 45px !important;   /* ⬅️ small, clean gap */
+}
+
+/* Reduce space BEFORE partners heading */
+.partners-heading {
+  margin-top: 45px !important;      /* ⬅️ pull heading up */
+  padding-top: 0 !important;
+}
+/* ================================================= */
+/* ✅ UNIVERSAL GHOST HEADING (SAFE + CLEAN) */
+/* ================================================= */
+
+/* Wrapper */
+.ghost-heading {
+  position: relative;
+  text-align: center;
+  margin: 80px 0 60px;
+  isolation: isolate;
+}
+
+/* Ghost background text */
+.ghost-heading::before {
+  content: attr(data-ghost);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  font-family: "TransformersMovie", sans-serif;
+  font-size: 5.5rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  line-height: 1;
+
+  color: rgba(255, 255, 255, 0.06);
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+/* Real visible heading */
+.ghost-heading h2 {
+  position: relative;
+  z-index: 1;
+
+  font-family: "TransformersMovie", sans-serif;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  letter-spacing: 2px;
+  margin: 0;
+  padding: 0;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+  .ghost-heading::before {
+    font-size: 3.2rem;
+  }
+
+  .ghost-heading {
+    margin: 32px 0 24px;
+  }
+}
+/* ================================================= */
+/* 🖥️ DESKTOP ONLY — SPACING & GAP CORRECTION */
+/* ================================================= */
+
+@media (min-width: 1025px) {
+
+  /* ===== SECTION HEADINGS ===== */
+  .section-heading,
+  .about-heading,
+  .partners-heading,
+  .themes-heading {
+    margin-top: 80px !important;
+    margin-bottom: 48px !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  /* ===== ABOUT SECTION ===== */
+  .about-page {
+    padding-bottom: 80px !important;   /* reduce huge tail gap */
+  }
+
+  .about-top {
+    margin-bottom: 80px !important;    /* clean separation */
+  }
+
+  .about-left p {
+    margin-bottom: 16px !important;    /* readable, not airy */
+  }
+
+  /* ===== ABOUT IMAGE ===== */
+  .about-right {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  .about-right img {
+    margin: 0 auto !important;
+  }
+
+  /* ===== PARTNERS SECTION ===== */
+  .partners-fixed {
+    margin-top: 32px !important;
+    margin-bottom: 64px !important;
+  }
+
+  .partner-card {
+    margin: 0 !important;
+  }
+
+  /* ===== SPONSOR CTA ===== */
+  .sponsor-cta {
+    margin-top: 48px !important;
+    margin-bottom: 64px !important;
+  }
+
+  /* ===== HERO → NEXT SECTION GAP ===== */
+  .hero + .section-heading,
+  .hero-section + .section-heading {
+    margin-top: 100px !important;
+  }
+}
+/* ================================================= */
+/* 🖥️ DESKTOP ONLY — REDUCE TOP & SIDE SPACING */
+/* ================================================= */
+
+@media (min-width: 1025px) {
+
+  /* ============================= */
+  /* SECTION HEADING SPACING */
+  /* ============================= */
+
+  .section-heading,
+  .about-heading,
+  .partners-heading,
+  .themes-heading {
+    margin-top: 48px !important;     /* ⬅️ reduce huge top gap */
+    margin-bottom: 40px !important;  /* balanced spacing */
+  }
+
+  /* ============================= */
+  /* PAGE SIDE PADDING (DESKTOP) */
+  /* ============================= */
+
+  .about-page {
+    padding-left: 5% !important;     /* was too wide (8%) */
+    padding-right: 5% !important;
+  }
+
+  /* ============================= */
+  /* ABOUT CONTENT SPACING */
+  /* ============================= */
+
+  .about-top {
+    margin-top: 0 !important;
+    margin-bottom: 64px !important;  /* tighter before partners */
+  }
+
+  .about-left p {
+    margin-bottom: 14px !important;
+  }
+
+  /* ============================= */
+  /* IMAGE ALIGNMENT */
+  /* ============================= */
+
+  .about-right {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* ============================= */
+  /* PARTNERS SECTION */
+  /* ============================= */
+
+  .partners-fixed {
+    margin-top: 24px !important;
+  }
+
+  /* ============================= */
+  /* HERO → ABOUT GAP */
+  /* ============================= */
+
+  .hero + .section-heading,
+  .hero-section + .section-heading {
+    margin-top: 52px !important;     /* was too tall */
+  }
+}
+/* ================================================= */
+/* 🖥️ DESKTOP ONLY — REMOVE HUGE GAP ABOVE ABOUT US */
+/* ================================================= */
+
+@media (min-width: 1025px) {
+
+  /* Reduce gap before ABOUT US heading */
+  .section-heading {
+    margin-top: 32px !important;   /* ⬅️ was very large */
+  }
+
+  /* If ABOUT US is first section after hero */
+  .hero + .section-heading,
+  .hero-section + .section-heading,
+  .home-hero + .section-heading {
+    margin-top: 40px !important;
+  }
+
+  /* Safety: remove any hidden padding pushing it down */
+  .about-page {
+    padding-top: 0 !important;
+  }
+}
+/* ================================================= */
+/* 📱 MOBILE — FIX ABOUT TEXT READABILITY */
+/* ================================================= */
+
+@media (max-width: 768px) {
+
+  /* Improve paragraph font & spacing */
+  .about-left p {
+    font-family: "Inter", "Poppins", system-ui, sans-serif; /* cleaner for reading */
+    font-size: 1rem;
+    line-height: 1.75;              /* breathing space */
+    letter-spacing: 0.2px;
+    color: #e0e6ea;
+
+    max-width: 340px;               /* readable width */
+    margin: 0 auto 18px !important; /* SPACE AFTER EACH PARA */
+    text-align: center;
+  }
+
+  /* Last paragraph spacing fix */
+  .about-left p:last-of-type {
+    margin-bottom: 0 !important;
+  }
+}
+/* ================================================= */
+/* 🔥 REMOVE HUGE GAP AFTER "BECOME OUR SPONSOR" */
+/* ================================================= */
+
+/* Tighten sponsor button spacing */
+.sponsor-cta {
+  margin-top: 14px !important;
+  margin-bottom: 14px !important;   /* ⬅️ THIS removes big black gap */
+}
+
+/* Pull next section up */
+.sponsor-cta + .section-heading,
+.sponsor-cta + section,
+.sponsor-cta + div {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Mobile: even tighter */
+@media (max-width: 768px) {
+  .sponsor-cta {
+    margin-top: 16px !important;
+    margin-bottom: 6px !important;
+  }
+}
+/* ================================================= */
+/* 🔥 POSITION SPONSOR BAR BETWEEN LINE & PHOTOS */
+/* ================================================= */
+
+/* Wrapper that holds the sponsor button */
+.sponsor-cta {
+  position: relative;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+
+  /* PUSH DOWN from top content */
+  transform: translateY(40px); /* ⬅️ adjust if needed */
+  z-index: 5;
+}
+
+/* If there is a glowing divider line above */
+.line,
+.divider-line,
+.section-divider {
+  margin-bottom: 40px !important; /* space before sponsor */
+}
+
+/* Ensure content below doesn’t push it away */
+.sponsor-cta + * {
+  margin-top: 40px !important; /* space before photos */
+}
+
+/* 📱 MOBILE — SLIGHTLY TIGHTER */
+@media (max-width: 768px) {
+  .sponsor-cta {
+    transform: translateY(24px);
+  }
+
+  .sponsor-cta + * {
+    margin-top: 24px !important;
+  }
+}
+/* ================================================= */
+/* 🔥 PUSH SPONSOR BAR FURTHER DOWN */
+/* ================================================= */
+
+.sponsor-cta {
+  position: relative;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+
+  transform: translateY(80px); /* ⬅️ MORE DOWN */
+  z-index: 5;
+}
+
+/* Space before photos */
+.sponsor-cta + * {
+  margin-top: 60px !important;
+}
+
+/* 📱 MOBILE — still tight but lower */
+@media (max-width: 768px) {
+  .sponsor-cta {
+    transform: translateY(48px);
+  }
+
+  .sponsor-cta + * {
+    margin-top: 32px !important;
+  }
+}

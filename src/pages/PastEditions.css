@@ -177,98 +177,183 @@
 /* RESPONSIVE (KEEPS SHAPE) */
 /* ============================= */
 
-/* ================= GALLERY FIX: DENSE HONEYCOMB (3-2-3 PATTERN) ================= */
 
-/* ================= FINAL MOBILE GALLERY FIX (3-2 PATTERN + FULL BOTTOM ROW) ================= */
+/* ================================================= */
+/* MOBILE FIX – HONEYCOMB RESPONSIVE */
+/* ================================================= */
 
-/* ================= FINAL GALLERY FIX: 3-2 PATTERN + SOLID BOTTOM BLOCK ================= */
+@media (max-width: 768px) {
 
-@media screen and (max-width: 768px) {
+  .past-gallery {
+    padding: 10px 0 80px;
+    margin-bottom: 0;
+  }
 
-    /* 1. RESET CONTAINER */
-    .past-gallery {
-        width: 100% !important;
-        padding: 40px 0 100px !important;
-        overflow-x: hidden !important;
-    }
+  /* ===== GALLERY HEADING ===== */
+  .gallery-heading {
+    margin-bottom: 50px;
+  }
 
-    /* 2. FLATTEN HTML LIST */
-    .hex-row {
-        display: contents !important;
-    }
+  .gallery-ghost {
+    font-size: 4.2rem;
+    top: 30%;
+    filter: blur(0.8px);
+  }
 
-    /* 3. CREATE 6-COLUMN GRID */
-    .honeycomb {
-        display: grid !important;
-        grid-template-columns: repeat(6, 1fr) !important;
-        width: 100% !important;
-        max-width: 380px !important; /* Uses full phone width */
-        margin: 0 auto !important;
-        padding: 0 10px !important;
-        gap: 8px !important;
-    }
+  .gallery-main-title {
+    font-size: 1.8rem;
+  }
 
-    /* 4. BASE HEXAGON STYLE */
-    .hex-wrap {
-        width: 100% !important;
-        grid-column: span 2 !important; /* Default: span 2 cols */
-        height: 100px !important;
-        margin: 0 !important;
-        margin-bottom: -22px !important; /* Pull rows together */
-        position: relative !important;
-    }
+  /* ===== HONEYCOMB STACK ===== */
+  .honeycomb {
+    width: 100%;
+    overflow-x: hidden;
+  }
 
-    /* 5. THE PATTERN (Applies to top 10 items) */
-    
-    /* Standard Row (3 items) */
-    .hex-wrap:nth-child(5n+1),
-    .hex-wrap:nth-child(5n+2),
-    .hex-wrap:nth-child(5n+3) {
-        margin-top: 0 !important;
-        z-index: 1 !important;
-    }
+  /* ===== ROWS ===== */
+  .hex-row {
+    justify-content: center;
+    margin-bottom: -18px; /* reduced overlap */
+  }
 
-    /* Indented Row (2 items) - Pushed down to fit in "V" */
-    .hex-wrap:nth-child(5n+4) {
-        grid-column: 2 / span 2 !important; /* Left Center */
-        margin-top: 25px !important;
-        z-index: 2 !important;
-    }
-    .hex-wrap:nth-child(5n) {
-        grid-column: 4 / span 2 !important; /* Right Center */
-        margin-top: 25px !important;
-        z-index: 2 !important;
-    }
+  .hex-row.offset {
+    margin-left: 0;
+  }
 
-    /* 6. THE FIX: MANUAL OVERRIDE FOR BOTTOM 6 TILES (11-16) */
-    /* We "turn off" the pattern here and force two straight rows of 3 */
+  /* ===== HEX SIZE (MOBILE) ===== */
+  .hex-wrap {
+    width: 135px;     /* 🔽 reduced */
+    height: 118px;    /* 🔽 reduced */
+    margin: 0 6px;    /* tighter spacing */
+  }
 
-    /* -- ROW 5: Force items 11, 12, 13 to be a straight row -- */
-    .hex-wrap:nth-child(11) { 
-        grid-column: 1 / span 2 !important; margin-top: 0 !important; z-index: 1 !important; 
-    }
-    .hex-wrap:nth-child(12) { 
-        grid-column: 3 / span 2 !important; margin-top: 0 !important; z-index: 1 !important; 
-    }
-    .hex-wrap:nth-child(13) { 
-        grid-column: 5 / span 2 !important; margin-top: 0 !important; z-index: 1 !important; 
-        display: block !important; /* Ensures it shows up */
-    }
+  /* ===== DISABLE HOVER FLIP (mobile safe) ===== */
+  .hex-wrap:hover .hex {
+    transform: none;
+  }
 
-    /* -- ROW 6: Force items 14, 15, 16 to be a straight row directly below -- */
-    .hex-wrap:nth-child(14) { 
-        grid-column: 1 / span 2 !important; margin-top: 0 !important; z-index: 1 !important; 
-    }
-    .hex-wrap:nth-child(15) { 
-        grid-column: 3 / span 2 !important; margin-top: 0 !important; z-index: 1 !important; 
-    }
-    .hex-wrap:nth-child(16) { 
-        grid-column: 5 / span 2 !important; margin-top: 0 !important; z-index: 1 !important; 
-        display: block !important; /* Fixes orphan issue */
-    }
+  .hex-face.back {
+    display: none;
+  }
+}
+/* ================================================= */
+/* MOBILE HONEYCOMB FIX – KEEP ALL IMAGES */
+/* ================================================= */
 
-    /* 7. TITLE & GHOST FIXES */
-    .gallery-heading { margin-bottom: 30px !important; height: auto !important; }
-    .gallery-ghost { font-size: 5rem !important; top: 45% !important; left: 59% !important; transform: translate(-50%, -50%) !important; }
-} 
+@media (max-width: 768px) {
 
+  /* Allow horizontal scroll instead of cutting images */
+  .past-gallery {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .honeycomb {
+    width: max-content;
+    padding: 0 20px;
+  }
+
+  /* Rows stay intact */
+  .hex-row {
+    justify-content: center;
+    margin-bottom: -16px;
+    flex-wrap: nowrap;
+  }
+
+  .hex-row.offset {
+    margin-left: 0;
+  }
+
+  /* Smaller hex for mobile */
+  .hex-wrap {
+    width: 130px;
+    height: 112px;
+    margin: 0 6px;
+  }
+
+  /* Disable hover flip ONLY on mobile */
+  .hex-wrap:hover .hex {
+    transform: none;
+  }
+
+  .hex-face.back {
+    display: none;
+  }
+}
+
+/* ================================================= */
+/* EXTRA SMALL DEVICES */
+/* ================================================= */
+
+@media (max-width: 480px) {
+
+  .hex-wrap {
+    width: 115px;
+    height: 100px;
+    margin: 0 5px;
+  }
+
+  .hex-row {
+    margin-bottom: -12px;
+  }
+}
+/* ================================= */
+/* REMOVE GALLERY GHOST TEXT (ALL) */
+/* ================================= */
+
+.gallery-ghost {
+  display: none !important;
+}
+ /* ================================================= */
+/* 🖥️ DESKTOP ONLY — FIX HUGE SPACE ABOVE PRIZES */
+/* ================================================= */
+
+@media (min-width: 901px) {
+
+  /* Reduce top padding of page */
+  .prizes-page {
+    padding-top: 0px !important;   /* was 150px */
+    padding-bottom: 100px !important;
+  }
+
+  /* Tighten heading spacing */
+  .prizes-heading-wrapper {
+    margin-bottom: 64px !important; /* was 120px */
+  }
+
+  /* Optional: slightly tighten title line height */
+  .prizes-main-title {
+    line-height: 1.1;
+  }
+}
+
+
+
+/* ============================= */
+/* RESPONSIVE (KEEPS SHAPE) */
+/* ============================= */
+
+/* @media (max-width: 1200px) {
+  .hex-wrap {
+      width: 200px;
+      height: 175px;
+  }
+
+  .hex-row.offset {
+      margin-left: 104px;
+  }
+}
+
+@media (max-width: 900px) {
+  .hex-wrap {
+      width: 160px;
+      height: 140px;
+  }
+
+  .hex-row,
+  .hex-row.offset {
+      margin-left: 0;
+      margin-bottom: 0;
+      flex-wrap: wrap;
+  }
+} */

@@ -209,131 +209,324 @@
 
 /* ================= RESPONSIVE ================= */
 
-/* ================= FINAL FOOTER FIX: FULL WIDTH MAP + CENTERED HEADINGS ================= */
 
-@media screen and (max-width: 768px) {
-
-    /* 1. CONTAINER */
-    .footer {
-        padding: 40px 15px 100px !important;
-        text-align: center !important;
-    }
-
-    /* 2. THE GRID (2 Columns Side-by-Side) */
+/* ================= RESPONSIVE ================= */
+  
+  /* Tablet */
+  @media (max-width: 900px) {
     .footer-grid {
-        display: grid !important;
-        grid-template-columns: 1fr 1fr !important;
-        gap: 30px 10px !important;
-        width: 100% !important;
-        justify-items: center !important;
+      grid-template-columns: 1fr 1fr;
     }
-
-    /* --- ITEM 1: BRAND (Logo) --- */
-    /* Spans Full Width at Top */
-    .footer-grid > *:nth-child(1) {
-        grid-column: 1 / -1 !important; 
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        width: 100% !important;
-        margin-bottom: 10px !important;
-        border-bottom: 1px solid rgba(255,255,255,0.1) !important;
-        padding-bottom: 20px !important;
+  }
+  
+  /* Mobile — PERFECT CENTER */
+  @media (max-width: 600px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+      justify-items: center;
+      align-items: center;
+      text-align: center;
     }
-
-    /* --- ITEM 2 & 3: VENUE & LINKS --- */
-    /* These sit side-by-side in the middle. We just force centering. */
-    
-    /* Target the Venue Column (2nd item) */
-    .footer-grid > *:nth-child(2) {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important; /* Centers the content block */
-        text-align: center !important;  /* Centers the text */
-        width: 100% !important;
+  
+    .brand-stack {
+      align-items: center;
+      text-align: center;
     }
-
-    /* Target the Links Column (3rd item) */
-    .footer-grid > *:nth-child(3) {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        text-align: center !important;
-        width: 100% !important;
-    }
-
-    /* Force Headings to Center */
-    .footer-col h3 {
-        text-align: center !important;
-        width: 100% !important;
-        margin-bottom: 15px !important;
-        margin-left: 10px !important;
-    }
-
-    .footer-col h4{
-        margin-left: -5px;
-    }
-
-    /* --- ITEM 4: LOCATION (Map + Heading) --- */
-    /* THIS IS THE FIX: Spans Full Width at Bottom */
-    .footer-grid > *:nth-child(4) {
-        grid-column: 1 / -1 !important; /* Span across both columns */
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        width: 100% !important;
-        margin-top: 10px !important;
-    }
-
-    /* Make the Map Huge and Centered */
-    .map-wrapper {
-        width: 100% !important;
-        height: 220px !important; /* Good height for mobile */
-        border-radius: 12px !important;
-        margin-top: 15px !important;
-    }
-
-    .map-wrapper iframe {
-        filter: none !important; /* Keep it colorful */
-    }
-
-    .brand-title{
-        margin-left: 14px;
-        font-size: 1.5rem;
-    }
-
-    .brand-sub{
-        font-size: 0.9rem;
-    }
-
-    /* 3. TEXT & SOCIALS ALIGNMENT */
-    .brand-sub, .footer-col p, .single-link {
-        text-align: center !important;
-    }
-
+  
     .brand-socials {
-        justify-content: center !important;
-        margin-top: 10px !important;
+      justify-content: center;
     }
-    
-    .brand-socials a { margin: 0 6px !important; }
-
-    /* 4. SCROLL BUTTON */
+  
+    .footer-col {
+      align-items: center;
+      text-align: center;
+    }
+  
+    .map-wrapper {
+      height: 160px;
+    }
+  
     .scroll-top {
-        bottom: 20px !important;
-        right: 20px !important;
+      right: 12px;
+      bottom: 12px;
+      width: 40px;
+      height: 40px;
     }
+  }
+  /* ================================================= */
+/* 🔥 FOOTER ALIGNMENT FIX — DESKTOP + MOBILE */
+/* ================================================= */
 
-    .footer-bottom{
-        margin-bottom: -30px;
-    }
+/* ---------- DESKTOP FIX ---------- */
+@media (min-width: 901px) {
 
-    .social-label{
-        margin-left: 3px;
-        margin-bottom: 2px;
-    }
+  /* Force equal top alignment */
+  .footer-grid {
+    align-items: flex-start !important;
+  }
 
-    .brand-socials{
-        margin-left: 5px;
-    }
+  /* Normalize all columns */
+  .brand-stack,
+  .footer-col {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  /* Headings: same baseline */
+  .brand-title,
+  .footer-col h3 {
+    margin-top: 0 !important;
+    margin-bottom: 10px !important;
+    line-height: 1.2;
+  }
+
+  /* Text blocks */
+  .brand-sub,
+  .footer-col p {
+    margin-top: 0 !important;
+    margin-bottom: 10px !important;
+  }
+
+  /* Social label */
+  .social-label {
+    margin-top: 12px !important;
+    margin-bottom: 8px !important;
+  }
+
+  /* Social icons */
+  .brand-socials {
+    margin-top: 0 !important;
+  }
+
+  /* Map column alignment */
+  .map-wrapper {
+    margin-top: 4px !important; /* aligns with text columns */
+  }
+}
+
+/* ---------- MOBILE FIX ---------- */
+@media (max-width: 600px) {
+
+  /* Reduce excessive spacing */
+  .footer {
+    padding-top: 32px !important;
+    padding-bottom: 32px !important;
+  }
+
+  /* Stack spacing consistency */
+  .footer-grid > * {
+    margin-bottom: 24px !important;
+  }
+
+  .footer-grid > *:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  /* Titles */
+  .brand-title,
+  .footer-col h3 {
+    margin-bottom: 8px !important;
+  }
+
+  /* Text */
+  .brand-sub,
+  .footer-col p {
+    margin-bottom: 12px !important;
+  }
+
+  /* Map */
+  .map-wrapper {
+    margin-top: 8px !important;
+  }
+}
+/* ================================================= */
+/* 📱 MOBILE FOOTER — REAL FOOTER STRUCTURE FIX */
+/* ================================================= */
+
+@media (max-width: 600px) {
+
+  /* FOOTER CONTAINER */
+  .footer {
+    padding: 28px 18px 20px !important;
+    background: #000;
+    border-top: 1px solid rgba(236, 177, 2, 0.35);
+  }
+
+  /* GRID → COMPACT STACK */
+  .footer-grid {
+    display: flex !important;
+    flex-direction: column;
+    gap: 20px !important;
+  }
+
+  /* REMOVE PAGE-LIKE SPACING */
+  .footer-grid > * {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* ================= BRAND (PRIMARY) ================= */
+
+  .brand-stack {
+    align-items: center;
+    text-align: center;
+  }
+
+  .brand-title {
+    font-size: 1.25rem !important;
+    margin-bottom: 6px !important;
+  }
+
+  .brand-sub {
+    font-size: 0.85rem !important;
+    line-height: 1.6;
+    margin: 0 !important;
+    opacity: 0.8;
+  }
+
+  /* SOCIALS INLINE */
+  .social-label {
+    display: none; /* footer-style */
+  }
+
+  .brand-socials {
+    justify-content: center;
+    margin-top: 10px;
+    gap: 14px;
+  }
+
+  /* ================= SECONDARY INFO ================= */
+
+  .footer-col {
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-col h3 {
+    font-size: 0.95rem !important;
+    margin-bottom: 4px !important;
+    opacity: 0.9;
+  }
+
+  .footer-col p,
+  .single-link {
+    font-size: 0.85rem !important;
+    line-height: 1.5;
+    opacity: 0.75;
+  }
+
+  /* ================= MAP (MINIMAL) ================= */
+
+  .map-wrapper {
+    height: 140px !important;
+    border-radius: 12px;
+    margin-top: 6px;
+  }
+
+  /* ================= FOOTER END ================= */
+
+  .footer-bottom {
+    margin-top: 16px !important;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    font-size: 0.7rem;
+    opacity: 0.6;
+  }
+}
+/* ================================================= */
+/* 📱 MOBILE — FORCE FOOTER LOOK (FINAL OVERRIDE) */
+/* ================================================= */
+
+@media (max-width: 600px) {
+
+  /* FORCE FOOTER CONTAINER */
+  footer.footer {
+    padding: 24px 16px 16px !important;
+    margin: 0 !important;
+    background: #000 !important;
+    border-top: 1px solid rgba(236, 177, 2, 0.35) !important;
+  }
+
+  /* KILL GRID → STACK LIKE FOOTER */
+  footer .footer-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 18px !important;
+  }
+
+  /* REMOVE PAGE-LIKE SPACING */
+  footer .footer-grid > div {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* ================= BRAND ================= */
+
+  footer .brand-stack {
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  footer .brand-title {
+    font-size: 1.2rem !important;
+    margin-bottom: 6px !important;
+  }
+
+  footer .brand-sub {
+    font-size: 0.85rem !important;
+    line-height: 1.6 !important;
+    margin: 0 !important;
+    opacity: 0.75 !important;
+    max-width: 100% !important;
+  }
+
+  /* SOCIAL ICONS INLINE */
+  footer .social-label {
+    display: none !important;
+  }
+
+  footer .brand-socials {
+    justify-content: center !important;
+    margin-top: 10px !important;
+    gap: 14px !important;
+  }
+
+  /* ================= OTHER COLUMNS ================= */
+
+  footer .footer-col {
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  footer .footer-col h3 {
+    font-size: 0.9rem !important;
+    margin-bottom: 4px !important;
+    opacity: 0.85 !important;
+  }
+
+  footer .footer-col p,
+  footer .single-link {
+    font-size: 0.85rem !important;
+    line-height: 1.5 !important;
+    opacity: 0.7 !important;
+  }
+
+  /* ================= MAP ================= */
+
+  footer .map-wrapper {
+    height: 140px !important;
+    margin-top: 6px !important;
+    border-radius: 12px !important;
+  }
+
+  /* ================= FOOTER END ================= */
+
+  footer .footer-bottom {
+    margin-top: 14px !important;
+    padding-top: 10px !important;
+    border-top: 1px solid rgba(255,255,255,0.15) !important;
+    font-size: 0.7rem !important;
+    opacity: 0.6 !important;
+  }
 }

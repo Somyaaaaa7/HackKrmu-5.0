@@ -423,83 +423,154 @@ html {
 /* ================================================= */
 
 /* ================================================= */
-/* MOBILE FIXES FOR HOME PAGE (Add to bottom) */
+  /* MOBILE & TABLET */
+  /* ================================================= */
+  
+  @media (max-width: 768px) {
+  
+    .page-section {
+      min-height: auto;
+      padding: 90px 16px 80px;
+    }
+  
+    .hero-title {
+      /* If you want HACK KRMU and 5.0 on the same line on mobile, 
+         change flex-direction to 'row' here */
+      flex-direction: row; 
+      flex-wrap: wrap;
+      font-size: clamp(2.4rem, 9vw, 3.2rem);
+      gap: 10px;
+    }
+  
+    .hero-cta {
+      flex-direction: column;
+      gap: 18px;
+    }
+  
+    .register-btn {
+      font-size: 1.3rem;
+      padding: 14px 32px;
+    }
+  
+    .insta-btn {
+      width: 52px;
+      height: 52px;
+    }
+  
+    .tagline-below {
+      margin-top: 28px;
+      font-size: 0.8rem;
+    }
+  
+    .shimmer-bg::after {
+      display: none;
+    }
+  }
+  
+  /* ================================================= */
+  /* EXTRA SMALL PHONES */
+  /* ================================================= */
+  
+  @media (max-width: 420px) {
+    .hero-title {
+      font-size: 2.2rem;
+    }
+  
+    .register-btn {
+      font-size: 1.2rem;
+      padding: 12px 26px;
+    }
+  }
+  /* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+
+    .hero-title {
+      font-size: 2.4rem;
+      text-align: center;
+      line-height: 1.2;
+    }
+  
+    .hero-section {
+      padding: 80px 16px;
+    }
+  
+  }
+  /* ================================================= */
+/* 📱 MOBILE HERO SPACING FIX */
 /* ================================================= */
 
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
 
-    /* 1. RESET PAGE PADDING */
-    .page-section {
-        padding: 100px 20px 60px !important; /* Adjust padding for mobile header */
-        width: 100% !important;
-        min-height: auto !important; /* Allow content to dictate height */
-        overflow-x: hidden !important;
-    }
+  /* HERO SECTION SHOULD NOT FORCE FULL SCREEN */
+  .home {
+    min-height: auto !important;
+    padding-bottom: 32px !important;
+  }
 
-    /* 2. SHRINK THE GIANT HERO TITLE */
-    .hero-title {
-        font-size: 3.5rem !important; /* Down from 6rem */
-        flex-wrap: wrap; /* Allow wrapping */
-        gap: 10px;
-        width: 100%;
-        margin-left: 20px !important;
-    }
+  /* EVENT DATE */
+  .event-dates {
+    margin-bottom: 12px !important;
+  }
 
-    /* 3. FIX THE BUTTON CONTAINER (CTA) */
-    .hero-cta {
-        display: flex !important;
-        flex-direction: column !important; /* Stack buttons vertically */
-        align-items: center !important;
-        justify-content: center !important;
-        
-        transform: none !important; /* REMOVE the desktop left-shift */
-        margin-top: 40px !important;
-        margin-left: 0 !important;
-        gap: 25px !important; /* Space between Register & Insta buttons */
-        width: 100% !important;
-    }
+  /* COUNTDOWN — REMOVE EXTRA SPACE */
+  .countdown,
+  .countdown-wrapper {
+    margin-bottom: 18px !important;
+  }
 
-    /* 4. FIX REGISTER BUTTON SIZE */
-    .register-btn {
-        font-size: 1.4rem !important; /* Smaller text */
-        padding: 14px 35px !important; /* Smaller button */
-        width: auto !important;
-        max-width: 80%; /* Prevent touching edges */
-        margin: 0 !important; /* Remove negative margins */
-        margin-left: 0 !important;
-    }
+  /* CTA BUTTON + INSTAGRAM */
+  .hero-cta {
+    margin-top: 14px !important;
+    gap: 12px !important;
+  }
 
-    /* 5. FIX INSTAGRAM BUTTON POSITION */
-    .insta-btn {
-        margin-left: 35px !important; /* Remove the huge 50px margin */
-        width: 55px !important;
-        height: 55px !important;
-    }
+  /* REGISTER BUTTON */
+  .register-btn {
+    margin-bottom: 0 !important;
+  }
 
-    .insta-btn img {
-        width: 24px !important;
-        height: 24px !important;
-    }
+  /* INSTAGRAM ICON */
+  .insta-btn {
+    margin-top: 4px !important;
+  }
 
-    /* 7. ADJUST TEXT SIZES */
-    .tagline {
-        font-size: 1rem !important;
-        line-height: 1.5 !important;
-        padding: 0 15px;
-    }
+  /* TAGLINE */
+  .tagline-below {
+    margin-top: 16px !important;
+  }
+}
+/* ================================================= */
+/* 📱 FIX EXTRA SPACE BEFORE ABOUT SECTION */
+/* ================================================= */
 
-    .tagline-below {
-        font-size: 0.8rem !important;
-        margin-top: 70px !important;
-        margin-bottom: -50px !important;
-        letter-spacing: 1px !important;
-        white-space: normal !important; /* Allow wrapping */
-        line-height: 1.6 !important;
-    }
-    
-    /* 8. TIMELINE / COUNTDOWN ADJUSTMENT */
-    /* Ensures the countdown timer fits */
-    .home > div {
-        max-width: 100%;
-    }
+@media (max-width: 768px) {
+
+  /* Stop sections from acting like full-screen */
+  .page-section {
+    min-height: auto !important;
+    padding-top: 32px !important;
+    padding-bottom: 32px !important;
+  }
+
+  /* Remove divider vertical gap on mobile */
+  .divider,
+  .section-divider,
+  hr {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* Specifically tighten ABOUT section top */
+  #about {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  /* Kill extra heading margin */
+  #about h1,
+  #about h2,
+  #about .hero-title {
+    margin-top: 0 !important;
+  }
 }
