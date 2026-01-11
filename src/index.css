@@ -154,3 +154,30 @@ body {
   }
 }
 
+/* ================= GLOBAL MOBILE SCROLL FIX ================= */
+
+html, body {
+    /* 1. STOP HORIZONTAL WOBBLE */
+    overflow-x: hidden !important; 
+    width: 100% !important;
+    max-width: 100% !important;
+
+    /* 2. FORCE VERTICAL SCROLLING */
+    overflow-y: auto !important;
+    height: auto !important;
+    min-height: 100% !important;
+    
+    /* 3. ENSURE TOUCH WORKS */
+    -webkit-overflow-scrolling: touch !important; /* Smooth scroll on iPhone */
+    touch-action: pan-y !important;
+    position: relative !important;
+}
+
+/* Fix any wrapper that might be locking the screen */
+#root, .App, .main-wrapper, .page-wrapper {
+    overflow-x: hidden !important;
+    overflow-y: visible !important;
+    height: auto !important;
+    min-height: 100vh !important;
+}
+
