@@ -349,6 +349,138 @@
     transform: translateY(-3px);
 }
 
+
 /* ================= RESPONSIVE ================= */
 
+
+@media screen and (max-width: 1024px) {
+    .about-page {
+        padding: 45px 20px 80px;
+        margin-top: 0;
+        overflow-x: hidden;
+    }
+
+    /* --- TITLES --- */
+    .about-heading, 
+    .partners-heading {
+        margin-bottom: 40px;
+        margin-top: -70px;
+    }
+
+    .about-ghost, 
+    .partners-ghost {
+        display: none !important;
+    }
+
+    .about-main-title {
+        font-size: 4.5rem !important;
+        text-align: center;
+    }
+
+    /* Split "OUR TRUSTED PARTNERS" into 2 lines if needed */
+    .partners-main-title {
+        font-size: 2.9rem !important; /* Smaller size */
+        line-height: 1.2;
+        text-align: center;
+        max-width: 300px; /* Forces wrap: OUR TRUSTED \n PARTNERS */
+        margin-left: 35px !important;
+    }
+
+    /* --- 1. ABOUT TEXT (Small & Centered) --- */
+    .about-top {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        margin-bottom: 50px;
+    }
+
+    .about-left {
+        text-align: center;
+        padding: 0 15px;
+    }
+
+    .about-left p {
+        font-size: 0.90rem !important; /* Smaller font */
+        line-height: 1.6;
+        text-align: center; /* Center align everything */
+        color: #d0d0d0;
+    }
+
+    /* --- 2. ABOUT IMAGE (Small & Centered) --- */
+    .about-right {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .about-right img {
+        width: 100%;
+        max-width: 280px; /* Keep it small */
+        height: auto;
+        margin: 0;
+        border-radius: 12px;
+        margin-bottom: 80px;
+    }
+
+    /* --- 3. FIXED SPONSORS (Strict 2-2-2 Pattern) --- */
+    .partners-fixed {
+        display: grid; /* Use Grid for strict columns */
+        grid-template-columns: 1fr 1fr; /* Exactly 2 columns */
+        gap: 20px;
+        justify-items: center;
+        width: 100%; 
+        max-width: 260px !important;
+        margin: 40px auto 30px; /* Center the grid */
+    }
+
+    .partners-fixed .partner-card {
+        width: 100%; /* Fill the grid cell */
+        height: 70px; /* Fixed height */
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    .partners-fixed .partner-card img {
+        max-width: 70%; /* Ensure logo fits inside */
+        max-height: 40px;
+    }
+
+    /* --- 4. MARQUEE (No Pause, No Cut) --- */
+    .partners-marquee {
+        padding: 20px 0 20px !important; /* Add padding to prevent cutting */
+        width: 100vw; /* Full viewport width */
+        margin-left: -20px; /* Counteract parent padding */
+        mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); /* Fade edges */
+    }
+    
+    .marquee-track {
+        gap: 15px;
+    }
+
+    /* Disable pause on hover for mobile */
+    .partners-marquee:hover .marquee-track {
+        animation-play-state: running !important;
+    }
+    
+    .marquee-track .partner-card {
+        width: 120px;
+        height: 75px;
+        flex-shrink: 0; /* Prevent squashing */
+    }
+
+    .marquee-track .partner-card img {
+        max-width: 80px;
+        max-height: 35px;
+    }
+
+    /* --- SPONSOR BUTTON --- */
+    .sponsor-cta {
+        margin-top: 30px;
+    }
+    
+    .sponsor-btn {
+        font-size: 2.1rem;
+        padding: 10px 15px !important;
+    }
+}
 

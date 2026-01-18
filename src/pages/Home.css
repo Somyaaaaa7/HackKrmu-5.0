@@ -422,3 +422,98 @@ html {
 /* RESPONSIVE */
 /* ================================================= */
 
+/* ================================================= */
+/* RESPONSIVE */
+/* ================================================= */
+
+@media (max-width: 768px) {
+
+    .page-section {
+        /* padding: 30px 20px; */
+        margin-top: -50px;
+        min-height: auto;
+        /* Allow content to dictate height on mobile */
+    }
+
+    /* 1. Resize Hero Title */
+    .hero-title {
+        flex-direction: column;
+        /* Stack "HACK KRMU" and "5.0" */
+        gap: 10px;
+        margin-bottom: -10px;
+        margin-bottom: -25px;
+    }
+
+    .hero-normal {
+        font-size: 3rem;
+        /* Drastically reduced from 6rem */
+    }
+
+    .hero-glitch-wrapper {
+        font-size: 4rem;
+        /* Reduced from 5rem */
+    }
+
+    .time-box{
+        width: 70px;
+        height: 70px;
+        margin-top: -25px;
+        margin-bottom: -30px;
+    }
+
+    /* 2. Resize Dates */
+    .event-dates {
+        font-size: 1.2rem;
+        /* Easier to read */
+        margin-top: 15px;
+        margin-bottom: 30px;
+    }
+
+    /* 3. Stack Buttons vertically */
+    .hero-cta {
+        flex-direction: column;
+        gap: 20px;
+        margin-top: 30px;
+    }
+
+    .register-btn {
+        width: 100%;
+        /* Full width button */
+        text-align: center;
+        font-size: 1.5rem;
+        /* Smaller text */
+        padding: 14px 20px;
+        max-width: 300px;
+        margin-top: -5px;
+        /* Don't get too wide on tablets */
+    }
+
+    .insta-btn {
+        width: 50px;
+        height: 50px;
+        margin-left: 10;
+        margin-top: -5px;
+        /* Remove legacy margin */
+    }
+
+    .insta-btn img {
+        width: 18px;
+        height: 18px;
+    }
+
+    /* 4. Adjust Tagline */
+    .tagline-below {
+        margin-top: 40px;
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+    }
+
+    /* 5. Disable Heavy Animations */
+    .shimmer-bg::after {
+        display: none;
+    }
+
+    .spacer-bottom {
+        height: 40px;
+    }
+}

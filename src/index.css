@@ -159,3 +159,58 @@ body {
 /* ================================================= */
 
 
+/* ================================================= */
+/* 🚀 PERFORMANCE & SMOOTH SCROLL BOOSTER 🚀 */
+/* Paste this at the very bottom of index.css */
+/* ================================================= */
+
+/* 1. Global Smooth Scroll */
+html {
+    scroll-behavior: smooth !important;
+}
+
+/* 2. Optimize Animations (Force GPU Usage) */
+/* This tells the browser to prep these elements for movement, reducing lag */
+.hero-title, 
+.ghost-text, 
+.partner-card, 
+.team-card, 
+img {
+    will-change: transform, opacity;
+    transform: translateZ(0); /* Hardware acceleration hack */
+    -webkit-font-smoothing: antialiased;
+}
+
+/* 3. Disable "Stuck" Scrolling on Mobile */
+/* Scroll Snap is the #1 reason mobile pages feel "stuck" or frozen */
+@media screen and (max-width: 1024px) {
+    html, body {
+        scroll-snap-type: none !important; /* Disable snap */
+        scroll-behavior: smooth !important;
+        overflow-x: hidden !important; /* Prevent side-scroll jitter */
+        height: auto !important;
+        overscroll-behavior-y: none; /* Prevents "bounce" effect lag */
+    }
+
+    /* Reset section heights so you don't get stuck in a huge div */
+    section, 
+    .page-section,
+    .themes-page,
+    .about-page,
+    .prizes-page {
+        height: auto !important; 
+        min-height: auto !important;
+        scroll-snap-align: none !important;
+    }
+}
+
+/* 4. Reduce Heavy Effects on Low-End Devices */
+/* Disables heavy blurs if the device is struggling */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

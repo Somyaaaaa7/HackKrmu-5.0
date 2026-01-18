@@ -175,3 +175,70 @@
 /* ============================= */
 
 
+/* ================= RESPONSIVE ================= */
+
+@media screen and (max-width: 1024px) {
+    .themes-page {
+        padding: -10px 20px 80px;
+        margin-top: -20px;
+    }
+
+    /* --- TITLE ADJUSTMENTS --- */
+    .themes-heading {
+        margin-bottom: 50px;
+        margin-top: -40px;
+    }
+
+    .themes-ghost {
+        display: none !important; /* Hide background text on mobile */
+    }
+
+    .themes-main-title {
+        font-size: 5.5rem !important; /* Smaller, readable title */
+    }
+
+    /* --- GRID TO STACK --- */
+    .theme-grid {
+        grid-template-columns: 1fr; /* 1 column stack */
+        gap: 50px;
+        width: 100%;
+        margin-top: 20px;
+        justify-items: center; /* Center cards horizontally */
+    }
+
+    /* --- CARD SIZING --- */
+    .theme-card {
+        width: 100%;
+        max-width: 340px; /* Prevent cards from getting too wide */
+        height: 160px; /* Slightly shorter for compact view */
+    }
+
+    /* --- TEXT ADJUSTMENTS --- */
+    .theme-face.front h3 {
+        font-size: 1rem;
+        padding: 0 10px;
+        text-align: center;
+    }
+
+    /* --- HOVER ON MOBILE --- */
+    /* On mobile, 'hover' often sticks until you tap elsewhere. 
+       This ensures the active state (press down) triggers the reveal reliably. */
+    .theme-card:active .theme-face.front {
+        opacity: 0;
+    }
+    
+    .theme-card:active .theme-face.back {
+        opacity: 1;
+    }
+}
+
+/* Very Small Screens */
+@media screen and (max-width: 380px) {
+    .themes-main-title {
+        font-size: 2.8rem !important;
+    }
+    
+    .theme-card {
+        height: 140px;
+    }
+}

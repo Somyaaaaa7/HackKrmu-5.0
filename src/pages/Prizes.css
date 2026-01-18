@@ -5,7 +5,7 @@
 .prizes-page {
     min-height: 100vh;
     padding: 150px 20px;
-    background: #000;
+    background: none;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -381,3 +381,104 @@
 /* MOBILE */
 /* ================================================= */
 
+/* ================= RESPONSIVE ================= */
+
+@media screen and (max-width: 1024px) {
+    .prizes-page {
+        padding: 80px 20px 60px;
+        min-height: auto;
+        margin-bottom: -100px;
+        margin-top: -30px;
+    }
+
+    /* --- TITLE ADJUSTMENTS --- */
+    .prizes-heading-wrapper {
+        margin-top: -60px; /* Adjust overlap */
+        margin-bottom: 40px;
+    }
+
+    .prizes-ghost {
+        font-size: 5rem;
+        top: 25%;
+        display: none !important;
+    }
+
+    .prizes-main-title {
+        font-size: 2.5rem;
+    }
+
+    /* --- TOTAL PRIZE POOL TEXT --- */
+    .prize-pool-text {
+        font-size: 1.3rem; /* Smaller text */
+        line-height: 1.4;
+        margin-top: -50px;
+        margin-bottom: 10px;
+    }
+
+    .prize-pool-sub{
+        margin-top: 10px;
+    }
+    
+    .prize-pool-line {
+        width: 200px; /* Shorter divider lines */
+        margin-top: -60px !important; /* Reset huge negative margin */
+        margin-bottom: 60px !important;
+    }
+
+    /* --- PODIUM STACKING --- */
+    .podium-wrapper {
+        flex-direction: column; /* Stack them vertically */
+        align-items: center;
+        gap: 40px;
+        width: 100%;
+        margin-bottom: 40px;
+        margin-top: 30px;
+    }
+
+    /* --- REORDERING (1st Place on Top) --- */
+    /* By default, your HTML is 2nd, 1st, 3rd. We use 'order' to fix visual flow */
+    
+    .podium-column.first {
+        order: 1; /* Champion First */
+    }
+    
+    .podium-column.second {
+        order: 2; /* Runner Up Second */
+    }
+    
+    .podium-column.third {
+        order: 3; /* 2nd Runner Up Third */
+    }
+
+    /* --- CARD SIZING --- */
+    .prize-card {
+        width: 200%;
+        max-width: 300px; /* Allow cards to be wider on mobile */
+        padding: 30px 20px;
+    }
+
+    .prize-amount {
+        font-size: 2.2rem;
+    }
+
+    /* --- DISABLE BASE ON MOBILE --- */
+    /* The "stairs" (podium-base) look weird in a vertical stack, so we hide or shrink them */
+    .podium-base {
+        display: none; 
+    }
+    
+    /* Remove negative margin since base is gone */
+    .podium-column .prize-card {
+        margin-bottom: 0;
+    }
+}
+
+/* Very Small Screens */
+@media screen and (max-width: 400px) {
+    .prizes-ghost {
+        font-size: 3.5rem;
+    }
+    .prize-amount {
+        font-size: 1.8rem;
+    }
+}

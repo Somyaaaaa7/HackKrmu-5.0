@@ -15,48 +15,84 @@ const sections = [
 
 export default function Navbar() {
     const [active, setActive] = useState(null);
-    const [menuOpen, setMenuOpen] = useState(false); // State for mobile menu
     const linksRef = useRef(null);
     const indicatorRef = useRef(null);
 
-    const toggleMenu = () => setMenuOpen(!menuOpen);
-
     /* ================= SCROLL SPY ================= */
     useEffect(() => {
-        const sectionEls = sections.map(s => document.getElementById(s.id));
+        const sectionEls = sections.map(s =>
+            document.getElementById(s.id)
+        );
+
         const onScroll = () => {
             const scrollPos = window.scrollY + window.innerHeight / 3;
+
             sectionEls.forEach(section => {
                 if (!section) return;
+
                 const top = section.offsetTop;
                 const height = section.offsetHeight;
+
                 if (scrollPos >= top && scrollPos < top + height) {
                     setActive(section.id);
                 }
             });
         };
+
         window.addEventListener("scroll", onScroll);
         return () => window.removeEventListener("scroll", onScroll);
     }, []);
 
-    /* ================= SLIDING INDICATOR (Desktop Only) ================= */
+    /* ================= SLIDING INDICATOR ================= */
     useEffect(() => {
-        if (!active || !linksRef.current || !indicatorRef.current || window.innerWidth < 900) return;
+        if (!active || !linksRef.current || !indicatorRef.current) return;
 
-        const activeLink = linksRef.current.querySelector(`span[data-id="${active}"]`);
+        const activeLink = linksRef.current.querySelector(
+            `span[data-id="${active}"]`
+        );
+
         if (activeLink) {
-            indicatorRef.current.style.width = `${activeLink.offsetWidth}px`;
-            indicatorRef.current.style.left = `${activeLink.offsetLeft}px`;
+            indicatorRef.current.style.width =
+                `${activeLink.offsetWidth}px`;
+            indicatorRef.current.style.left =
+                `${activeLink.offsetLeft}px`;
         }
-    }, [active, menuOpen]);
+    }, [active]);
+
+    /* ================= RIBBON WIND SWAY ================= */
+    useEffect(() => {
+        const ribbon = document.querySelector(".register-ribbon");
+        if (!ribbon) return;
+
+        const move = (e) => {
+            const rect = ribbon.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+
+            ribbon.style.transform = `
+                rotateX(${(-y / 18)}deg)
+                rotateY(${(x / 18)}deg)
+            `;
+        };
+
+        const reset = () => {
+            ribbon.style.transform = "rotateX(0deg) rotateY(0deg)";
+        };
+
+        ribbon.addEventListener("mousemove", move);
+        ribbon.addEventListener("mouseleave", reset);
+
+        return () => {
+            ribbon.removeEventListener("mousemove", move);
+            ribbon.removeEventListener("mouseleave", reset);
+        };
+    }, []);
 
     /* ================= SCROLL TO SECTION ================= */
     const scrollTo = (id) => {
         const section = document.getElementById(id);
-        if (section) {
-            section.scrollIntoView({ behavior: "smooth" });
-            setMenuOpen(false); // Close menu on click
-        }
+        if (!section) return;
+        section.scrollIntoView({ behavior: "smooth" });
     };
 
     return (
@@ -67,15 +103,8 @@ export default function Navbar() {
                 <span className="logo-text">HACK KRMU 5.0</span>
             </div>
 
-            {/* HAMBURGER ICON (Visible on Mobile) */}
-            <div className={`hamburger ${menuOpen ? "open" : ""}`} onClick={toggleMenu}>
-                <div className="bar"></div>
-                <div className="bar"></div>
-                <div className="bar"></div>
-            </div>
-
-            {/* LINKS CONTAINER (Desktop Center + Mobile Drawer) */}
-            <div ref={linksRef} className={`links center ${menuOpen ? "mobile-active" : ""}`}>
+            {/* CENTER LINKS */}
+            <div ref={linksRef} className="links center">
                 {sections.map(({ id, label }) => (
                     <span
                         key={id}
@@ -86,21 +115,27 @@ export default function Navbar() {
                         {label}
                     </span>
                 ))}
-                {/* Indicator only shows on Desktop via CSS */}
                 <span ref={indicatorRef} className="nav-indicator" />
-
-                {/* Mobile-only Register Button (Optional: if you want it inside the menu) */}
-                <a href="/register" className="mobile-register-btn">REGISTER</a>
             </div>
 
-            {/* DESKTOP REGISTER PILL (Hidden on Mobile via CSS) */}
+            {/* 🔥 REGISTER RIBBON */}
+            {/* <a
+                href="https://docs.google.com/forms/d/e/YOUR_GOOGLE_FORM_ID/viewform"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="register-pill"
+            >
+                REGISTER NOW
+            </a> */}
+
             <a
                 href="/register"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="register-pill desktop-only">
+                className="register-pill">
                 REGISTER NOW
             </a>
+
         </nav>
     );
 }

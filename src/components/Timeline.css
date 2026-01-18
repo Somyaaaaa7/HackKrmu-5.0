@@ -189,5 +189,88 @@
     font-size: 1.25rem;
 }
 
-/* MOBILE */
 
+/* ============================= */
+        /* RESPONSIVE  */
+/* ============================= */
+
+@media (max-width: 768px) {
+
+    .timeline-page {
+        padding: 0 20px 80px;
+    }
+
+    /* 1. Resize Titles */
+    .timeline-title {
+        font-size: 5.5rem !important;
+        margin-bottom: -40px;
+        margin-top: -15px;
+    }
+
+    .timeline-ghost {
+        font-size: 4rem;
+        display: none !important;
+    }
+
+    .timeline-day {
+        font-size: 1.8rem;
+        margin-bottom: 40px;
+    }
+
+    /* 2. Adjust Tabs */
+    .timeline-tabs {
+        gap: 10px;
+        margin-bottom: 60px;
+        max-height: 60px;
+    }
+
+    .timeline-tabs button {
+        font-size: 1rem;
+        padding: 8px 16px;
+    }
+
+    /* 3. RESTRUCTURE TIMELINE to Single Column */
+
+    /* Move Line to the Left */
+    .line-base,
+    .line-fill {
+        left: 17.5px;
+        /* Fixed position on left */
+        transform: translateX(0);
+    }
+
+
+    /* Reset Event Containers */
+    .event {
+        width: 100%;
+        /* Full width */
+        padding: 10px 10px 25px 50px !important;
+        /* Add padding-left to clear the line */
+        text-align: left !important;
+        /* Force left align text */
+    }
+
+    /* Reset Left/Right specific positioning */
+    .event.left,
+    .event.right {
+        left: 0;
+    }
+
+    /* Align Dots to the new line position */
+    .dot {
+        left: 12px !important;
+        /* (Line Left 20px) - (Dot Half Width 8px) */
+        right: auto !important;
+        top: 25px;
+        /* Adjust vertical alignment */
+    }
+
+    /* Adjust Text Sizes */
+    .time {
+        font-size: 0.9rem;
+    }
+
+    .label {
+        font-size: 1.2rem;
+    }
+}

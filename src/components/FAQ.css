@@ -143,4 +143,72 @@
 
 /* MOBILE */
 
+/* ================= MOBILE RESPONSIVE ================= */
 
+@media screen and (max-width: 900px) {
+    .faq-page {
+        padding: 60px 5% 80px; /* Reduce side padding */
+        margin-bottom: -50px !important;
+    }
+
+    .faq-heading-wrapper {
+        margin-top: -60px; /* Adjust overlap */
+        margin-bottom: 50px;
+    }
+
+    /* --- GHOST TEXT --- */
+    .faq-ghost {
+        font-size: 5rem; /* Shrink the giant background text */
+        top: 30%; /* Re-center it slightly */
+        display: none !important;
+    }
+
+    .faq-main-title {
+        font-size: 2rem ; /* Smaller main heading */
+    }
+
+    /* --- CONTAINER --- */
+    .faq-container {
+        width: 100%;
+        gap: 25px;
+    }
+
+    /* --- FAQ ITEM --- */
+    .faq-question {
+        padding: 18px 20px; /* Compact padding */
+        font-size: 1rem; /* readable font size */
+        align-items: flex-start; /* Align icon to top if text wraps */
+        gap: 15px; /* Space between text and icon */
+    }
+
+    .faq-icon {
+        font-size: 1.4rem;
+        line-height: 1; /* Prevent icon from shifting layout */
+        margin-top: 2px; /* Align with text */
+        flex-shrink: 0; /* Prevent icon from getting squashed */
+    }
+
+    /* --- ANSWER --- */
+    .faq-item.active .faq-answer {
+        padding: 0 20px 20px; /* Match question padding */
+        max-height: 500px; /* Allow taller height for wrapped text */
+    }
+
+    .faq-answer p {
+        font-size: 0.95rem;
+        margin-top: 15px; /* Less gap between Q and A */
+    }
+}
+
+/* Very small screens (Narrow Phones) */
+@media screen and (max-width: 480px) {
+
+    .faq-question {
+        padding: 15px 15px;
+        font-size: 0.9rem;
+    }
+
+    .faq-answer p {
+        font-size: 0.85rem;
+    }
+}
